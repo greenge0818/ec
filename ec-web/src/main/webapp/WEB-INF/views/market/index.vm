@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <!-- meta S -->
+	#parse("layout/meta.vm")
+	<!-- meta E -->
+    <meta name="keywords" content="$!{keywords}">
+    <meta name="description" content="$!{description}">
+    <title>$!{title}</title>
+    <link type="image/x-icon" href="$link.getContextPath()/css/default/images/favicon.ico " rel="shortcut icon">
+    <link href="$link.getContextPath()/css/plugin/jquery-tips/jquery-tips.css" rel="stylesheet"/>
+    <link href="$link.getContextPath()/css/plugin/artdialog.css" rel="stylesheet"/>
+    <link href="$link.getContextPath()/css/default/css/common.css" rel="stylesheet"/>
+    <link href="$link.getContextPath()/css/default/css/shopcart.css" rel="stylesheet"/>
+    <link href="$link.getContextPath()/css/default/css/market.css" rel="stylesheet"/>
+    <link href="$link.getContextPath()/css/default/css/login.css" rel="stylesheet"/>
+    #parse("layout/context.vm")
+    <script>
+//      var _hmt = _hmt || [];
+//      (function () {
+//          var hm = document.createElement("script");
+//          hm.src = "//hm.baidu.com/hm.js?d18d819a63068d5dd5a58859eed22d99";
+//          var s = document.getElementsByTagName("script")[0];
+//          s.parentNode.insertBefore(hm, s);
+//      })();
+    </script>
+    <script src="$link.getContextPath()/js/lib/seajs/2.2.0/sea.js" type="text/javascript"></script>
+    <script src="$link.getContextPath()/js/seaconfig.js"></script>
+    <script>
+        seajs.use('js/event/market.init.js');
+    </script>
+</head>
+<body>
+<!--[if lte IE 6]>
+<div style="width:100%;_position:absolute;
+_bottom:auto;
+_top:expression(eval(document.documentElement.scrollTop));
+z-index:1000;">
+    <div style="width:100%;height:30px;border-bottom:1px solid #ff5a00;background:#ffede3;color:#444;line-height:30px; text-align:center;">
+        系统检测您当前的浏览器为IE6，可能会影响部分功能的使用。为了您有更好的体验。建议您<a href="http://www.microsoft.com/china/windows/internet-explorer/"
+                                                     target="_blank" style="color:#c81624;text-decoration:underline;">升级IE浏览器</a>或者下载安装使用<a
+            href="http://dlsw.baidu.com/sw-search-sp/soft/9d/14744/ChromeStandalone_V43.0.2357.124_Setup.1433905898.exe"
+            target="_blank" style="color:#c81624;text-decoration:underline;">谷歌浏览器chrome</a>
+    </div>
+    <style>
+        body {
+            _padding-top: 30px;
+        }
+    </style>
+</div>
+<![endif]-->
+<!---头部公共控件 S--->
+    #parse("layout/min-header.vm")
+<!---头部公共控件 E--->
+
+<!--logo 搜索 S-->
+<div class="logolayout">
+    <div class="indexlogo f-fl"><a href="$link.getContextPath()/"></a></div>
+    <!--<a href="http://www.prcsteel.com" target="_blank" class="logo"></a>-->
+    <!--<span>全国服务热线：<i>0571-8971&nbsp;8799</i></span>-->
+</div>
+<!--logo 搜索 E-->
+
+<!--导航 S-->
+<!-- 首页导航E -->
+<div class="navbox">
+    <div class="index-nav f-clrfix">
+        <ul>
+            <li><a href="$link.getContextPath()/" target="_blank">首页</a></li>
+            <li class="active"><a href="$link.getContextPath()/market">钢铁超市</a></li>
+            <li><a href="$marketCenterDomain/">行情圈</a></li>
+            <li><a href="https://www.paysteel.com" target="_blank">款道</a></li>
+            <li><a href="$link.getContextPath()/helpfind/">钢为购</a></li>
+        </ul>
+    </div>
+</div>
+<!--导航 E-->
+<!--common S-->
+<div class="main">
+    <!--search S-->
+    <div class="m-s">
+        <div class="m-search m-search-bar f-clrfix" id="m-search">
+            <div class="product-ipt">
+                <span class="in-block f-fl">品名：</span>
+                <div class="form-item">
+                    <label class="f-label" style="color: rgb(153, 153, 153);">简拼/全拼/汉字</label>
+                    <input type="text" id="nsortName" class="f-text lt22" value=""  autocomplete="off"><!--$!{query.categoryName},$!{query.categoryUuid}-->
+                    <input type="hidden" id="nsortId" class="f-text" value="">
+                    <input type="hidden" id="sortName" class="f-text" value="">
+                    <input type="hidden" id="sortId" class="f-text" value="">
+                    <span class="icon down-arr-icon"></span>
+                    <!--品名首字母匹配  S-->
+                    <div id="proComp" class="product-complete none">
+                        <ul class="product-complete-ul">
+                        </ul>
+                    </div>
+                    <!--品名首字母匹配  E-->
+                    <!--品名数据层  S-->
+                    <div class="show-layer product-bar none" id="showLayer_nsortName">
+                        <div class="product-t">
+                            <ul class="product-t-ul">
+                            </ul>
+                        </div>
+                    </div>
+                    <!--品名数据层 E-->
+                </div>
+            </div>
+            <div class="product-ipt">
+                <span class="in-block f-fl">材质：</span>
+                <div class="form-item">
+                    <label class="f-label" style="color: rgb(153, 153, 153);">可多选</label>
+                    <input type="text" id="material" class="f-text lt22" value="" autocomplete="off">
+                    <input type="hidden" name="material-uuid" id="material-uuid">
+                    <span class="icon down-arr-icon"></span>
+
+                    <!--材质首字母匹配  S-->
+                    <div id="materialsHeadMatch" class="product-complete none">
+                        <ul class="product-complete-ul">
+                        </ul>
+                    </div>
+                    <!--材质首字母匹配  E-->
+
+                    <!--材质数据层  S-->
+                    <div class="show-layer textures-bar none" id="showLayer_material">
+                        <div class="textures-t">
+                            <a class="layer-del"></a>
+                            <span>可多选</span>
+                        </div>
+                        <div class="textures-con">
+
+                        </div>
+                        <div class="btn-bar">
+                            <button class="clear-btn">清除</button>
+                            <button class="confirm-btn">确认</button>
+                        </div>
+                    </div>
+                    <!--材质数据层  E-->
+                </div>
+            </div>
+	          <div class="product-ipt" >
+	             <span class="in-block f-fl">厂家：</span>
+	             <div class="form-item ">
+	                    <label class="f-label" style="color: rgb(153, 153, 153);">可多选</label>
+	                    <input type="text" id="factory" class="f-text lt22" value="" autocomplete="off">
+	                    <input type="hidden" name="factory-uuid" id="factory-uuid"/>
+	                    <input type="hidden" id="test_u_acc" class="f-text" value="">
+	                		<span class="icon down-arr-icon"></span>
+                     <!--材质首字母匹配  S-->
+                     <div id="factoryMatch" class="product-complete none">
+                         <ul class="product-complete-ul">
+                         </ul>
+                     </div>
+                     <!--材质首字母匹配  E-->
+	                <!--厂家数据层 S-->
+	              	 <div class="show-layer factory-layer textures-bar standard-bar none" id="showLayer_factory">
+													<div class="product-t">
+														 <a class="layer-del"></a>
+	                        <ul class="product-t-ul">
+	                        </ul>
+	                    </div>
+	                    <div class="product-b">
+
+	                    </div>
+													<div class="btn-bar f-clrfix">
+														<button class="clear-btn">清除</button>
+														<button class="confirm-btn">确认</button>
+													</div>
+								       </div>
+											 <!--厂家数据层  E-->
+        			</div>
+            </div>
+            <div class="product-ipt" type="spec">
+                <span class="in-block f-fl">规格：</span>
+                <div class="form-item form-item-width">
+                    <label class="f-label" style="color: rgb(153, 153, 153);">可多选</label>
+                    <input type="text" id="inputspec1"  class="f-text sm lt22" value="" autocomplete="off">
+                    <input type="hidden" id="test_u_acc" class="f-text" value="">
+                    <span class="icon down-arr-icon"></span>
+                </div>
+            </div>
+            <div class="product-ipt" type="spec">
+                <!--<span class="in-block f-fl">宽度：</span>-->
+                <div class="form-item form-item-width">
+                    <label class="f-label" style="color: rgb(153, 153, 153);">宽</label>
+                    <input type="text" id="inputspec2" readonly="readonly"  class="f-text sm lt22" value="" autocomplete="off">
+                    <input type="hidden" id="test_u_acc" class="f-text" value="">
+                    <span class="icon down-arr-icon"></span>
+                        <!--品规 S-->
+                        	<div class="show-layer textures-bar breadth-bar standard-bar none" id="showLayer_spec2" style="display: none;">
+														<div class="textures-con f-clrfix ">
+															<div class="textures-con-bar-list bder-b-dashed">
+																<span><a href="javascript:;">1250.00</a></span>
+																<span><a href="javascript:;">1500.00</a></span>
+															</div>
+															<div class="f-clr-l">
+
+															</div>
+														</div>
+														<div class="btn-bar t-l">
+														<span class="s-gray">范围：</span>
+														<input class="range-ipt" type="text" value="" id="from_spec2">
+														<em class="dash-line">—</em>
+														<input class="range-ipt" type="text" value="" id="to_spec2">
+														<button class="clear-btn">清除</button>
+														<button class="confirm-btn">确认</button>
+														</div>
+													</div>
+                        <!-- 品规S-->
+                </div>
+            </div>
+            <div class="product-ipt" type="spec">
+                <!-- <span class="in-block f-fl">高度：</span>-->
+                <div class="form-item form-item-width">
+                    <label class="f-label" style="color: rgb(153, 153, 153);">高</label>
+                    <input type="text" id="inputspec3" readonly="readonly"  class="f-text sm lt22" value="" autocomplete="off">
+                    <input type="hidden" id="test_u_acc" class="f-text" value="">
+                    <span class="icon down-arr-icon"></span>
+                </div>
+            </div>
+            <button type="button" name="searchBtn" id="searchBtn" class="search-btn" value=""
+                    onMouseOver="this.className='search-btn search-btn-o'"
+                    onMouseDown="this.className='search-btn search-btn-c'" onMouseOut="this.className='search-btn'">搜&nbsp;索
+            </button>
+
+        </div>
+    </div>
+    <!--search E-->
+    <div class="err-c none">
+            <span class="info">请选择需购买的品名</span>
+    </div>
+    <!--resoult S-->
+    <div class="prefer-resoult none">
+        <dl class="f-clr-l none">
+            <dt>最近搜索：</dt>
+            <dd id="pre-lately">
+
+            </dd>
+        </dl>
+        <dl class="f-clr-l none">
+            <dt>猜你喜欢：</dt>
+            <dd id="pre-common">
+
+            </dd>
+        </dl>
+    </div>
+    <!--resoult S-->
+    <div class="order-tool">
+        <div class="area-bar">
+            <div class="area-bar-com">
+                <a href="javascript:;">全国</a>
+            </div>
+            <div class="show-layer area-layer textures-bar standard-bar none" style="display: none;">
+                <div class="textures-t f-clr-r">
+                    <a class="layer-del f-fr" href="javascript:;"></a>
+                    <span class="fl">城市（可多选）</span>
+                </div>
+                <div class="textures-con f-clrfix">
+                    #foreach( $area in $citys.data)
+                        <div class="product-con f-clrfix bder-b-dashed">
+                            <div class="product-con-sort f-fl">
+                                <span class="textures-list-first bold">$!{area.areaName}：</span>
+                            </div>
+                            <div class="product-con-bar f-fl">
+                                <div class="textures-con-bar-list f-clrfix">
+                                    #foreach( $city in $area.citys)
+                                        <span><a href="javascript:;" cityid="$!{city.id}" >$!{city.name}</a></span>
+                                    #end
+                                </div>
+                            </div>
+                        </div>
+                    #end
+                    <div class="product-con f-clrfix bder-b-dashed">
+	                    <div class="product-con-sort f-fl">
+	                        <span class="textures-list-first bold"></span>
+	                    </div>
+	                    <div class="product-con-bar f-fl">
+	                        <div class="textures-con-bar-list f-clrfix">
+	                            <span><a href="javascript:;" class="hover">全国</a></span>
+	                        </div>
+	                    </div>
+	                </div>
+                </div>
+
+                <div class="btn-bar f-clrfix">
+                    <button class="clear-btn">清除</button>
+                    <button class="confirm-btn">确认</button>
+                </div>
+            </div>
+        </div>
+        <div class="factory-bar none">
+            <div class="factory-bar-com"><a href="javascript:;">厂家</a></div>
+            <div class="show-layer factory-layer textures-bar standard-bar none">
+                <div class="textures-t f-clrfix">
+                    <a class="layer-del f-fr"></a>
+                    <span class="fl">可多选</span>
+                </div>
+                <div class="textures-con f-clrfix ">
+                </div>
+                <div class="btn-bar f-clrfix">
+                    <button class="clear-btn">清除</button>
+                    <button class="confirm-btn">确认</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="order-bar">
+            <div class="order-bar-com"><a href="javascript:;">价格</a></div>
+            <ul class="order-bar-ul show-layer">
+                <li class="bder-b-dashed" v="0"><a href="javascript:;">价格从低到高</a></li>
+                <li class="bder-b-dashed" v="1"><a href="javascript:;">价格从高到低</a></li>
+            </ul>
+        </div>
+        <!---基础分页地址--->
+        #set($transUrl="$link.getContextPath()/$!{url}")
+        <!---总页码--->
+        #set($pageNum=${number.pageCount(${resourceDto.total},${query.pageSize})})
+
+        <!---当前页码--->
+        #set($currentPage=$query.pageIndex)
+        #if(${resourceDto.data.size()} > 0)
+            <div class="order-page">
+                #set($n=$currentPage + 1)
+                #set($p=$currentPage - 1)
+                #if($currentPage==1)
+                    <span class="order-page-span f-fr">
+                     <a id="page-prev" class="left-arr-icon" href="javascript:;"></a>
+                     <em class="order-page-num"> 1</em><i>/</i><em class="order-page-max">$!{pageNum}</em>
+                     <a id="page-next" class="next right-arr-icon" href="#if($currentPage==$pageNum) javascript:; #else $transUrl$n #end"></a>
+                    </span>
+                #elseif($currentPage==$pageNum)
+                    <span class="order-page-span f-fr">
+                     <a id="page-prev" class="left-arr-icon" href="$transUrl$p"></a>
+                     <em class="order-page-num"> $!{currentPage}</em><i>/</i><em class="order-page-max">$!{pageNum}</em>
+                     <a id="page-next" class="next right-arr-icon" href="javascript:;"></a>
+                    </span>
+                #else
+                    <span class="order-page-span f-fr">
+                     <a id="page-prev" class="left-arr-icon" href="$transUrl$p"></a>
+                     <em class="order-page-num">$!{currentPage}</em><i>/</i><em class="order-page-max">$!{pageNum}</em>
+                     <a id="page-next" class="next right-arr-icon" href="$transUrl$n"></a>
+                    </span>
+                #end
+            </div>
+        #end
+    </div>
+    <!--resoult E-->
+    <div class="m-data">
+         #if($resourceDto.data.size() > 0 && $!{query.isSearchFromCity2Country})
+         <div class="search_notice">
+    		当前地区没有找到<strong> "$!{query.categoryName}" </strong>商品，以下为您显示全国地区<strong> "$!{query.categoryName}" </strong>的搜索结果。
+        </div>
+        #end
+
+        <div style="height:30px">
+            <ul>
+                <li class="title list_01">品名</li>
+                <li class="title list_02">材质</li>
+                <li class="title list_03">规格</li>
+                <li class="title list_04">厂家</li>
+                <li class="title list_05">仓库</li>
+                <li class="title list_06">计重方式</li>
+                <li class="title list_07">参考价</li>
+                <li class="title list_08">操作</li>
+
+            </ul>
+        </div>
+
+        #if(${resourceDto} && ${resourceDto.data.size()} > 0)
+            <ul id="data-area">
+                #foreach( $resource in $resourceDto.data)
+                    <li>
+                        <dl class="a1">
+                            <dt>
+                                <input type="hidden" name="categoryUuid" value="$!{resource.categoryUuid}">
+                                 <input type="hidden" name="categoryName" value="$!{resource.categoryName}">
+                                <strong class="factory bottomTip">$!{resource.categoryName} </strong>
+                            </dt>
+                        </dl>
+                        <dl class="a2">
+                            <dt>
+                                <input type="hidden" name="materialUuid" value="$!{resource.materialUuid}">
+                                <input type="hidden" name="materialName" value="$!{resource.materialName}">
+                                <span>$!{resource.materialName}</span>
+                            </dt>
+                        </dl>
+                        <dl class="a3">
+                            <dt>
+                            	<input type="hidden" name="spec" value="$!{resource.spec}">
+                            	<input type="hidden" name="spec1" value="$!{resource.spec1}">
+                            	<input type="hidden" name="spec2" value="$!{resource.spec2}">
+                            	<input type="hidden" name="spec3" value="$!{resource.spec3}">
+                                <span>$!{resource.spec}</span>
+                            </dt>
+                        </dl>
+                        <dl class="a4">
+                            <dt>
+                                <input type="hidden" name="factoryId" value="$!{resource.factoryId}">
+                                <input type="hidden" name="factoryName" value="$!{resource.factoryName}">
+                                <span>$!{resource.factoryName}</span>
+                            </dt>
+                        </dl>
+                        <dl class="a5">
+                            <dt>
+                                <input type="hidden" name="cityId" value="$!{resource.cityId}">
+                                <input type="hidden" name="cityName" value="$!{resource.cityName}">
+                                <input type="hidden" name="warehouseId" value="$!{resource.warehouseId}">
+                                <input type="hidden" name="warehouseName" value="$!{resource.warehouseName}">
+                                <span>$!{resource.cityName} $!{resource.warehouseName}</span>
+                            </dt>
+                        </dl>
+                        <dl class="a6">
+                            <dt>
+                            	 <input type="hidden" name="weightConcept" value="$!{resource.weightConcept}">
+                                <span>$!{resource.weightConcept}</span>
+                            </dt>
+                        </dl>
+                        <dl class="a7">
+                        	<input type="hidden" name="price" #if(!$resource.expired) value="${resource.price}" #end>
+                            <dt>
+                                #if($resource.expired)
+                                    议价
+                                #else
+                                    <b> $!{number.moneyFormat(${resource.price})}</b> / 吨
+                                #end
+                            </dt>
+                        </dl>
+                        <button type="button">加入购物车</button>
+
+                    </li>
+                #end
+            </ul>
+        #elseif(!${resourceDto})
+            <div class="con-empty" style="padding-left:130px;padding-top:125px;">
+               <span><strong>抱歉，您要访问的页面被外星人偷走了，</strong></span>
+               <br>
+              <span><strong>钢铁侠正在努力追回！</strong></span>
+              <br>
+               <span><strong>您可以通过【钢为购】提交需求，掌柜随时待命</strong></span>
+            </div>
+        #else
+            <div class="con-empty" style="padding-left:130px;padding-top:125px;">
+               <span>未找到您要搜索的 <strong>$!{query.categoryName}&nbsp;$!{query.materialNames.replace(",","/")}&nbsp;$!{query.factoryNames.replace(",","/")}&nbsp;</strong> </span>
+               <br>
+              <span>您可以在下方提交您的需求，</span>
+              <br>
+               <span>我们会尽快用 <span style="color:#c81623">0571-8971&nbsp;8799</span> 给您回复</span>
+            </div>
+        #end
+        <!--分页 S-->
+
+
+		<input type="hidden" id="currentPage" value="$currentPage"/>
+		<input type="hidden" id="ck_categoryuuid" value="$!{query.categoryUuid}"/>
+		<input type="hidden" id="ck_categoryname" value="$!{query.categoryName}"/>
+		<input type="hidden" id="ck_materialuuid" value="$!{query.materialUuids}"/>
+		<input type="hidden" id="ck_factory" value="$!{query.factoryIds}"/>
+		<input type="hidden" id="ck_spec1" value="$!{query.spec1}"/>
+		<input type="hidden" id="ck_spec2" value="$!{query.spec2}"/>
+		<input type="hidden" id="ck_spec3" value="$!{query.spec3}"/>
+		<input type="hidden" id="ck_city" value="$!{query.purchaseCityIds}"/>
+		<input type="hidden" id="ck_orderway" value="$!{query.orderWay}"/>
+
+		#if($pageNum >0)
+            <div id="m-page" class="m-page none" style="display: block;padding-left:0px;">
+                <div class="m-page-num" id="m-page-num">
+                    #if($currentPage==1 || $pageNum==0)
+                        <span class="current prev">&nbsp;上一页</span>
+                    #else
+                        #set($pre=$currentPage - 1)
+                        <a href="$!{transUrl}$pre" class="prev">上一页</a>
+                    #end
+
+                    #if($pageNum ==0)
+                        <span class="current">0</span>
+                    #elseif($currentPage<5)
+                        #if($pageNum<=5)
+                            #foreach($foo in [1..$pageNum])
+                                #if ($foo == $currentPage)
+                                    <span class="current">$foo</span>
+                                #else
+                                    <a href="$!{transUrl}$foo"  #if($velocityCount==1)style="border: 1px solid rgb(232, 232, 232);"  #end>$foo</a>
+                                #end
+                            #end
+                        #elseif($pageNum>5)
+                            #foreach($foo in [1..5])
+                                #if ($foo == $currentPage)
+                                    <span class="current">$foo</span>
+                                #else
+                                    <a href="$!{transUrl}$foo"  #if($velocityCount==1)style="border: 1px solid rgb(232, 232, 232);"  #end>$foo</a>
+                                #end
+                            #end
+                            <span class="dotted-page">...</span>
+                            <a href="$!{transUrl}$pageNum" style="border: 1px solid rgb(232, 232, 232);">$pageNum</a>
+                        #end
+                    #elseif($currentPage<=$pageNum)
+                        #set($s=$currentPage - 2)
+                        #set($e=$currentPage + 2)
+
+                        #if($e >= $pageNum)
+                            <a  href="$!{transUrl}1" style="border: 1px solid rgb(232, 232, 232);">1</a>
+                            <span class="dotted-page">...</span>
+                            #foreach($foo in [$s..$pageNum])
+                                #if ($foo == $currentPage)
+                                    <span class="current">$foo</span>
+                                #else
+                                    <a href="$!{transUrl}$foo"  #if($velocityCount==1)style="border: 1px solid rgb(232, 232, 232);"  #end>$foo</a>
+                                #end
+                            #end
+                        #else
+                            <a  href="$!{transUrl}1" style="border: 1px solid rgb(232, 232, 232);">1</a>
+                            <span class="dotted-page">...</span>
+                            #foreach($foo in [$s..$e])
+                                #if ($foo == $currentPage)
+                                    <span class="current">$foo</span>
+                                #else
+                                    <a  href="$!{transUrl}$foo" #if($velocityCount==1)style="border: 1px solid rgb(232, 232, 232);"  #end>$foo</a>
+                                #end
+                            #end
+                            <span class="dotted-page">...</span>
+                            <a href="$!{transUrl}$pageNum" style="border: 1px solid rgb(232, 232, 232);">$pageNum</a>
+                        #end
+                    #end
+
+                    #if($currentPage==$pageNum || $pageNum ==0)
+                        <span class="current next">&nbsp;下一页</span>
+                    #else
+                        #set($next=$currentPage + 1)
+                        <a href="$!{transUrl}$next" class="next">下一页</a>
+                    #end
+                </div>
+                <i>
+                    共<em class="order-page-max">&nbsp;$pageNum
+                </em>页，
+                </i>
+                <i>到第&nbsp;
+                    <input type="text" class="page-num-ipt" name="pageNum" value="">
+                    &nbsp;页
+                </i>
+                <button class="page-num-btn" type="button">确定</button>
+            </div>
+             #end
+    	</div>
+</div>
+<div class="search-c">
+	<form id="gwfindform">
+	    <div class="serach-detail">
+	        <textarea id="requirement_textarea" maxlength="100" style="color: #999;">#if(${resourceDto.data.size()} == 0)我要找  $!{query.categoryName}&nbsp;$!{query.materialNames.replace(",","/")}&nbsp;$!{query.factoryNames.replace(",","/")}&nbsp; 请尽快回复我 !#else输入想要查找 品名#end</textarea>
+	        <span class="btn" id="helpfind">钢为购</span>
+	    </div>
+        <div class="red-c marketerr-msg-span"></div>
+	</form>
+</div>
+<!--common E-->
+<!---公用底部控件 开始--->
+<div class="footer">
+     #parse("layout/globalfooter.vm")
+</div>
+
+<!---公用底部控件 结束-->
+<div id="shopcart" class="shopcart"></div>
+<div id="guide" class="none">
+    <div id="guide01" class="guide_box">
+        <div class="guide01">
+            <a href="javascript:;"
+               onclick="document.getElementById('guide01').style.display='none';document.getElementById('guide02').style.display='block'"></a>
+        </div>
+        <a href="javascript:void(0)"
+           onclick="document.getElementById('guide01').style.display='none';document.getElementById('fade01').style.display='none'"
+           class="guide_close"></a>
+    </div>
+    <div id="guide02" class="guide_box">
+        <div class="guide02">
+            <a href="javascript:;"
+               onclick="document.getElementById('guide02').style.display='none';document.getElementById('guide03').style.display='block'"></a>
+        </div>
+        <a href="javascript:void(0)"
+           onclick="document.getElementById('guide02').style.display='none';document.getElementById('fade01').style.display='none'"
+           class="guide_close"></a>
+    </div>
+    <div id="guide03" class="guide_box">
+        <div class="guide03">
+            <i>
+                <a href="javascript:;"
+                   onclick="document.getElementById('guide03').style.display='none';document.getElementById('guide04').style.display='block'"></a>
+            </i>
+        </div>
+        <a href="javascript:void(0)"
+           onclick="document.getElementById('guide03').style.display='none';document.getElementById('fade01').style.display='none'"
+           class="guide_close"></a>
+    </div>
+    <div id="guide04" class="guide_box">
+        <div class="guide04">
+            <a href="javascript:;"
+               onclick="document.getElementById('guide04').style.display='none';document.getElementById('guide05').style.display='block'"></a>
+        </div>
+        <a href="javascript:void(0)"
+           onclick="document.getElementById('guide04').style.display='none';document.getElementById('fade01').style.display='none'"
+           class="guide_close"></a>
+    </div>
+    <div id="guide05" class="guide_box">
+        <div class="guide05">
+            <a href="javascript:;"
+               onclick="document.getElementById('guide05').style.display='none';document.getElementById('fade01').style.display='none'"></a>
+        </div>
+        <a href="javascript:void(0)"
+           onclick="document.getElementById('guide05').style.display='none';document.getElementById('fade01').style.display='none'"
+           class="guide_close"></a>
+    </div>
+    <div id="fade01" class="black_overlay"></div>
+</div>
+<!--<div style='display:none;'>-->
+    <!-- Piwik Market-->
+    <!--<script type="text/javascript">
+        var _paq1 = _paq1 || [];
+        _paq1.push(['trackPageView']);
+        _paq1.push(['enableLinkTracking']);
+        (function () {
+            var u = "//piwik.prcsteel.com/piwik/";
+            _paq1.push(['setTrackerUrl', u + 'piwik.php']);
+            _paq1.push(['setSiteId', 5]);
+            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript';
+            g.async = true;
+            g.defer = true;
+            g.src = u + 'piwik.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <noscript><p><img src="//piwik.prcsteel.com/piwik/piwik.php?idsite=5" style="border:0;" alt=""/></p></noscript>-->
+    <!-- End Piwik Code -->
+    <!-- Piwik Prcsteel-->
+    <!--<script type="text/javascript">
+        var _paq = _paq || [];
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = "http://piwik.prcsteel.com//piwik/";
+            _paq.push(['setTrackerUrl', u + 'piwik.php']);
+            _paq.push(['setSiteId', 2]);
+            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript';
+            g.async = true;
+            g.defer = true;
+            g.src = u + 'piwik.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <noscript><p><img src="http://piwik.prcsteel.com/piwik/piwik.php?idsite=2" style="border:0;" alt=""/></p></noscript>-->
+    <!-- End Piwik Code -->
+    <!-- count Code -->
+  <!--  <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+  document.write(unescape("%3Cspan id='cnzz_stat_icon_1256380266'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1256380266' type='text/javascript'%3E%3C/script%3E"));</script>-->
+    <!-- end count Code -->
+<!--</div>-->
+  <!--
+      	cas登录开始
+      -->
+		#parse("layout/cas.vm")
+		<!--
+			cas登录结束
+		-->
+		#parse("layout/qq.vm")
+</body>
+</html>

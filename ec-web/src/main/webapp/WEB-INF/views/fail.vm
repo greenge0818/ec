@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Not Authorized Error</title>
+</head>
+<body>
+<h1>Authorization failed!</h1>
+</body>
+
+</html>

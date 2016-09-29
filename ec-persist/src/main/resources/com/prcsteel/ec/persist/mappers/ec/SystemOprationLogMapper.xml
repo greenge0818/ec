@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.prcsteel.ec.persist.dao.ec.SystemOperationLogDao">
+
+    <resultMap id="baseResultMap" type="com.prcsteel.ec.model.domain.ec.SystemOperationLog">
+        <result property="id" column="id"/>
+        <result property="guid" column="guid"/>
+        <result property="operatorGuid" column="operator_guid"/>
+        <result property="operatorName" column="operator_name"/>
+        <result property="operationKey" column="operation_key"/>
+        <result property="operationLevel" column="operation_level"/>
+        <result property="operationLevelValue" column="operation_level_value"/>
+        <result property="parameters" column="parameters"/>
+        <result property="createdBy" column="created_by"/>
+        <result property="lastUpdated" column="last_updated"/>
+        <result property="lastUpdatedBy" column="last_updated_by"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.prcsteel.ec.model.domain.ec.SystemOperationLog" useGeneratedKeys="true"
+            keyProperty="id">
+        INSERT INTO base_system_operation_log (guid,operator_guid, operator_name,
+        operation_key, operation_name, operation_level,
+        operation_level_value, parameters, created,
+        created_by, last_updated, last_updated_by,modification_number)
+        VALUES(#{guid},#{operatorGuid}, #{operatorName},
+        #{operationKey}, #{operationName}, #{operationLevel},
+        #{operationLevelValue}, #{parameters}, now(),
+        #{createdBy}, now(), #{lastUpdatedBy},1)
+    </insert>
+
+    <!-- 根据操作人guid,操作key获取日志对象 -->
+    <select id="getLogByOprtGuidAndOprtKey" parameterType="String" resultMap="baseResultMap">
+        SELECT guid,operator_guid, operator_name,
+        operation_key, operation_name, operation_level,
+        operation_level_value, parameters, created,
+        created_by, last_updated, last_updated_by
+        FROM base_system_operation_log
+        WHERE operator_guid=#{oprtGuid}  AND operation_key=#{oprtKey}
+        ORDER BY created DESC
+    </select>
+</mapper>

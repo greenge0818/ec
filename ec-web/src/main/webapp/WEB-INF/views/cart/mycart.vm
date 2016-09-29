@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+     <!-- meta S -->
+	#parse("layout/meta.vm")
+	<!-- meta E -->
+    <title>我的购物车</title>
+    <link type="image/x-icon" href="$link.getContextPath()/css/default/images/favicon.ico " rel="shortcut icon">
+    <link href="$link.getContextPath()/css/plugin/jquery-tips/jquery-tips.css" rel="stylesheet" />
+    <link href="$link.getContextPath()/css/plugin/artdialog.css" rel="stylesheet" />
+    <link href="$link.getContextPath()/css/default/css/cartList.css" rel="stylesheet" />
+     <link href="$link.getContextPath()/css/default/css/common.css" rel="stylesheet" />
+  	<link href="$link.getContextPath()/css/default/css/shopcart.css" rel="stylesheet" />
+  	<link href="$link.getContextPath()/css/default/css/login.css" rel="stylesheet" />
+     #parse("layout/context.vm")
+
+   <script src="$link.getContextPath()/js/lib/seajs/2.2.0/sea.js"></script>
+  	<script src="$link.getContextPath()/js/seaconfig.js"></script>
+    <script type="text/javascript">
+        seajs.use('$link.getContextPath()/js/event/mycart.js');
+    </script>
+</head>
+<body>
+<!--[if lte IE 6]>
+<div style="width:100%;_position:absolute;
+_bottom:auto;
+_top:expression(eval(document.documentElement.scrollTop));
+z-index:1000;">
+	<div style="width:100%;height:30px;border-bottom:1px solid #ff5a00;background:#ffede3;color:#444;line-height:30px; text-align:center;">
+	系统检测您当前的浏览器为IE6，可能会影响部分功能的使用。为了您有更好的体验。建议您<a href="http://www.microsoft.com/china/windows/internet-explorer/" target="_blank" style="color:#c81624;text-decoration:underline;">升级IE浏览器</a>或者下载安装使用<a href="http://dlsw.baidu.com/sw-search-sp/soft/9d/14744/ChromeStandalone_V43.0.2357.124_Setup.1433905898.exe" target="_blank" style="color:#c81624;text-decoration:underline;">谷歌浏览器chrome</a>
+	</div>
+<style>
+body{_padding-top:30px;}
+</style>
+</div>
+<![endif]-->
+    <!---头部公共控件 S--->
+    
+    <!---头部公共控件 E--->
+    <!--logo 搜索 S-->
+<div class="header">
+	<a href="$link.getContextPath()/" target="_blank" class="logo"></a><em></em><h2>购物车</h2>
+	<span>全国服务热线：<i>0571-8971&nbsp;8799</i></span>
+</div>
+<!--logo 搜索 E-->
+
+    <!--common S-->
+    <div class="m-main">
+        <!--E-->
+        <div class="m-data">
+            <div class="d-addr"></div>
+            <!--步骤 S-->
+            <!--<div class="buy_step f-clrfix" style="display:none">
+                    <img class="crumbs-Img" src="images/crumbs.gif" width="828" height="71" />
+               <!-- <ul>
+                    <li class="step_left">
+                        <p></p>
+                    </li>
+                    <li class="step01"><span class="font-red">选购商品</span>
+                        <p class="round"></p>
+                        <p class="pink"></p>
+                    </li>
+                    <li style="width:80px">
+                        <p class="red"></p>
+                    </li>
+                    <li class="step02"><span class="font-red">提交订单</span>
+                        <p class="round">2</p>
+                        <p class="red"></p>
+                    </li>
+                    <li style="width:80px">
+                        <p class="gray"></p>
+                    </li>
+                    <li class="step03"><span class="font-gray">支付货款</span>
+                        <p class="round">3</p>
+                        <p class="gray"></p>
+                    </li>
+                    <li style="width:80px">
+                        <p class="gray"></p>
+                    </li>
+                    <li class="step04"><span class="font-gray">完成交易</span>
+                        <p class="round">4</p>
+                        <p class="gray"></p>
+                    </li>
+                    <li class="step_right">
+                        <p></p>
+                    </li>
+                </ul>
+            </div>-->
+            <!--步骤 E-->
+            <div class="f-clr"></div>
+            <!--步骤 S-->
+           <div class="list_tit"></div>
+            <!--步骤 E-->
+            <!--empty S-->
+            <div class="f-clr"></div>
+            <div class="empty-indent" style="display:none">
+                <div class="empty-info cart-empty ">
+                    <ul>
+                        <li class="info-text">购物车内暂时没有商品</li>
+                        
+                       	<li><a class="link info-text color-red mg-lt" href="$link.getContextPath()/market/">去钢铁超市</a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="link info-text color-red" href="$link.getContextPath()/member/">去会员中心</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <!--empty E-->
+            <!--data list S-->
+            <div class="d-list-tit" style="display:none">
+                <ul>
+                    <li class="list01">
+                        <input name="checkAll" class="checked-all" type="checkbox" value="" checked="checked"> 全选
+                    </li>
+                    <li class="list02">资源信息</li>
+                    <li class="list03">&nbsp;</li>
+                    <li class="list04">参考价</li>
+                    <li class="list05">重量</li>
+                    <li class="list06">金额</li>
+                    <li class="list07">操作</li>
+                </ul>
+            </div>
+            <div class="cart_items">
+            </div>
+            <!--data list E-->
+        </div>
+        <!---提示 S--->
+        <div class="list-tips" style="display:none">您本次选购了 <span>0</span> 家供应商的资源，提交后生成 <span>0</span> 笔交易订单。</div>
+        <!---提示 E--->
+
+        <!---合计 S--->
+        <div class="m-b f-clrfix">
+            <div class="list-total" style="display:none">
+                <p class="left">
+                    <input name="checkAll" class="checked-all" type="checkbox" value="" checked="checked"> 全选 <a class="deleteSelected">删除所选</a>
+                </p>
+                <p class="middle">已选资源 <span>0</span> 条 &nbsp; &nbsp; &nbsp; 重量总计： <span>0</span> 吨</p>
+                <p class="right"> <a class="btn_submit">提交询价</a>
+               </p>
+            </div>
+        </div>
+        <!---合计 E--->
+
+    <div class="list_return none"><a href="$link.getContextPath()/market/">返回继续挑选资源 >></a></div>
+        <div class="f-clr"></div>
+    </div>
+    <!--common E-->
+    <!---公用底部控件 开始--->
+
+    <div id="footer">
+    <div>
+        Copyright&nbsp;&nbsp; &copy; 2006-2016&nbsp;&nbsp;<a
+            href="http://www.prcsteel.com/" target="_blank" style="color: #4884be">prcsteel.com</a>&nbsp;钢为网&nbsp;
+        版权所有
+    </div>
+      </div>
+      <!--
+      	cas登录开始
+      -->
+#parse("layout/cas.vm")
+<!--
+	cas登录结束
+-->
+    <!---公用底部控件 结束--->
+
+</body>
+
+</html>

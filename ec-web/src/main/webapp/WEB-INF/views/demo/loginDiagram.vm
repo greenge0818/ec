@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Index</title>
+    #parse("layout/context.vm")
+    <script type="text/javascript" src="$link.getContextPath()/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+        /**
+         * 登录
+         **/
+        var login = function(){
+            var url = Context.CAS_PATH+'/login?mode=rlogin&service='+Context.ROOT+'/sso';
+            $.ajax({ url: url,
+                dataType: "jsonp",
+                jsonpCallback: "jsonpcallback",
+                success: function (data) {
+                    $('#lt').val(data.lt);
+                    $('#execution').val(data.execution);
+
+                    $('#login-form').submit();
+                },
+
+                error:function(){
+                    alert('网络访问错误!');
+                }
+            });
+        };
+
+        /**
+         * 登录后回调函数
+         **/
+        var logincallback = function(res) {
+            // do something here.
+
+//            if (res.code == 0){
+//                location.href=Context.ROOT;
+//            } else {
+//                var index = indexOf(Context.CAS_MSG.status, res.msg);
+//                alert(Context.CAS_MSG.message[index]);
+//                $('#login-form')[0].reset();
+//            }
+            parent.loginMessage(res);
+
+        };
+
+        /**
+         * 时间戳
+         * @returns {number}
+         */
+        var timestamp = function() {
+            return new Date().getTime();
+        }
+    </script>
+</head>
+<body>
+<div id="sec-login">
+    <form id="login-form" name="login-form" action="${casUrl}/login?service=$link.getRoot()$link.getContextPath()/shiro-cas" method="post" target="rlogin">
+        <div><input name="username" id="username" type="text" autocomplete="off" class="login-ipt" placeholder="邮箱/手机号"/></div>
+        <div><input name="password" type="password" id="password" class="login-ipt" placeholder="密码"/></div>
+        <input type="hidden" name="lt" value="" id="lt"/>
+        <input type="hidden" name="execution" value="" id="execution"/>
+        <input type="hidden" name="_eventId" value="submit"/>
+        <input type="button" value="登录" class="login-bnt" onclick="javascript:login();"/>
+    </form>
+
+</div>
+<iframe style="display:none;width:0;height:0" id="rlogin" name="rlogin"/>
+</body>
+
+</html>

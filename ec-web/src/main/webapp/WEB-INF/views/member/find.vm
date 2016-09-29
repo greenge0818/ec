@@ -1,0 +1,32 @@
+<div class="find-content">
+<div class="find-box-bg">
+<form  name="gwfindform" method="post" id="gwfindform" enctype="multipart/form-data">
+	<h2>填写采购需求</h2>
+	<textarea class="textarea" id="textarea" maxlength="100" name="request">请输入想要钢材的品名</textarea>
+</div>
+<div class="find-box-bg">
+	<h2>上传采购需求</h2>
+    <div class="markbtnbox">
+        <div class="markbtn">
+            <a href="javascript:;" class="a-upload">
+                <input type="file" upload="file" name="uploadFile" id="uploadFile1" />
+                <em class="upload-icon"></em>上传文件
+            </a>
+            <!--<span class="err-msg-span"></span>-->
+        </div>
+    </div>
+    <div class="filelist">
+        <div id="file_upload-queue" class="uploadify-queue"></div>
+    </div>
+    <div class="upload_btn">
+    	<a href="javascript:;" class="a-upload"><input type="file" upload="file" class="filerowbtn" name="uploadFile" id="uploadFile2" /><em class="upload-icon"></em>上传文件</a>
+        <!--<div class="err-msg-span" style="line-height:25px;"></div>-->
+    </div>
+    <p>注：可上传2M之内的word、excel、文本和图片文件</p>
+    <input type="hidden" name="fileUrl" id="fileUrl">
+</div>
+<span class="err-msg-span" style="color:#c81623;display:inline-block;margin-left:20px;"></span>
+<input type="button" class="helpme-btn" value="钢为购">
+</form>
+<p class="remind">我们将用<span>0571-8971&nbsp;8799</span>给您回电，请保持手机畅通</p>
+</div>

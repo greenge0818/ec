@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.prcsteel.ec.persist.dao.ec.RequirementItemDao" >
+  <resultMap id="BaseResultMap" type="com.prcsteel.ec.model.domain.ec.RequirementItem" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="guid" property="guid" jdbcType="VARCHAR" />
+    <result column="requirement_guid" property="requirementGuid" jdbcType="VARCHAR" />
+    <result column="category_uuid" property="categoryUuid" jdbcType="VARCHAR" />
+    <result column="category_name" property="categoryName" jdbcType="VARCHAR" />
+    <result column="material_uuid" property="materialUuid" jdbcType="VARCHAR" />
+    <result column="material_name" property="materialName" jdbcType="VARCHAR" />
+    <result column="spec1" property="spec1" jdbcType="VARCHAR" />
+    <result column="spec2" property="spec2" jdbcType="VARCHAR" />
+    <result column="spec3" property="spec3" jdbcType="VARCHAR" />
+    <result column="factory_id" property="factoryId" jdbcType="INTEGER" />
+    <result column="factory_name" property="factoryName" jdbcType="VARCHAR" />
+    <result column="city_id" property="cityId" jdbcType="INTEGER" />
+    <result column="city_name" property="cityName" jdbcType="VARCHAR" />
+    <result column="warehouse_id" property="warehouseId" jdbcType="INTEGER" />
+    <result column="warehouse_name" property="warehouseName" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="DECIMAL" />
+    <result column="weight" property="weight" jdbcType="DECIMAL" />
+    <result column="amount" property="amount" jdbcType="DECIMAL" />
+    <result column="weight_concept" property="weightConcept" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="is_deleted" property="isDeleted" jdbcType="VARCHAR" />
+    <result column="created" property="created" jdbcType="TIMESTAMP" />
+    <result column="created_by" property="createdBy" jdbcType="VARCHAR" />
+    <result column="last_updated" property="lastUpdated" jdbcType="TIMESTAMP" />
+    <result column="last_updated_by" property="lastUpdatedBy" jdbcType="VARCHAR" />
+    <result column="modification_number" property="modificationNumber" jdbcType="INTEGER" />
+  </resultMap>
+
+  <resultMap id="RequirenmentItemDto" type="com.prcsteel.ec.model.dto.RequirementItemDto" >
+    <result column="category_uuid" property="categoryUuid" jdbcType="VARCHAR" />
+    <result column="category_name" property="categoryName" jdbcType="VARCHAR" />
+    <result column="material_uuid" property="materialUuid" jdbcType="VARCHAR" />
+    <result column="material_name" property="materialName" jdbcType="VARCHAR" />
+    <result column="spec1" property="spec1" jdbcType="VARCHAR" />
+    <result column="spec2" property="spec2" jdbcType="VARCHAR" />
+    <result column="spec3" property="spec3" jdbcType="VARCHAR" />
+    <result column="factory_id" property="factoryId" jdbcType="INTEGER" />
+    <result column="factory_name" property="factoryName" jdbcType="VARCHAR" />
+    <result column="city_id" property="cityId" jdbcType="INTEGER" />
+    <result column="city_name" property="cityName" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="DECIMAL" />
+    <result column="weight" property="weight" jdbcType="DECIMAL" />
+    <result column="weight_concept" property="weightConcept" jdbcType="VARCHAR" />
+    <result column="warehouse_id" property="warehouseId" jdbcType="INTEGER" />
+    <result column="warehouse_name" property="warehouseName" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    id, guid, requirement_guid, category_uuid, category_name, material_uuid, material_name, 
+    spec1, spec2, spec3, factory_id, factory_name, city_id, city_name, warehouse_id, warehouse_name, price, weight,
+    amount, weight_concept, remark, is_deleted, created, created_by, last_updated, last_updated_by, 
+    modification_number
+  </sql>
+
+  <insert id="insert" parameterType="com.prcsteel.ec.model.domain.ec.RequirementItem" >
+    insert into busi_requirement_item (id, guid, requirement_guid, 
+      category_uuid, category_name, material_uuid, 
+      material_name, spec1, spec2, 
+      spec3, factory_id, factory_name, 
+      city_id, city_name, warehouse_id, warehouse_name, price,
+      weight, amount, weight_concept, 
+      remark, is_deleted, created, 
+      created_by, last_updated, last_updated_by, 
+      modification_number)
+    values (#{id,jdbcType=BIGINT}, #{guid,jdbcType=VARCHAR}, #{requirementGuid,jdbcType=VARCHAR}, 
+      #{categoryUuid,jdbcType=VARCHAR}, #{categoryName,jdbcType=VARCHAR}, #{materialUuid,jdbcType=VARCHAR}, 
+      #{materialName,jdbcType=VARCHAR}, #{spec1,jdbcType=VARCHAR}, #{spec2,jdbcType=VARCHAR}, 
+      #{spec3,jdbcType=VARCHAR}, #{factoryId,jdbcType=INTEGER}, #{factoryName,jdbcType=VARCHAR}, 
+      #{cityId,jdbcType=INTEGER}, #{cityName,jdbcType=VARCHAR}, #{warehouseId,jdbcType=INTEGER}, #{warehouseName,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL},
+      #{weight,jdbcType=DECIMAL}, #{amount,jdbcType=DECIMAL}, #{weightConcept,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{isDeleted,jdbcType=VARCHAR}, #{created,jdbcType=TIMESTAMP}, 
+      #{createdBy,jdbcType=VARCHAR}, #{lastUpdated,jdbcType=TIMESTAMP}, #{lastUpdatedBy,jdbcType=VARCHAR}, 
+      #{modificationNumber,jdbcType=INTEGER})
+  </insert>
+
+  <insert id="batchInsert" parameterType="java.util.List">
+    insert into busi_requirement_item (id, guid, requirement_guid,
+    category_uuid, category_name, material_uuid,
+    material_name, spec1, spec2,
+    spec3, factory_id, factory_name,
+    city_id, city_name, warehouse_id, warehouse_name, price,
+    weight, amount, weight_concept,
+    remark, is_deleted, created,
+    created_by, last_updated, last_updated_by,
+    modification_number)
+    values
+    <foreach collection="list" item="item" index="index" separator=",">
+      (#{item.id,jdbcType=BIGINT}, #{item.guid,jdbcType=VARCHAR}, #{item.requirementGuid,jdbcType=VARCHAR},
+      #{item.categoryUuid,jdbcType=VARCHAR}, #{item.categoryName,jdbcType=VARCHAR}, #{item.materialUuid,jdbcType=VARCHAR},
+      #{item.materialName,jdbcType=VARCHAR}, #{item.spec1,jdbcType=VARCHAR}, #{item.spec2,jdbcType=VARCHAR},
+      #{item.spec3,jdbcType=VARCHAR}, #{item.factoryId,jdbcType=INTEGER}, #{item.factoryName,jdbcType=VARCHAR},
+      #{item.cityId,jdbcType=INTEGER}, #{item.cityName,jdbcType=VARCHAR}, #{item.warehouseId,jdbcType=INTEGER}, #{item.warehouseName,jdbcType=VARCHAR}, #{item.price,jdbcType=DECIMAL},
+      #{item.weight,jdbcType=DECIMAL}, #{item.amount,jdbcType=DECIMAL}, #{item.weightConcept,jdbcType=VARCHAR},
+      #{item.remark,jdbcType=VARCHAR}, #{item.isDeleted,jdbcType=VARCHAR}, #{item.created,jdbcType=TIMESTAMP},
+      #{item.createdBy,jdbcType=VARCHAR}, #{item.lastUpdated,jdbcType=TIMESTAMP}, #{item.lastUpdatedBy,jdbcType=VARCHAR},
+      #{item.modificationNumber,jdbcType=INTEGER})
+    </foreach>
+  </insert>
+
+  <!--根据requirementGuid查询需求单明细 -->
+  <select id="selectByRequirementGuid" resultMap="RequirenmentItemDto"  >
+    SELECT category_uuid, category_name, material_uuid, material_name,
+    spec1, spec2, spec3, factory_id, factory_name, warehouse_id, warehouse_name, city_id, city_name, price, weight, weight_concept
+    FROM busi_requirement_item
+    WHERE requirement_guid = #{requirementGuid,jdbcType=VARCHAR}
+  </select>
+
+  <resultMap id="RequirementItemForPickDto" type="com.prcsteel.ec.model.dto.RequirementItemForPickDto" >
+    <result column="category_uuid" property="categoryID" jdbcType="VARCHAR" />
+    <result column="category_name" property="categoryName" jdbcType="VARCHAR" />
+    <result column="material_uuid" property="materialID" jdbcType="VARCHAR" />
+    <result column="material_name" property="materialName" jdbcType="VARCHAR" />
+    <result column="spec1" property="spec1" jdbcType="VARCHAR" />
+    <result column="spec2" property="spec2" jdbcType="VARCHAR" />
+    <result column="spec3" property="spec3" jdbcType="VARCHAR" />
+    <result column="factory_id" property="factoryID" jdbcType="INTEGER" />
+    <result column="factory_name" property="factoryName" jdbcType="VARCHAR" />
+    <result column="city_id" property="cityID" jdbcType="INTEGER" />
+    <result column="city_name" property="cityName" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="DECIMAL" />
+    <result column="weight" property="weight" jdbcType="DECIMAL" />
+    <result column="weight_concept" property="weightConcept" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <select id="selectItemsByRequirementCode" resultMap="RequirementItemForPickDto" parameterType="java.lang.String">
+    SELECT ri.category_uuid, ri.category_name, ri.material_uuid, ri.material_name, ri.spec1, ri.spec2, ri.spec3, ri.factory_id,
+    ri.factory_name, ri.city_id, ri.city_name, ri.price, ri.weight, ri.weight_concept, ri.remark
+    FROM busi_requirement_item ri
+    JOIN busi_requirement r ON ri.requirement_guid = r.guid
+    WHERE r.code = #{requirementCode,jdbcType=VARCHAR}
+  </select>
+
+</mapper>

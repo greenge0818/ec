@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<title>钢为会员知多少?</title>
+		<link type="image/x-icon" href="$link.getContextPath()/css/default/images/favicon.ico " rel="shortcut icon">
+		<link href="$link.getContextPath()/css/plugin/jquery-tips/jquery-tips.css" rel="stylesheet" />
+		<link href="$link.getContextPath()/css/plugin/artdialog.css" rel="stylesheet" />
+		<link href="$link.getContextPath()/css/default/css/common.css" rel="stylesheet" />
+		<link href="$link.getContextPath()/css/default/css/global.css" rel="stylesheet" />
+		<link href="$link.getContextPath()/css/plugin/artdialog.css" rel="stylesheet" />
+		<link href="$link.getContextPath()/css/default/css/member.css" rel="stylesheet" />
+		<link href="$link.getContextPath()/css/default/css/gwfind.css" rel="stylesheet" />
+		 #parse("layout/context.vm")
+	</head>
+
+	<body>
+		#parse("member/head.vm")
+
+		<!--common S-->
+		<div class="m-main">
+			<div class='member-info'  >
+				<div class="member-info-c">
+					<div class="welcome">
+						<div class="bold wel-name">欢迎你，<span>$!{memberInfo.name}</span> $!{company}</div>
+						<div>积分：#if(${score})${score}#{else}0#end <span>&nbsp;|&nbsp;</span> <a href="$link.getContextPath()/member/getpoint">查看如何赚取积分?</a></div>
+					</div>
+					<div class="f-fr last-reset-c">
+							<div>上次登录时间：$!{lastLoginTime}</div>
+							<div><a target="_blank" href="$link.getContextPath()/member/modifypassword">重置密码</a>&nbsp;&nbsp;<a target="_blank" href="$link.getContextPath()/member/resetphone">修改绑定手机号</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="vipinfo f-clrfix">
+					<h2>钢为会员知多少?</h2>
+					<div class="vip-part f-clrfix">
+						<h2>*什么是会员</h2>
+						<p>会员是指在钢为网进行账号注册的用户；<br>
+	会员分为注册会员（尚未在钢为平台交易的客户）和VIP会员（已在平台交易的买<br>家客户）；VIP会员分为VIP1青铜会员、VIP2白银会员、VIP3黄金会员。</p>
+					</div>
+
+					<div class="vip-part">
+						<h2>*如何成为会员</h2>
+						<p>个人在钢为网注册成功即可成为注册会员；<br>
+	在钢为网平台完成交易的买家客户可获得会员积分，升级为VIP会员。</p>
+					</div>
+
+					<div class="vip-part">
+						<h2>*如何评定会员等级</h2>
+						<p>会员等级取决于该会员近三个月内在交易及活动中所获的积分总值；<br>
+	积分值越高，会员等级越高；会员等级状况每月更新一次。</p>
+					</div>
+					<hr>
+					<div class="vip-part1">
+						<h2>会员等级与积分息息相关，积分详解如下：</h2>
+						<p>会员等级取决于该会员近三个月内在交易及活动中所获的积分总值；<br>
+积分值越高，会员等级越高；会员等级状况每月更新一次。</p>
+					</div>
+
+					<div class="vip-part2 f-clrfix">
+						<ul>
+							<li class="vip-part2-l">
+								<h2>什么是积分</h2>
+								<p>积分是对会员在平台上进行买钢交易的奖励回馈，交易量越多，积分越多；积分用途广，作用大。</p>
+							</li>
+							<li class="vip-part2-midel">
+								<h2>怎么获得积分</h2>
+								<p>通过购买钢材获得积分，具体获取积分额度视客户所采购钢材品类及吨数而定；
+	VIP会员还可通过参与“VIP专享积分活动”获取积分。</p>
+							</li>
+							<li class="vip-part2-r">
+								<h2>积分能干什么</h2>
+								<p>拥有VIP会员特权，积分越多等级越高；<br>
+	玩转钢为会员活动，积分越多权限越高；<br>
+	经常会有福利红包，积分越多福利越多。</p>
+							</li>
+						</ul>
+					</div>
+					<hr>
+					<div class="interpret">*本《会员说明》最终解释权归钢为网所有</div>
+				</div>
+			<div class="f-clr"></div>
+		</div>
+		<!--common E-->
+		<!--公用底部控件 开始-->
+
+		<div id="footer">
+			<div>
+		        Copyright&nbsp;&nbsp; &copy; 2006-2016&nbsp;&nbsp;<a
+		            href="http://www.prcsteel.com/" target="_blank" style="color: #4884be">prcsteel.com</a>&nbsp;钢为网&nbsp;
+		        版权所有
+		    </div>
+		</div>
+  <script src="$link.getContextPath()/js/lib/seajs/2.2.0/sea.js"></script>
+  <script src="$link.getContextPath()/js/seaconfig.js"></script>
+  <script>
+    seajs.use(['jquery'],function($){
+		//TAB中设置选中状态
+		$("li[name='member-tab']").css("background-color","#9e2324");
+    })
+  </script>
+		<!---公用底部控件 结束--->
+		<!--<div style='display:none;'>
+			<script type="text/javascript">
+				var _paq1 = _paq1 || [];
+				  _paq1.push(['trackPageView']);
+				  _paq1.push(['enableLinkTracking']);
+				  (function() {
+				    var u="//piwik.prcsteel.com/piwik/";
+				    _paq1.push(['setTrackerUrl', u+'piwik.php']);
+				    _paq1.push(['setSiteId', 5]);
+				    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+				    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+				  })();
+			</script>
+			<noscript>
+				<p><img src="//piwik.prcsteel.com/piwik/piwik.php?idsite=5" style="border:0;" alt="" /></p>
+			</noscript>
+			<script type="text/javascript">
+				var _paq = _paq || [];
+				        _paq.push(['trackPageView']);
+				        _paq.push(['enableLinkTracking']);
+				        (function () {
+				            var u = "http://piwik.prcsteel.com//piwik/";
+				            _paq.push(['setTrackerUrl', u + 'piwik.php']);
+				            _paq.push(['setSiteId', 2]);
+				            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+				            g.type = 'text/javascript'; g.async = true; g.defer = true; g.src = u + 'piwik.js'; s.parentNode.insertBefore(g, s);
+				        })();
+			</script>
+			<noscript>
+				<p><img src="http://piwik.prcsteel.com/piwik/piwik.php?idsite=2" style="border:0;" alt="" /></p>
+			</noscript>
+			<script type="text/javascript">
+				var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256380266'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1256380266' type='text/javascript'%3E%3C/script%3E"));
+			</script>
+		</div>-->
+	</body>
+
+</html>

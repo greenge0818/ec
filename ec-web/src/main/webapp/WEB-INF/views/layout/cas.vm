@@ -1,0 +1,5 @@
+<div id="login" style="display: none">
+	<iframe id="casIframe" src="$link.getRoot()$link.getContextPath()/caslogin"></iframe>
+</div>
+<div id="login2" style="display: none">
+</div>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>掌柜APP下载</title>
+	<link type="image/x-icon" href="$link.getContextPath()/css/default/images/favicon.ico " rel="shortcut icon">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+    <link href="$link.getContextPath()/css/plugin/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="$link.getContextPath()/css/default/css/wxappdown.css" rel="stylesheet" type="text/css" />
+</head>
+</head>   
+<body>
+	<div class="main-app">
+        #if($!showWechat)
+            <div class="message article_content">
+                <img src="$link.getContextPath()/css/default/images/0.png" class="img-responsive" >
+            </div>
+        #end
+         <div class="btn-bar">
+         	
+	        <div class="article_content">
+	            <a href="https://itunes.apple.com/cn/app/id1139744712"><img src="$link.getContextPath()/css/default/images/iosbtn.png" class="img-responsive down-btn" ></a>
+	        </div>        
+	        <div class="article_content">
+	            <a href="$link.getContextPath()/common/getfile?key=app/gw_market.apk"><img src="$link.getContextPath()/css/default/images/andriodbtn.png" class="img-responsive down-btn" ></a>
+	        </div>
+         </div>       
+                
+    </div>
+</body>
+</html>

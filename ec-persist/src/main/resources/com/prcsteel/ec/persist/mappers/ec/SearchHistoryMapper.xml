@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.prcsteel.ec.persist.dao.ec.SearchHistoryDao" >
+  <resultMap id="BaseResultMap" type="com.prcsteel.ec.model.dto.SearchHistoryDto" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="category_uuid" property="categoryUuid" jdbcType="VARCHAR" />
+    <result column="category_name" property="categoryName" jdbcType="VARCHAR" />
+    <result column="material_uuid" property="materialUuid" jdbcType="VARCHAR" />
+    <result column="material_name" property="materialName" jdbcType="VARCHAR" />
+    <result column="spec1" property="spec1" jdbcType="VARCHAR" />
+    <result column="spec2" property="spec2" jdbcType="VARCHAR" />
+    <result column="spec3" property="spec3" jdbcType="VARCHAR" />
+    <result column="factory_id" property="factoryId" jdbcType="VARCHAR" />
+    <result column="factory_name" property="factoryName" jdbcType="VARCHAR" />
+    <result column="city_id" property="cityId" jdbcType="VARCHAR" />
+    <result column="city_name" property="cityName" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="getRecentSearchList" resultMap="BaseResultMap" parameterType="com.prcsteel.ec.model.query.SearchHistoryQuery" >
+    SELECT * FROM(
+      SELECT
+      max(id) id, category_uuid, category_name, material_uuid, material_name, spec1, spec2, spec3,
+      factory_id, factory_name, ifnull(city_id, 0) city_id, city_name, min(is_user_deleted) is_user_deleted,
+      min(is_cookie_deleted) is_cookie_deleted, max(created) created
+      FROM mkt_search_history
+      <where>
+        <if test="userGuid != null">
+          user_guid = #{userGuid}
+        </if>
+        <if test="cookieId != null">
+          cookie_id = #{cookieId}
+        </if>
+      </where>
+      GROUP BY category_uuid, material_uuid, spec1 ,spec2 ,spec3, factory_id, city_id
+      ORDER BY max(created) DESC
+      limit #{size}
+    ) t
+    <where>
+        <if test="userGuid != null">
+           is_user_deleted = 'N'
+        </if>
+        <if test="cookieId != null">
+          is_cookie_deleted = 'N'
+        </if>
+    </where>
+    ORDER BY created DESC
+  </select>
+
+  <update id="softDelById">
+   UPDATE mkt_search_history h, (
+        SELECT user_guid, cookie_id, category_uuid, material_uuid, spec1 ,spec2 ,spec3, factory_id, city_id
+        FROM mkt_search_history
+        <where>
+          id = #{id}
+          <if test="userGuid != null">
+              AND user_guid = #{userGuid}
+          </if>
+          <if test="cookieId != null">
+              AND cookie_id = #{cookieId}
+          </if>
+        </where>
+    ) d
+    SET
+      <if test="userGuid != null">
+          is_user_deleted = 'Y'
+      </if>
+      <if test="cookieId != null">
+          is_cookie_deleted = 'Y'
+      </if>
+    WHERE h.category_uuid = d.category_uuid
+    AND (h.material_uuid = d.material_uuid OR (h.material_uuid IS NULL AND d.material_uuid IS NULL))
+    AND (h.spec1 = d.spec1 OR (h.spec1 IS NULL AND d.spec1 IS NULL))
+    AND (h.spec2 = d.spec2 OR (h.spec2 IS NULL AND d.spec2 IS NULL))
+    AND (h.spec3 = d.spec3 OR (h.spec3 IS NULL AND d.spec3 IS NULL))
+    AND (h.factory_id = d.factory_id OR (h.factory_id IS NULL AND d.factory_id IS NULL))
+    AND (h.city_id = d.city_id OR (h.city_id IS NULL AND d.city_id IS NULL))
+    <if test="userGuid != null">
+      AND (h.user_guid = d.user_guid OR (h.user_guid IS NULL AND d.user_guid IS NULL))
+    </if>
+    <if test="cookieId != null">
+      AND (h.cookie_id = d.cookie_id OR (h.cookie_id IS NULL AND d.cookie_id IS NULL))
+    </if>
+  </update>
+
+  <update id="setCookieToLoginId">
+    UPDATE mkt_search_history
+    SET user_guid = #{userGuid}
+    WHERE cookie_id = #{cookieId} AND user_guid IS NULL AND is_cookie_deleted = 'N'
+  </update>
+
+  <resultMap id="MarketToSmartMap" type="com.prcsteel.ec.model.query.Market2SmartResourceQuery" >
+    <result column="category_uuid" property="categoryUuid" jdbcType="VARCHAR" />
+    <result column="category_name" property="categoryName" jdbcType="VARCHAR" />
+    <result column="material_uuid" property="materialUuids" jdbcType="VARCHAR" />
+    <result column="material_name" property="materialNames" jdbcType="VARCHAR" />
+    <result column="spec1" property="spec1" jdbcType="VARCHAR" />
+    <result column="spec2" property="spec2" jdbcType="VARCHAR" />
+    <result column="spec3" property="spec3" jdbcType="VARCHAR" />
+    <result column="factory_id" property="factoryIds" jdbcType="VARCHAR" />
+    <result column="factory_name" property="factoryNames" jdbcType="VARCHAR" />
+    <result column="city_id" property="purchaseCityIds" jdbcType="VARCHAR" />
+    <result column="city_name" property="purchaseCityNames" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <!-- 获取最近10条不重复的搜索记录 -->
+  <select id="getHistoryList" resultMap="MarketToSmartMap" parameterType="String" >
+    SELECT DISTINCT category_uuid, category_name, material_uuid, material_name,
+    spec1, spec2, spec3, factory_id, factory_name, city_id, city_name
+    FROM mkt_search_history
+    WHERE user_guid = #{userGuid,jdbcType=VARCHAR}
+    AND is_user_deleted = 'N'
+    ORDER BY created DESC
+    LIMIT 0,10
+  </select>
+</mapper>

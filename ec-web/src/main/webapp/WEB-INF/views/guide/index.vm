@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="image/x-icon" href="$link.getContextPath()/css/default/images/favicon.ico " rel="shortcut icon">
+<meta name="keywords" content="钢铁,钢材,螺纹钢,热轧卷板,冷轧卷板,中厚板,热轧带钢,钢铁市场,钢材交易">
+<meta name="description" content="钢为网钢铁超市为国内钢厂、钢材贸易商、钢材终端用户提供国内钢铁,钢材,螺纹钢,热轧卷板,冷轧卷板,中厚板,热轧带钢线上钢铁市场,钢材交易电商平台。">
+<link href="$link.getContextPath()/css/default/css/global.css" rel="stylesheet" />
+<link href="$link.getContextPath()/css/default/css/default.css" rel="stylesheet" />
+<link href="$link.getContextPath()/css/default/css/about.css" rel="stylesheet"/>
+<link href="$link.getContextPath()/css/default/css/nav.css" rel="stylesheet"/>
+<title>网站导航</title>
+<!-- context S -->
+#parse("layout/context.vm")
+<!-- context E -->
+</head>
+
+<body class="no-skin ">
+<!--[if lte IE 6]>
+	<div style="width:100%;_position:absolute;
+	_bottom:auto;
+	_top:expression(eval(document.documentElement.scrollTop));
+	z-index:1000;">
+		<div style="width:100%;height:30px;border-bottom:1px solid #ff5a00;background:#ffede3;color:#444;line-height:30px; text-align:center;">
+		系统检测您当前的浏览器为IE6，可能会影响部分功能的使用。为了您有更好的体验。建议您<a href="http://www.microsoft.com/china/windows/internet-explorer/" target="_blank" style="color:#c81624;text-decoration:underline;">升级IE浏览器</a>或者下载安装使用<a href="http://dlsw.baidu.com/sw-search-sp/soft/9d/14744/ChromeStandalone_V43.0.2357.124_Setup.1433905898.exe" target="_blank" style="color:#c81624;text-decoration:underline;">谷歌浏览器chrome</a>
+		</div>
+	<style>
+	body{_padding-top:30px;}
+	</style>
+	</div>
+<![endif]-->
+	<!-- Header S-->
+	#parse("layout/min-header.vm")
+	<!-- Header E-->
+	<!-- logo and search -->
+	<div class="logolayout">
+		<div class="indexlogo f-fl"><a href="$link.getContextPath()/"></a></div>
+	</div>
+	<!-- 首页导航E -->
+	<div class="navbox f-clrfix">
+		<div class="index-nav f-clrfix">
+			<ul>
+				<li class="active"><a href="$link.getContextPath()/">首页</a></li>
+				<li><a href="$link.getContextPath()/market/" target="_blank">钢铁超市</a></li>
+				<li><a href="$marketCenterDomain" >行情圈</a></li>
+				<li><a href="https://www.paysteel.com/" target="_blank">款道</a></li>
+				<li><a href="$link.getContextPath()/helpfind/" >钢为购</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="navLink">
+		<h1>
+            <a target="_blank" href="http://www.prcsteel.com/news/">行情圈</a>
+            <a style="margin-left: 50px;font-size:20px;color:#585858;" target="_blank" href="$link.getContextPath()/guide/name.html">钢铁市场</a>
+            <a style="margin-left: 50px;font-size:20px;color:#585858;" target="_blank" href="$link.getContextPath()/guide/factory.html">钢铁厂家</a>
+            <a style="margin-left: 50px;font-size:20px;color:#585858;" target="_blank" href="$link.getContextPath()/guide/city.html">中国钢铁</a>
+        </h1>
+		<div class="proNews proMarket">
+			<div class="proNewsList">
+				<p class="newsPWidth">产品新闻</p>
+                <ul class="proNewsWidth">
+                    <li class="t-lLi mar-r-20">
+                        <label class="boldLabel"><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1917.html">板材</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_32.html">中厚板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_103.html">热轧开平板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1921.html">低合金板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_111.html">船板</a></label>
+                    </li>
+                    <li class="t-lLi">
+                        <label class="boldLabel"><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_89.html">建材</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_75.html">螺纹钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_87.html">圆钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_79.html">高线</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_80.html">盘螺</a></label>
+                    </li>
+
+                    <li class="t-lLi mar-r-20">
+                        <label class="boldLabel"><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1922.html">卷材</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_102.html">热轧卷板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_61.html">热轧带钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1793.html">冷轧卷板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1923.html">热镀锌卷</a></label>
+                    </li>
+                    <li class="t-lLi">
+                        <label class="boldLabel"><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1918.html">优钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_18.html">碳结圆</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_16.html">合结圆</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1920.html">合金钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_22.html">模具钢</a></label>
+                    </li>
+
+                    <li class="t-lLi mar-r-20">
+                        <label class="boldLabel"><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_66.html">型材</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_63.html">工字钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_64.html">槽钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_74.html">H型钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1924.html">等边角钢</a></label>
+                    </li>
+                    <li class="t-lLi">
+                        <label class="boldLabel"><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1919.html">管材</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_94.html">焊管</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_91.html">无缝管</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_98.html">镀锌管</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_95.html">方矩管</a></label>
+                    </li>
+                </ul>
+				<div class="clear"></div>
+			</div>
+			<div class="proNewsList ">
+				<p class="newsPWidth">钢厂新闻</p>
+                <ul class="steelNewsWidth">
+                    <li>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_425.html">萍钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_422.html">沙钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_208.html">中天</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1012.html">冷钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_130.html">涟钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_158.html">鄂钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_122.html">武钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_160.html">柳钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_118.html">鞍钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_124.html">首钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1927.html">天铁</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_365.html">承钢</a></label>
+                    </li>
+                    <li>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_127.html">包钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1813.html">瑞丰</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_150.html">邯钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1925.html">长江</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1814.html">德龙</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1926.html">中铁</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_428.html">日照</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_149.html">西城</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_123.html">马钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_328.html">南钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1928.html">文丰</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1812.html">国丰</a></label>
+                    </li>
+                    <li>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1044.html">九江</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1929.html">长达</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1930.html">敬业</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1931.html">建龙</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_121.html">本钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_455.html">永钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_119.html">宝钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1932.html">申特</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1933.html">燕钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_420.html">安钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_873.html">信钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_318.html">湘钢</a></label>
+                    </li>
+                </ul>
+				<div class="clear"></div>
+			</div>
+			<div class="proNewsList">
+				<p class="allSteelPWidth"><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1909.html">全国钢材</a></p>
+                <ul class="steelNewsWidth">
+                    <li>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1878.html">上海</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1934.html">杭州</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1935.html">无锡</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1936.html">郑州</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1937.html">武汉</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1938.html">长沙</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1939.html">广州</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1264.html">唐山</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1940.html">成都</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_163.html">邯郸</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1882.html">重庆</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/news/search/kwid_1265.html">天津</a></label>
+                    </li>
+                </ul>
+				<div class="clear"></div>
+			</div>
+		</div>
+		
+		<h1>钢铁超市</h1>
+		<div class="proNews steelMarket">
+			<div class="proNewsList ">
+                <ul>
+                    <li class="widFnf t-lLi">
+                        <label class="boldLabel">板材</label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ca82b-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E4%25B8%25AD%25E5%258E%259A%25E6%259D%25BF_material_68d8d173-3e69-11e5-b8c0-54ee755150b2_factory_578_city_0">中厚板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ca666-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%2583%25AD%25E8%25BD%25A7%25E5%25BC%2580%25E5%25B9%25B3%25E6%259D%25BF_material_68d8d173-3e69-11e5-b8c0-54ee755150b2_factory_347_city_0">热轧开平板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931cad1d-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E4%25BD%258E%25E5%2590%2588%25E9%2587%2591%25E6%259D%25BF_material_68d8d392-3e69-11e5-b8c0-54ee755150b2_factory_825_city_0">低合金板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ce587-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%2583%25AD%25E9%2595%2580%25E9%2594%258C%25E6%259D%25BF_material_68d87250-3e69-11e5-b8c0-54ee755150b2_factory_512_city_0">热镀锌板</a></label>
+                    </li>
+                    <li class="t-lLi">
+                        <label class="boldLabel">建材</label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ccbd1-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E8%259E%25BA%25E7%25BA%25B9%25E9%2592%25A2_material_68d5bff3-3e69-11e5-b8c0-54ee755150b2_factory_578_city_0">螺纹钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ccc2f-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E5%259C%2586%25E9%2592%25A2_material_68d7f4f9-3e69-11e5-b8c0-54ee755150b2_factory_679_city_0">圆钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ccc92-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E9%25AB%2598%25E7%25BA%25BF_material_68bd257a-3e69-11e5-b8c0-54ee755150b2_factory_348_city_0">高线</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ce0d1-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%259B%2598%25E8%259E%25BA_material_68d5bff3-3e69-11e5-b8c0-54ee755150b2_factory_578_city_0">盘螺</a></label>
+                    </li>
+
+                    <li class="widFnf t-lLi">
+                        <label class="boldLabel">型材</label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931cc9ae-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E5%25B7%25A5%25E5%25AD%2597%25E9%2592%25A2_material_68d8d0dd-3e69-11e5-b8c0-54ee755150b2_factory_907_city_0">工字钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931cc925-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E6%25A7%25BD%25E9%2592%25A2_material_68d8d173-3e69-11e5-b8c0-54ee755150b2_factory_1_city_0">槽钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931cca2e-3e66-11e5-b8c0-54ee755150b2_categoryname_H%25E5%259E%258B%25E9%2592%25A2_material_68d8d173-3e69-11e5-b8c0-54ee755150b2_factory_516_city_0">H型钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931cda1a-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%25AD%2589%25E8%25BE%25B9%25E8%25A7%2592%25E9%2592%25A2_material_68d8d0dd-3e69-11e5-b8c0-54ee755150b2_factory_907_city_0">等边角钢</a></label>
+                    </li>
+                    <li class="t-lLi">
+                        <label class="boldLabel">优钢</label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931cd029-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%25A2%25B3%25E7%25BB%2593%25E5%259C%2586_material_68d800e2-3e69-11e5-b8c0-54ee755150b2_factory_9_city_0">碳结圆</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931cd103-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E5%2590%2588%25E7%25BB%2593%25E5%259C%2586_material_0821fab4-9739-467b-b823-67520beddeb1_factory_321_city_0">合结圆</a></label>
+                    </li>
+
+                    <li class="t-lLi">
+                        <label class="boldLabel pd-gc">管材</label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ccd56-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%2584%258A%25E7%25AE%25A1_material_68d8c40d-3e69-11e5-b8c0-54ee755150b2_factory_969_city_0">焊管</a></label>
+                    </li>
+                    <li>
+                        <label class="boldLabel">卷材</label>
+                        <label class="juanchai"><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ca529-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%2583%25AD%25E8%25BD%25A7%25E5%258D%25B7%25E6%259D%25BF_material_68d8d173-3e69-11e5-b8c0-54ee755150b2_factory_747_city_0">热轧卷板</a></label>
+                        <label class="juanchai"><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ca7b3-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%2583%25AD%25E8%25BD%25A7%25E5%25B8%25A6%25E9%2592%25A2_material_68d8c40d-3e69-11e5-b8c0-54ee755150b2_factory_123_city_0">热轧带钢</a></label>
+                        <label class="juanchai"><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931cb217-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E5%2586%25B7%25E8%25BD%25A7%25E5%258D%25B7%25E6%259D%25BF_material_68d874a2-3e69-11e5-b8c0-54ee755150b2_factory_170_city_0">冷轧卷板</a></label>
+                        <label class="juanchai"><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931cf116-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%2583%25AD%25E9%2595%2580%25E9%2594%258C%25E5%258D%25B7_material_68d87250-3e69-11e5-b8c0-54ee755150b2_factory_830_city_0">热镀锌卷</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931cec20-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E4%25BD%258E%25E5%2590%2588%25E9%2587%2591%25E5%258D%25B7_material_68d8d392-3e69-11e5-b8c0-54ee755150b2_factory_247_city_0">低合金卷</a></label>
+                        <label class="juanchaiLz"><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931d0897-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E5%2586%25B7%25E8%25BD%25A7%25E4%25B8%258D%25E9%2594%2588%25E9%2592%25A2%25E5%258D%25B7_material_68d8e3e4-3e69-11e5-b8c0-54ee755150b2_factory_892_city_0">冷轧不锈钢卷</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ce066-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E8%258A%25B1%25E7%25BA%25B9%25E5%258D%25B7_material_68d5bd18-3e69-11e5-b8c0-54ee755150b2_factory_588_city_0">花纹卷</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931cec8b-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E9%2585%25B8%25E6%25B4%2597%25E5%258D%25B7_material_68d7cefc-3e69-11e5-b8c0-54ee755150b2_factory_2_city_0">酸洗卷</a></label>
+                    </li>
+                    <li class="placeAddName">
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ccbd1-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E8%259E%25BA%25E7%25BA%25B9%25E9%2592%25A2_material_68d5bff3-3e69-11e5-b8c0-54ee755150b2_factory_748_city_78">杭州螺纹钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ca529-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%2583%25AD%25E8%25BD%25A7%25E5%258D%25B7%25E6%259D%25BF_material_68d8d173-3e69-11e5-b8c0-54ee755150b2_factory_247_city_2">天津热轧卷板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ca529-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%2583%25AD%25E8%25BD%25A7%25E5%258D%25B7%25E6%259D%25BF_material_68d8d173-3e69-11e5-b8c0-54ee755150b2_factory_855_city_190">广东热轧卷板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ca82b-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E4%25B8%25AD%25E5%258E%259A%25E6%259D%25BF_material_68d8d173-3e69-11e5-b8c0-54ee755150b2_factory_578_city_64">无锡中厚板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ce0d1-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%259B%2598%25E8%259E%25BA_material_68d5bff3-3e69-11e5-b8c0-54ee755150b2_factory_578_city_177">长沙盘螺</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931cb217-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E5%2586%25B7%25E8%25BD%25A7%25E5%258D%25B7%25E6%259D%25BF_material_68d874a2-3e69-11e5-b8c0-54ee755150b2_factory_170_city_190">广东冷轧卷板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ccc92-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E9%25AB%2598%25E7%25BA%25BF_material_68d8c40d-3e69-11e5-b8c0-54ee755150b2_factory_3_city_78">杭州高线</a></label>
+                        <label>长沙低合金板</label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ca666-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%2583%25AD%25E8%25BD%25A7%25E5%25BC%2580%25E5%25B9%25B3%25E6%259D%25BF_material_68d8d173-3e69-11e5-b8c0-54ee755150b2_factory_747_city_64">无锡热轧开平板</a></label>
+                    </li>
+                    <li class="placeAddName">
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ccbd1-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E8%259E%25BA%25E7%25BA%25B9%25E9%2592%25A2_material_68d5bff3-3e69-11e5-b8c0-54ee755150b2_factory_578_city_177">长沙螺纹钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ca529-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%2583%25AD%25E8%25BD%25A7%25E5%258D%25B7%25E6%259D%25BF_material_68d8d173-3e69-11e5-b8c0-54ee755150b2_factory_516_city_3">上海热轧卷板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ca7b3-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%2583%25AD%25E8%25BD%25A7%25E5%25B8%25A6%25E9%2592%25A2_material_68d8c40d-3e69-11e5-b8c0-54ee755150b2_factory_836_city_64">无锡热轧带钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ca82b-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E4%25B8%25AD%25E5%258E%259A%25E6%259D%25BF_material_68d8d173-3e69-11e5-b8c0-54ee755150b2_factory_749_city_3">上海中厚板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ce0d1-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%259B%2598%25E8%259E%25BA_material_68d5bff3-3e69-11e5-b8c0-54ee755150b2_factory_748_city_78">杭州盘螺</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931cb217-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E5%2586%25B7%25E8%25BD%25A7%25E5%258D%25B7%25E6%259D%25BF_material_68d874a2-3e69-11e5-b8c0-54ee755150b2_factory_747_city_3">上海冷轧卷板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ccc92-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E9%25AB%2598%25E7%25BA%25BF_material_68bd257a-3e69-11e5-b8c0-54ee755150b2_factory_362_city_177">长沙高线</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931cad1d-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E4%25BD%258E%25E5%2590%2588%25E9%2587%2591%25E6%259D%25BF_material_68d8d392-3e69-11e5-b8c0-54ee755150b2_factory_247_city_2">天津低合金板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ca666-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%2583%25AD%25E8%25BD%25A7%25E5%25BC%2580%25E5%25B9%25B3%25E6%259D%25BF_material_68d8d173-3e69-11e5-b8c0-54ee755150b2_factory_347_city_159">武汉热轧开平板</a></label>
+                    </li>
+                    <li class="placeAddName">
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ccbd1-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E8%259E%25BA%25E7%25BA%25B9%25E9%2592%25A2_material_68d5bff3-3e69-11e5-b8c0-54ee755150b2_factory_348_city_159">武汉螺纹钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ca529-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%2583%25AD%25E8%25BD%25A7%25E5%258D%25B7%25E6%259D%25BF_material_68d8d173-3e69-11e5-b8c0-54ee755150b2_factory_747_city_64">无锡热轧卷板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ca7b3-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%2583%25AD%25E8%25BD%25A7%25E5%25B8%25A6%25E9%2592%25A2_material_68d8c40d-3e69-11e5-b8c0-54ee755150b2_factory_123_city_10">唐山热轧带钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ca82b-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E4%25B8%25AD%25E5%258E%259A%25E6%259D%25BF_material_68d8d173-3e69-11e5-b8c0-54ee755150b2_factory_14_city_177">长沙中厚板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ce0d1-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%259B%2598%25E8%259E%25BA_material_68d5bff3-3e69-11e5-b8c0-54ee755150b2_factory_348_city_159">武汉盘螺</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931cb217-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E5%2586%25B7%25E8%25BD%25A7%25E5%258D%25B7%25E6%259D%25BF_material_68d874a2-3e69-11e5-b8c0-54ee755150b2_factory_668_city_78">杭州冷轧卷板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ccc92-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E9%25AB%2598%25E7%25BA%25BF_material_68bd257a-3e69-11e5-b8c0-54ee755150b2_factory_348_city_159">武汉高线</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931cad1d-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E4%25BD%258E%25E5%2590%2588%25E9%2587%2591%25E6%259D%25BF_material_68d81709-3e69-11e5-b8c0-54ee755150b2_factory_260_city_3">上海低合金板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ca666-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%2583%25AD%25E8%25BD%25A7%25E5%25BC%2580%25E5%25B9%25B3%25E6%259D%25BF_material_68d8d173-3e69-11e5-b8c0-54ee755150b2_factory_660_city_78">杭州热轧开平板</a></label>
+                    </li>
+                    <li class="placeAddName">
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ccbd1-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E8%259E%25BA%25E7%25BA%25B9%25E9%2592%25A2_material_68d5c0e3-3e69-11e5-b8c0-54ee755150b2_factory_637_city_225">成都螺纹钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ca529-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%2583%25AD%25E8%25BD%25A7%25E5%258D%25B7%25E6%259D%25BF_material_68d8d173-3e69-11e5-b8c0-54ee755150b2_factory_171_city_5">邯郸热轧卷板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ca7b3-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%2583%25AD%25E8%25BD%25A7%25E5%25B8%25A6%25E9%2592%25A2_material_68d8c40d-3e69-11e5-b8c0-54ee755150b2_factory_123_city_78">杭州热轧带钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ca82b-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E4%25B8%25AD%25E5%258E%259A%25E6%259D%25BF_material_68d8d173-3e69-11e5-b8c0-54ee755150b2_factory_14_city_5">邯郸中厚板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ce0d1-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%259B%2598%25E8%259E%25BA_material_68d5c0e3-3e69-11e5-b8c0-54ee755150b2_factory_290_city_0">成都盘螺</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931cb217-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E5%2586%25B7%25E8%25BD%25A7%25E5%258D%25B7%25E6%259D%25BF_material_68d77ec8-3e69-11e5-b8c0-54ee755150b2_factory_1_city_64">无锡冷轧卷板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ccc2f-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E5%259C%2586%25E9%2592%25A2_material_68bd257a-3e69-11e5-b8c0-54ee755150b2_factory_663_city_78">杭州圆钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931cf116-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%2583%25AD%25E9%2595%2580%25E9%2594%258C%25E5%258D%25B7_material_68d87250-3e69-11e5-b8c0-54ee755150b2_factory_830_city_3">上海热镀锌卷</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931cec20-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E4%25BD%258E%25E5%2590%2588%25E9%2587%2591%25E5%258D%25B7_material_68d8d392-3e69-11e5-b8c0-54ee755150b2_factory_247_city_2">天津低合金卷</a></label>
+                    </li>
+                    <li class="placeAddName">
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ccbd1-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E8%259E%25BA%25E7%25BA%25B9%25E9%2592%25A2_material_68d5c0e3-3e69-11e5-b8c0-54ee755150b2_factory_2_city_5">邯郸螺纹钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ca529-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%2583%25AD%25E8%25BD%25A7%25E5%258D%25B7%25E6%259D%25BF_material_68d8d173-3e69-11e5-b8c0-54ee755150b2_factory_347_city_159">武汉热轧卷板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ca7b3-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%2583%25AD%25E8%25BD%25A7%25E5%25B8%25A6%25E9%2592%25A2_material_68d8c40d-3e69-11e5-b8c0-54ee755150b2_factory_123_city_3">上海热轧带钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ca82b-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E4%25B8%25AD%25E5%258E%259A%25E6%259D%25BF_material_68d8d173-3e69-11e5-b8c0-54ee755150b2_factory_2_city_159">武汉中厚板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ce0d1-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%259B%2598%25E8%259E%25BA_material_68d5c0e3-3e69-11e5-b8c0-54ee755150b2_factory_748_city_3">上海盘螺</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931cb217-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E5%2586%25B7%25E8%25BD%25A7%25E5%258D%25B7%25E6%259D%25BF_material_68d77ec8-3e69-11e5-b8c0-54ee755150b2,68d874a2-3e69-11e5-b8c0-54ee755150b2_factory_347_city_159">武汉冷轧卷板</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931ccc2f-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E5%259C%2586%25E9%2592%25A2_material_68d8d0dd-3e69-11e5-b8c0-54ee755150b2_factory_594_city_190">广东圆钢</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931cf116-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E7%2583%25AD%25E9%2595%2580%25E9%2594%258C%25E5%258D%25B7_material_abc57667-b3a3-11e5-8445-68f728526dd7_factory_170_city_190">广东热镀锌卷</a></label>
+                        <label><a target="_blank" href="http://www.prcsteel.com/market/categoryuuid_931cec20-3e66-11e5-b8c0-54ee755150b2_categoryname_%25E4%25BD%258E%25E5%2590%2588%25E9%2587%2591%25E5%258D%25B7_material_68d8d392-3e69-11e5-b8c0-54ee755150b2_factory_516_city_3">上海低合金卷</a></label>
+                    </li>
+                </ul>
+				<div class="clear"></div>
+			</div>			
+		</div>
+	</div>
+		<!-- Footer S -->
+	#parse("layout/globalfooter.vm")
+	<!-- Footer E -->
+	<script src="$link.getContextPath()/js/lib/seajs/2.2.0/sea.js"></script>
+	<script src="$link.getContextPath()/js/seaconfig.js"></script>
+</body>
+</html>

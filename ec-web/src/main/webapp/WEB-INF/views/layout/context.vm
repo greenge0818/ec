@@ -1,0 +1,74 @@
+<script type="text/javascript" >
+    var Context = new function() {
+        this.PATH = "$link.getContextPath()";
+        var root  ="$link.getRoot()" + "$link.getContextPath()/";
+        if(root.indexOf(":80/")>-1){
+            this.ROOT = root.replace(":80/","");
+        }else{
+            this.ROOT = root.substring(0,root.length-1);
+        }
+        this.CAS_PATH = "${casUrl}";
+
+        this.CAS_MSG={
+        	"AccountNotFound":"账号不存在",
+        	"InvalidPassword" : "验证码错误",
+        	"PasswordExpired" : "验证码错误",
+        	"AccountLocked" : "账号被锁",
+        	"LoginTicketExpired":"LT过期",
+        	"InnerExceptions"　:　"服务器错误"
+//          status:["AccountNotFound", "InvalidPassword", "PasswordExpired", "AccountLocked", "LoginTicketExpired", "InnerExceptions"],
+//          message:["账号不存在","密码错误","密码过期","账号被锁","LT过期","服务器错误"]
+        };
+        this.getMsg = function(code){
+        	return Context.CAS_MSG[code] ? Context.CAS_MSG[code] : "未知错误";
+        }
+    }
+
+    #if($ut == true)
+    var _utaq = _utaq || [];
+
+    window.onload = function(){
+        //////百度
+
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?7779b57621a328a80245d4d33c122123";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+        <!-- uniclickTracking Code -->
+        //uniclickTracking
+        _utaq.push(["trackPageView"]);
+        _utaq.push(["enableLinkTracking"]);
+        (function() {
+            var utu=(("https:" == document.location.protocol) ? "https" : "http") + "://sit.gentags.net/";
+            _utaq.push(["setTrackerUrl", utu+"site/unids.gif"]);
+            _utaq.push(["setSiteId", "1540"]);
+            var t=parseInt((new Date()).getTime()/1000);
+            var utd=document, ut=utd.createElement("script"), s=utd.getElementsByTagName("script")[0]; ut.type="text/javascript";
+            ut.defer=true; ut.async=true; ut.src=utu+"adagent/js/uta.js?v="+(t-t%300); s.parentNode.insertBefore(ut,s);
+        })();
+        //Universal Analytics 跟踪代码
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-82200475-1', 'auto');
+        ga('send', 'pageview');
+    };
+    #end
+
+</script>
+#if($ut == true)
+    <noscript>
+        <img src="http://sit.gentags.net/site/img?site=1540" style="border:0" alt="" />
+    </noscript>
+    <!-- End uniclickTracking Code -->
+#end
+<style type="text/css">
+	.WPA3-SELECT-PANEL {
+	    display:none!important;
+	}
+</style>

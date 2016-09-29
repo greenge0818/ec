@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:amq="http://activemq.apache.org/schema/core"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd
+        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:ecweb.properties"/>
+
+    <bean id="amqConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory" destroy-method="stop">
+        <property name="connectionFactory">
+            <bean class="org.apache.activemq.ActiveMQConnectionFactory">
+                <property name="brokerURL">
+                    <value>${amq.brokerUrl}</value>
+                </property>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="amqJmsOperations" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="amqConnectionFactory"/>
+        <property name="defaultDestinationName" value="${amq.channelName}"/>
+    </bean>
+
+    <!--JMS broker, sample for CLUSTER URL: 'failover:(tcp://12.13.14.100:61616,tcp://12.13.14.101:61616)?randomize=true'-->
+    <amq:connectionFactory id="listenerAmqConnectionFactory" brokerURL="${amq.brokerUrl}"/>
+
+    <!-- JMS channel: ec.queue.message -->
+
+    <bean id="activemq" class="org.apache.activemq.camel.component.ActiveMQComponent">
+        <property name="connectionFactory" ref="listenerAmqConnectionFactory"/>
+    </bean>
+
+    <bean id="listenerRouteBuilder" class="com.prcsteel.ec.route.ListenerRouteBuilder"/>
+
+    <!-- Camel context -->
+    <camelContext id="listenerCamelContext" xmlns="http://camel.apache.org/schema/spring">
+        <routeBuilder ref="listenerRouteBuilder"/>
+    </camelContext>
+
+    <!-- Camel handlers -->
+    <bean id="activemqHandler" class="com.prcsteel.ec.route.handler.ActivemqHandler"/>
+    <bean id="assRequirementStatusHandler" class="com.prcsteel.ec.route.handler.AssRequirementStatusHandler"/>
+    <bean id="smRequirementStatusHandler" class="com.prcsteel.ec.route.handler.SmRequirementStatusHandler"/>
+    <bean id="cbmsRequirementStatusHandler" class="com.prcsteel.ec.route.handler.CbmsRequirementStatusHandler"/>
+    <bean id="addMarketUserHandler" class="com.prcsteel.ec.route.handler.AddMarketUserHandler"/>
+    <bean id="updateMarketUserHandler" class="com.prcsteel.ec.route.handler.UpdateMarketUserHandler"/>
+    <bean id="changeContactStatusHandler" class="com.prcsteel.ec.route.handler.ChangeContactStatusHandler"/>
+</beans>

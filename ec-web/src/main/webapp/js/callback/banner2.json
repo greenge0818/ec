@@ -1,0 +1,21 @@
+{
+	"code":"0",
+    "data":[
+        {
+            "title":"会员活动1",
+            "image":"/web/css/default/images/cishan.jpg",
+            "url":"http://www.prcsteel.com"
+        },
+        {
+            "title":"会员活动2",
+            "image":"/web/css/default/images/cishan2.gif",
+            "url":"http://news.prcsteel.com"
+        },
+        {
+            "title":"会员活动3",
+            "image":"/web/css/default/images/cishan.jpg",
+            "url":"http://market.prcsteel.com"
+        }
+  
+    ]
+}

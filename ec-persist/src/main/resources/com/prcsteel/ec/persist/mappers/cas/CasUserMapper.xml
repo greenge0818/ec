@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.prcsteel.ec.persist.dao.cas.CasUserDao" >
+  <resultMap id="BaseResultMap" type="com.prcsteel.ec.model.domain.cas.CasUser" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="account" property="account" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="dynamic_password" property="dynamicPassword" jdbcType="VARCHAR" />
+    <result column="dynamic_password_expired" property="dynamicPasswordExpired" jdbcType="TIMESTAMP" />
+    <result column="is_activated" property="isActivated" jdbcType="CHAR" />
+    <result column="is_locked" property="isLocked" jdbcType="CHAR" />
+    <result column="is_deleted" property="isDeleted" jdbcType="CHAR" />
+    <result column="created" property="created" jdbcType="TIMESTAMP" />
+    <result column="last_updated" property="lastUpdated" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, account, password, dynamic_password, dynamic_password_expired, is_activated, 
+    is_locked, is_deleted, created, last_updated
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.prcsteel.ec.model.domain.cas.CasUser" >
+    insert into user (id, account, password, 
+      dynamic_password, dynamic_password_expired, 
+      is_activated, is_locked, is_deleted, 
+      created, last_updated)
+    values (#{id,jdbcType=INTEGER}, #{account,jdbcType=VARCHAR}, SHA1(#{password,jdbcType=VARCHAR}),
+      SHA1(#{dynamicPassword,jdbcType=VARCHAR}), #{dynamicPasswordExpired,jdbcType=TIMESTAMP},
+      #{isActivated,jdbcType=CHAR}, #{isLocked,jdbcType=CHAR}, #{isDeleted,jdbcType=CHAR}, 
+      #{created,jdbcType=TIMESTAMP}, #{lastUpdated,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.prcsteel.ec.model.domain.cas.CasUser" >
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="account != null" >
+        account,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="dynamicPassword != null" >
+        dynamic_password,
+      </if>
+      <if test="dynamicPasswordExpired != null" >
+        dynamic_password_expired,
+      </if>
+      <if test="isActivated != null" >
+        is_activated,
+      </if>
+      <if test="isLocked != null" >
+        is_locked,
+      </if>
+      <if test="isDeleted != null" >
+        is_deleted,
+      </if>
+      <if test="created != null" >
+        created,
+      </if>
+      <if test="lastUpdated != null" >
+        last_updated,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="account != null" >
+        #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        SHA1( #{password,jdbcType=VARCHAR} ),
+      </if>
+      <if test="dynamicPassword != null" >
+        SHA1( #{dynamicPassword,jdbcType=VARCHAR} ),
+      </if>
+      <if test="dynamicPasswordExpired != null" >
+        #{dynamicPasswordExpired,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isActivated != null" >
+        #{isActivated,jdbcType=CHAR},
+      </if>
+      <if test="isLocked != null" >
+        #{isLocked,jdbcType=CHAR},
+      </if>
+      <if test="isDeleted != null" >
+        #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="created != null" >
+        #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdated != null" >
+        #{lastUpdated,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.prcsteel.ec.model.domain.cas.CasUser" >
+    update user
+    <set >
+      <if test="account != null" >
+        account = #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        SHA1( password = #{password,jdbcType=VARCHAR} ),
+      </if>
+      <if test="dynamicPassword != null" >
+        SHA1(  dynamic_password = #{dynamicPassword,jdbcType=VARCHAR} ),
+      </if>
+      <if test="dynamicPasswordExpired != null" >
+        dynamic_password_expired = #{dynamicPasswordExpired,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isActivated != null" >
+        is_activated = #{isActivated,jdbcType=CHAR},
+      </if>
+      <if test="isLocked != null" >
+        is_locked = #{isLocked,jdbcType=CHAR},
+      </if>
+      <if test="isDeleted != null" >
+        is_deleted = #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="created != null" >
+        created = #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdated != null" >
+        last_updated = #{lastUpdated,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.prcsteel.ec.model.domain.cas.CasUser" >
+    update user
+    set account = #{account,jdbcType=VARCHAR},
+      password = SHA1( #{password,jdbcType=VARCHAR} ),
+      dynamic_password =SHA1( #{dynamicPassword,jdbcType=VARCHAR} ),
+      dynamic_password_expired = #{dynamicPasswordExpired,jdbcType=TIMESTAMP},
+      is_activated = #{isActivated,jdbcType=CHAR},
+      is_locked = #{isLocked,jdbcType=CHAR},
+      is_deleted = #{isDeleted,jdbcType=CHAR},
+      created = #{created,jdbcType=TIMESTAMP},
+      last_updated = #{lastUpdated,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <!-- 根据手机号查询CAS用户 add by peanut on 2015/05/11-->
+  <select id="selectByPhone" parameterType="String" resultMap="BaseResultMap">
+    SELECT
+       <include refid="Base_Column_List" />
+    FROM user WHERE account=#{phone}
+  </select>
+
+  <!--- 通过手机号更新用户密码  add by peanut on 2015/05/11-->
+  <update id="updatePasswordByPhone" parameterType="String" >
+    UPDATE user SET password= SHA1(#{pwd}) ,last_updated=NOW()
+    WHERE account=#{phone} AND is_deleted='N' AND is_locked='N' AND is_activated='Y'
+  </update>
+
+  <!--通过旧手机号修改为新手机号 add by peanut on 2015/05/11-->
+  <update id="updateMobileByMobile" parameterType="String">
+    UPDATE user SET account= #{newPhone} ,last_updated=NOW()
+    WHERE account=#{oldPhone} AND is_deleted='N' AND is_locked='N' AND is_activated='Y'
+  </update>
+
+  <!--通过手机号更新动态验证码 add by peanut on 2015/05/13-->
+  <update id="updateCasDynamicPassword" parameterType="String">
+    UPDATE user SET
+      <if test="code != null and code != ''">
+        dynamic_password =SHA1( #{code} ),dynamic_password_expired=DATE_ADD(NOW(),INTERVAL 30 MINUTE)
+      </if>
+      <if test="code == null">
+        dynamic_password =NULL,dynamic_password_expired=NULL
+      </if>
+    WHERE account=#{phone} AND is_deleted='N' AND is_locked='N' AND is_activated='Y'
+  </update>
+
+  <!--通过手机号更新动态验证码 add by Green.Ge on 2016/06/06-->
+  <select id="SelectByMobileAndValidCode" parameterType="String" resultType="int">
+    <![CDATA[
+    SELECT COUNT(1)
+    FROM  user
+    WHERE account = #{mobile}
+    AND dynamic_password =SHA1( #{code} )
+    AND dynamic_password_expired <= DATE_ADD(NOW(),INTERVAL 30 MINUTE)
+    AND is_deleted='N' AND is_locked='N' AND is_activated='Y'
+    ]]>
+  </select>
+
+  <update id="updateIsLockedByMobile">
+    UPDATE user SET
+    is_locked =#{isLocked}
+    WHERE account=#{mobile}
+  </update>
+
+</mapper>

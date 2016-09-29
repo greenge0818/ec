@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="image/x-icon" href="$link.getContextPath()/css/default/images/favicon.ico " rel="shortcut icon">
+<meta name="keywords" content="钢铁,钢材,螺纹钢,热轧卷板,冷轧卷板,中厚板,热轧带钢,钢铁市场,钢材交易">
+<meta name="description" content="钢为网钢铁超市为国内钢厂、钢材贸易商、钢材终端用户提供国内钢铁,钢材,螺纹钢,热轧卷板,冷轧卷板,中厚板,热轧带钢线上钢铁市场,钢材交易电商平台。">
+<link href="$link.getContextPath()/css/default/css/global.css" rel="stylesheet" />
+<link href="$link.getContextPath()/css/default/css/default.css" rel="stylesheet" />
+<link href="$link.getContextPath()/css/default/css/about.css" rel="stylesheet"/>
+<title>关于钢为</title>
+<!-- context S -->
+#parse("layout/context.vm")
+<!-- context E -->
+</head>
+
+<body class="no-skin ">
+<!--[if lte IE 6]>
+	<div style="width:100%;_position:absolute;
+	_bottom:auto;
+	_top:expression(eval(document.documentElement.scrollTop));
+	z-index:1000;">
+		<div style="width:100%;height:30px;border-bottom:1px solid #ff5a00;background:#ffede3;color:#444;line-height:30px; text-align:center;">
+		系统检测您当前的浏览器为IE6，可能会影响部分功能的使用。为了您有更好的体验。建议您<a href="http://www.microsoft.com/china/windows/internet-explorer/" target="_blank" style="color:#c81624;text-decoration:underline;">升级IE浏览器</a>或者下载安装使用<a href="http://dlsw.baidu.com/sw-search-sp/soft/9d/14744/ChromeStandalone_V43.0.2357.124_Setup.1433905898.exe" target="_blank" style="color:#c81624;text-decoration:underline;">谷歌浏览器chrome</a>
+		</div>
+	<style>
+	body{_padding-top:30px;}
+	</style>
+	</div>
+<![endif]-->
+	<!-- Header S-->
+	#parse("layout/min-header.vm")
+	<!-- Header E-->
+	<!-- logo and search -->
+	<div class="logolayout">
+		<div class="indexlogo f-fl"><a href="$link.getContextPath()/"></a></div>
+	</div>
+	<!-- 首页导航E -->
+	<div class="navbox f-clrfix">
+		<div class="index-nav f-clrfix">
+			<ul>
+				<li class="active"><a href="$link.getContextPath()/">首页</a></li>
+				<li><a href="$link.getContextPath()/market/" target="_blank">钢铁超市</a></li>
+				<li><a href="$marketCenterDomain" >行情圈</a></li>
+				<li><a href="https://www.paysteel.com/" target="_blank">款道</a></li>
+				<li><a href="$link.getContextPath()/helpfind/" >钢为购</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="about-mian f-clrfix">
+		<ul class="about-ul f-fl">
+			<li data-attr="prc" >关于钢为</li>
+			<li data-attr="contact">联系我们</li>
+			<li data-attr="member">会员说明</li>
+			<li data-attr="buyer">买家入门</li>
+			<li data-attr="seller">卖家合作</li>
+		</ul>
+		<div data-attr="prc" class="about-eq about-eq-wth about-prc f-fr none">
+			<h1 class="t-c">关于钢为</h1>
+			<p>钢为网（www.prcsteel.com），是国内大型钢铁产业链第三方电商交易服务平台，前身为“中国钢铁现货网”（www.gtxh.com）。中国钢铁现货网成立于2006年8月，在历经9年发展后，于2015年4月24日更名为钢为网，开启了全新的征程。</p>
+			<p>“让每一个钢贸商都成为钢铁电商”是钢为人的使命。“坚守第三方平台，不与贸易商争利，不介入自营买卖”是钢为网第三方平台的运营核心。</p>
+			<p> 钢为人一直在为“构建钢铁商业新生态系统”这一愿景而不断坚持和创新。钢为网旨在为用户提供行业资讯、交易撮合、在线支付、交易监管、金融服务、仓储物流等一站式、全链条服务，从而为用户提升经营效益提供助力，为产业转型升级提供支持，为行业信用体系重构提供保障。</p>
+			<img src="$link.getContextPath()/css/default/images/aboutUS.png" />
+			<ul>
+				<li><span>钢为愿景</span><span class="circleBg"></span><label>构建钢铁商业新生态体系</label></li>
+				<li><span>价值观</span><span class="circleBg"></span><label>成就用户，成就自己</label></li>
+				<li><span>企业使命</span><span class="circleBg"></span><label>让每一个钢贸商都成为钢铁电商！</label></li>
+				<li><span>团队文化</span><span class="circleBg"></span><label>创新、坚持</label></li>
+			</ul>
+		</div>		
+		<div data-attr="contact" class="about-eq about-contact f-fr none">
+			<h1 class="t-c">联系我们</h1>
+			<img src="$link.getContextPath()/css/default/images/contactMap.png" />
+			<div class="f-clrfix">
+				<dl>
+					<dt>钢为网总部</dt>
+					<dd>全国服务热线：0571-89718799</dd>
+					<dd>网址：www.prcsteel.com</dd>
+					<dd>邮箱：prcsteel@prcsteel.com</dd>
+					<dd>地址：浙江省杭州市下城区文晖路46号现代置业大厦西楼7楼706室  </dd>
+					<dd>电话：0571-89718799</dd>
+				</dl>
+				<dl>
+					<dt>天津服务中心（北辰区）</dt>
+					<dd>地址：天津市北辰区顺义道中储大厦921室  </dd>
+					<dd>电话：022-86447286</dd>
+				</dl>
+				<dl>
+					<dt>天津服务中心（东丽区）</dt>
+					<dd>地址：天津市东丽区军粮城镇宝仓路丽兴物流园c-332 </dd>
+					<dd>电话：022-60291370 </dd>
+				</dl>
+				<dl>
+					<dt>杭州服务中心 </dt>
+					<dd>地址：浙江省杭州市拱墅区石祥路342号运河钢材市场五区3310</dd>
+					<dd>电话：0571-89718781</dd>
+				</dl>
+				<dl>
+					<dt>广东服务中心    </dt>
+					<dd>地址：广东省佛山市乐从镇细海工业区欧浦商务大厦华商107</dd>
+					<dd>电话：0757-29233940</dd>
+				</dl>
+				<dl>
+					<dt>长沙服务中心    </dt>
+					<dd>地址：湖南省长沙市新开铺路1348号钢材大市场包三栋一单元301室</dd>
+					<dd>电话：0731-83885465</dd>
+				</dl>
+				<dl>
+					<dt>武汉服务中心（汉阳区）    </dt>
+					<dd>地址：湖北省武汉市汉阳区琴台钢材市场南区2-171号 </dd>
+					<dd>电话：027-65020531</dd>
+				</dl>
+				<dl>
+					<dt>无锡服务中心</dt>
+					<dd>地址：江苏省无锡市崇安区广瑞路780号名景轩13楼钢为网</dd>
+					<dd>电话：0510-83221850 </dd>
+				</dl>
+				<dl>
+					<dt>武汉服务中心（江岸区） </dt>
+					<dd>地址：湖北省武汉市江岸区解放大道2020号丹水池661市场中储大楼9-906</dd>
+					<dd>电话：027-65021035 </dd>
+				</dl>
+				<div class="clear"></div>
+			</div>
+			<ul class="about-code">
+				<li>
+					<img src="$link.getContextPath()/css/default/images/gwzd.png" />
+					<p>官方订阅号——精彩活动入口——【钢为早知道】</p>
+				</li>
+				<li class="t-c">
+					<img src="$link.getContextPath()/css/default/images/gwzg.png" />
+					<p>官方服务号——新鲜资讯入口——【钢为掌柜】</p>
+				</li>
+			</ul>
+		</div>
+		<div data-attr="member" class="about-eq about-eq-wth about-member f-fr none">
+			<h1 class="t-c">会员说明</h1>
+			<h2><span class="whatMember f-fl"></span><p class="f-fl">什么是会员活动</p></h2>
+			<p>会员活动是钢为网为活跃买家VIP客户量身定制的专属活动，活动内容包括：移动端红包活动，会员积分活动，众筹慈善活动及VIP等级专享活动等。</p>
+
+			<h2><span class="howVip f-fl"></span><p class="f-fl">如何成为VIP会员</p></h2>
+			<p>在钢为网注册成功即可成为普通会员。</p>
+			<p>在钢为网完成交易的买家客户获得会员积分，升级为VIP会员。VIP会员分为：VIP1青铜会员、VIP2白银会员、VIP3黄金会员。交易越多越频繁，获得的积分越多，VIP等级也越高。</p>
+
+			<h2><span class="vipWelfare f-fl"></span><p class="f-fl">VIP会员尊享福利</p></h2>
+			<p>1.每月不定期的线上微信红包活动，VIP等级越高，参与活动拆红包的次数越多，拆得红包的金额越大；</p>
+			<p>2.在会员活动中，VIP会员可使用积分额外获得一个红包，也可使用积分使红包金额翻倍；</p>
+			<p>3.不定期的线下聚会沙龙活动，成为钢为网VIP会员还可使用积分免费做慈善，众筹巨额大奖。</p>
+			
+			<p class="mar-t-45">快来成为钢为网VIP会员吧，购钢材够简单，抢红包变土豪！！</p>
+			<!--<p class="t-r mar-t-45"> *本《会员活动说明》最终解释权归钢为网所有</p>-->
+		</div>
+		<div data-attr="buyer" class="about-eq about-buyer f-fr none">
+			<h1 class="t-c">买家入门</h1>
+			<p>欢迎您到钢为网采购钢材！在这里，您只要告诉钢为掌柜要买什么，剩下的钢为帮您搞定。</p>
+			<h2>钢为网为您竭诚提供以下服务：</h2>
+			
+			<h3>一、简易采购流程</h3>
+			<ul class="one-Flow">
+				<li class="f-fl flow-li"><p class="flow-img flow-imgPosOne"></p><p>1.您提交需求</p></li>
+				<li class="f-fl arrows"><p></p></li>
+				
+				<li class="f-fl"><p class="flow-img flow-imgPosTwo"></p><p>2.钢为给您报价</p></li>
+				<li class="f-fl arrows"><p></p></li>
+				
+				<li class="f-fl"><p class="flow-img flow-imgPosThree"></p><p>3.您付款给钢为</p></li>
+				<li class="f-fl arrows"><p></p></li>
+				
+				<li class="f-fl"><p class="flow-img flow-imgPosFour"></p><p>4.坐等收货（货物有问题钢为先行赔付）</p></li>
+				<li class="f-fl arrows"><p></p></li>
+				
+				<li class="f-fl"><p class="flow-img flow-imgPosFive"></p><p>5.当月20号之前提供开票资料给钢为，发票当月送达给您</p></li>
+				<br class="clear">
+			</ul>
+			
+			<h3>二、全方位采购模式</h3>
+			<p>您付钱给钢为网，钢为网为你提供找货、发货、开票等一条龙服务。</p>
+			
+			<h3>三、多种付款方式</h3>
+			<p>1.现金支付；</p>
+			<p>2.银票支付；</p>
+			<p>3.钢为还可向您提供信用采购（可先拿货再付钱，具体事项可联系<a style="color:#2aabe9"  class="qqlink">钢为掌柜</a>咨询）。</p>
+			
+			<h3>四、线上-多样采购渠道</h3>
+			<div class="mar-t-45">
+				<img class="f-fl" src="$link.getContextPath()/css/default/images/online.png" />
+				<p class="f-fl img-p t-c">提交采购需求，钢为帮您找货</p>
+				
+				<br class="clear">
+			</div>
+			<div class="mar-t-45">
+				<p class="f-fl img-p t-l">钢铁超市直接搜索下单</p>				
+				<img class="f-fl" src="$link.getContextPath()/css/default/images/online2.png" />
+				
+				<br class="clear">
+			</div>
+			<h3>五、线下-各地服务中心</h3>
+			<div class="f-fl offline">
+				<dl>
+					<dt>杭州服务中心</dt>
+					<dd>地址：浙江省杭州市拱墅区石祥路342号运河钢材市场五区3310</dd>
+					<dd>电话：0571-89718781</dd>
+				</dl>				
+				<dl>
+					<dt>长沙服务中心</dt>
+					<dd>地址：湖南省长沙市新开铺路1348号钢材大市场包三栋一单元301室</dd>
+					<dd>电话：0731-83885465</dd>
+				</dl>
+				<dl>
+					<dt>无锡服务中心</dt>
+					<dd>地址：江苏省无锡市崇安区广瑞路780号名景轩13楼钢为网</dd>
+					<dd>电话：0510-83221850</dd>
+				</dl>
+				<dl>
+					<dt>广东服务中心</dt>
+					<dd>地址：广东省佛山市乐从镇细海工业区欧浦商务大厦华商107</dd>
+					<dd>电话：0757-29233940</dd>
+				</dl>
+				<dl>
+					<dt>天津服务中心（北辰区）</dt>
+					<dd>地址：天津市北辰区顺义道中储大厦921室 </dd>
+					<dd>电话：022-86447286</dd>
+				</dl>
+				<dl>
+					<dt>天津服务中心（东丽区）</dt>
+					<dd>地址：天津市东丽区军粮城镇宝仓路丽兴物流园C-332 </dd>
+					<dd>电话：022-60291370</dd>
+				</dl>
+				<label>更多详细信息可咨询：<span>400 705 9515</span> 或 <span>0571-89718799</span></label>
+			</div>
+			<div class="f-fr offline">
+				<img src="$link.getContextPath()/css/default/images/offline.png" />
+				<dl>
+					<dt>武汉服务中心（汉阳区）</dt>
+					<dd>地址：湖北省武汉市汉阳区琴台钢材市场南区2-171号</dd>
+					<dd>电话：027-65020531</dd>
+				</dl>
+				<dl>
+					<dt>武汉服务中心（江岸区）</dt>
+					<dd>地址：湖北省武汉市江岸区解放大道2020号丹水池661市场中储大楼9-906</dd>
+					<dd>电话：027-65021035</dd>
+				</dl>
+			</div>
+			<br class="clear">
+		</div>
+		<div data-attr="seller" class="about-eq about-seller f-fr none">
+			<h1 class="t-c">卖家合作</h1>
+			<h2>您好，欢迎来到钢为网！</h2>
+			<p>期待与您携手合作，互利共赢，合作具体细则如下：</p>
+			
+			<div class="sellerCoop">
+				<h3><p class="flow-img seller-pos1 f-fl"></p><p class="f-fl">如何成为钢为供应商：</p><br class="clear"></h3>
+				<p>只要与钢为网签署合作协议，即可被纳入钢为网采购体系。</p>
+				
+				<h3><p class="flow-img seller-pos2 f-fl"></p><p class="f-fl">具体合作流程：</p><br class="clear"></h3>
+				<p>1.致电 <span>0571-8971&nbsp;8799</span>，提出合作申请；</p>
+				<p>2.提供资质证明：包含但不限于企业营业执照、组织机构代码证、税务登记证；</p>
+				<p>3.审核资质：钢为网会对您的资质进行审核；</p>
+				<p>4.合同签署：审核通过后与您签署代运营合作协议；</p>
+				<p>5.签约成功：签约后，您会被纳入钢为网的采购体系，双方正式开展合作。</p>
+				
+				<h3><p class="flow-img seller-pos3  f-fl"></p><p class="f-fl">供应商义务：</p><br class="clear"></h3>
+				<p>供应商应在每个工作日9点45分之前，提供准确的资源库存和价格，且必须为真实可售足额的现货资源。如当天需变动挂牌价格和挂牌资源，须及时通知到钢为，以便钢为能够及时更新，维护卖方信誉。若钢为需要咨询某个货物的库存及价格会通过 <span>400-705-9515 </span> 或 <span>0571-89718799</span> 进行联系，供应商必须配合提供真实的价格及库存。</p>
+				
+				<h3><p class="flow-img seller-pos4  f-fl"></p><p class="f-fl">钢为网在全国有如下服务中心，您也可以联系服务中心提出合作申请。</p><br class="clear"></h3>
+				<div class="f-fl offline">
+					<dl>
+						<dt>杭州服务中心</dt>
+						<dd>地址：浙江省杭州市拱墅区石祥路342号运河钢材市场五区3310</dd>
+						<dd>电话：0571-89718781</dd>
+					</dl>				
+					<dl>
+						<dt>长沙服务中心</dt>
+						<dd>地址：湖南省长沙市新开铺路1348号钢材大市场包三栋一单元301室</dd>
+						<dd>电话：0731-83885465</dd>
+					</dl>
+					<dl>
+						<dt>无锡服务中心</dt>
+						<dd>地址：江苏省无锡市崇安区广瑞路780号名景轩13楼钢为网</dd>
+						<dd>电话：0510-83221850</dd>
+					</dl>
+					<dl>
+						<dt>广东服务中心</dt>
+						<dd>地址：广东省佛山市乐从镇细海工业区欧浦商务大厦华商107</dd>
+						<dd>电话：0757-29233940</dd>
+					</dl>
+					<dl>
+						<dt>天津服务中心（北辰区）</dt>
+						<dd>地址：天津市北辰区顺义道中储大厦921室 </dd>
+						<dd>电话：022-86447286</dd>
+					</dl>
+					<dl>
+						<dt>天津服务中心（东丽区）</dt>
+						<dd>地址：天津市东丽区军粮城镇宝仓路丽兴物流园C-332 </dd>
+						<dd>电话：022-60291370</dd>
+					</dl>
+					<label>更多详细信息可咨询：<span>400 705 9515</span> 或 <span>0571-89718799</span></label>
+				</div>
+				<div class="f-fr offline">
+					<img src="$link.getContextPath()/css/default/images/offline.png" />
+					<dl>
+						<dt>武汉服务中心（汉阳区）</dt>
+						<dd>地址：湖北省武汉市汉阳区琴台钢材市场南区2-171号</dd>
+						<dd>电话：027-65020531</dd>
+					</dl>
+					<dl>
+						<dt>武汉服务中心（江岸区）</dt>
+						<dd>地址：湖北省武汉市江岸区解放大道2020号丹水池661市场中储大楼9-906</dd>
+						<dd>电话：027-65021035</dd>
+					</dl>
+				</div>
+				<br class="clear">
+			</div>
+			
+
+			
+		</div>	
+	</div>
+		<!-- Footer S -->
+	#parse("layout/globalfooter.vm")
+	<!-- Footer E -->
+	 #parse("layout/qq.vm")
+	<script src="$link.getContextPath()/js/lib/seajs/2.2.0/sea.js"></script>
+	<script src="$link.getContextPath()/js/seaconfig.js"></script>
+	<script>
+		seajs.use('about');
+	</script>
+	 
+</body>
+</html>

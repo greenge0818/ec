@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.prcsteel.ec.persist.dao.ec.CartDao" >
+  <resultMap id="BaseResultMap" type="com.prcsteel.ec.model.domain.ec.Cart" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="guid" property="guid" jdbcType="VARCHAR" />
+    <result column="cookie_id" property="cookieId" jdbcType="VARCHAR" />
+    <result column="user_guid" property="userGuid" jdbcType="VARCHAR" />
+    <result column="seller_id" property="sellerId" jdbcType="INTEGER" />
+    <result column="seller_name" property="sellerName" jdbcType="VARCHAR" />
+    <result column="category_uuid" property="categoryUuid" jdbcType="VARCHAR" />
+    <result column="category_name" property="categoryName" jdbcType="VARCHAR" />
+    <result column="material_uuid" property="materialUuid" jdbcType="VARCHAR" />
+    <result column="material_name" property="materialName" jdbcType="VARCHAR" />
+    <result column="spec1" property="spec1" jdbcType="VARCHAR" />
+    <result column="spec2" property="spec2" jdbcType="VARCHAR" />
+    <result column="spec3" property="spec3" jdbcType="VARCHAR" />
+    <result column="factory_id" property="factoryId" jdbcType="BIGINT" />
+    <result column="factory_name" property="factoryName" jdbcType="VARCHAR" />
+    <result column="city_id" property="cityId" jdbcType="BIGINT" />
+    <result column="city_name" property="cityName" jdbcType="VARCHAR" />
+    <result column="warehouse_id" property="warehouseId" jdbcType="INTEGER" />
+    <result column="warehouse_name" property="warehouseName" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="DECIMAL" />
+    <result column="weight" property="weight" jdbcType="DECIMAL" />
+    <result column="amount" property="amount" jdbcType="DECIMAL" />
+    <result column="weight_concept" property="weightConcept" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="is_checked" property="isChecked" jdbcType="VARCHAR" />
+    <result column="is_deleted" property="isDeleted" jdbcType="VARCHAR" />
+    <result column="created" property="created" jdbcType="TIMESTAMP" />
+    <result column="created_by" property="createdBy" jdbcType="VARCHAR" />
+    <result column="last_updated" property="lastUpdated" jdbcType="TIMESTAMP" />
+    <result column="last_updated_by" property="lastUpdatedBy" jdbcType="VARCHAR" />
+    <result column="modification_number" property="modificationNumber" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, guid, cookie_id, user_guid, seller_id, seller_name, category_uuid, category_name,
+    material_uuid, material_name, spec1, spec2, spec3, factory_id, factory_name, city_id,
+    city_name, warehouse_id, warehouse_name, price, weight, amount, weight_concept, remark, is_checked, is_deleted, created,
+    created_by, last_updated, last_updated_by, modification_number
+  </sql>
+
+  <insert id="insert" parameterType="com.prcsteel.ec.model.domain.ec.Cart" >
+    insert into mkt_cart (id, guid, cookie_id,
+    user_guid, seller_id, seller_name,
+    category_uuid, category_name, material_uuid,
+    material_name, spec1, spec2,
+    spec3, factory_id, factory_name,
+    city_id, city_name, warehouse_id, warehouse_name, price,
+    weight, amount, weight_concept,
+    remark, is_checked, is_deleted,
+    created, created_by, last_updated,
+    last_updated_by, modification_number)
+    values (#{id,jdbcType=BIGINT}, #{guid,jdbcType=VARCHAR}, #{cookieId,jdbcType=VARCHAR},
+    #{userGuid,jdbcType=VARCHAR}, #{sellerId,jdbcType=INTEGER}, #{sellerName,jdbcType=VARCHAR},
+    #{categoryUuid,jdbcType=VARCHAR}, #{categoryName,jdbcType=VARCHAR}, #{materialUuid,jdbcType=VARCHAR},
+    #{materialName,jdbcType=VARCHAR}, ifnull(#{spec1,jdbcType=VARCHAR}, ''), ifnull(#{spec2,jdbcType=VARCHAR}, ''),
+    ifnull(#{spec3,jdbcType=VARCHAR}, ''), #{factoryId,jdbcType=BIGINT}, #{factoryName,jdbcType=VARCHAR},
+    #{cityId,jdbcType=BIGINT}, #{cityName,jdbcType=VARCHAR}, #{warehouseId,jdbcType=INTEGER}, #{warehouseName,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL},
+    #{weight,jdbcType=DECIMAL}, #{amount,jdbcType=DECIMAL}, #{weightConcept,jdbcType=VARCHAR},
+    #{remark,jdbcType=VARCHAR}, #{isChecked,jdbcType=VARCHAR}, #{isDeleted,jdbcType=VARCHAR},
+    #{created,jdbcType=TIMESTAMP}, #{createdBy,jdbcType=VARCHAR}, #{lastUpdated,jdbcType=TIMESTAMP},
+    #{lastUpdatedBy,jdbcType=VARCHAR}, #{modificationNumber,jdbcType=INTEGER})
+  </insert>
+
+  <insert id="insertSelective" parameterType="com.prcsteel.ec.model.domain.ec.Cart" >
+    insert into mkt_cart
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="guid != null" >
+        guid,
+      </if>
+      <if test="cookieId != null" >
+        cookie_id,
+      </if>
+      <if test="userGuid != null" >
+        user_guid,
+      </if>
+      <if test="sellerId != null" >
+        seller_id,
+      </if>
+      <if test="sellerName != null" >
+        seller_name,
+      </if>
+      <if test="categoryUuid != null" >
+        category_uuid,
+      </if>
+      <if test="categoryName != null" >
+        category_name,
+      </if>
+      <if test="materialUuid != null" >
+        material_uuid,
+      </if>
+      <if test="materialName != null" >
+        material_name,
+      </if>
+      spec1,
+      spec2,
+      spec3,
+      <if test="factoryId != null" >
+        factory_id,
+      </if>
+      <if test="factoryName != null" >
+        factory_name,
+      </if>
+      <if test="cityId != null" >
+        city_id,
+      </if>
+      <if test="cityName != null" >
+        city_name,
+      </if>
+      <if test="warehouseId != null" >
+        warehouse_id,
+      </if>
+      <if test="warehouseName != null" >
+        warehouse_name,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+      <if test="weight != null" >
+        weight,
+      </if>
+      <if test="amount != null" >
+        amount,
+      </if>
+      <if test="weightConcept != null" >
+        weight_concept,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="isChecked != null" >
+        is_checked,
+      </if>
+      <if test="isDeleted != null" >
+        is_deleted,
+      </if>
+      <if test="created != null" >
+        created,
+      </if>
+      <if test="createdBy != null" >
+        created_by,
+      </if>
+      <if test="lastUpdated != null" >
+        last_updated,
+      </if>
+      <if test="lastUpdatedBy != null" >
+        last_updated_by,
+      </if>
+      <if test="modificationNumber != null" >
+        modification_number,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="guid != null" >
+        #{guid,jdbcType=VARCHAR},
+      </if>
+      <if test="cookieId != null" >
+        #{cookieId,jdbcType=VARCHAR},
+      </if>
+      <if test="userGuid != null" >
+        #{userGuid,jdbcType=VARCHAR},
+      </if>
+      <if test="sellerId != null" >
+        #{sellerId,jdbcType=INTEGER},
+      </if>
+      <if test="sellerName != null" >
+        #{sellerName,jdbcType=VARCHAR},
+      </if>
+      <if test="categoryUuid != null" >
+        #{categoryUuid,jdbcType=VARCHAR},
+      </if>
+      <if test="categoryName != null" >
+        #{categoryName,jdbcType=VARCHAR},
+      </if>
+      <if test="materialUuid != null" >
+        #{materialUuid,jdbcType=VARCHAR},
+      </if>
+      <if test="materialName != null" >
+        #{materialName,jdbcType=VARCHAR},
+      </if>
+      ifnull(#{spec1,jdbcType=VARCHAR}, ''),
+      ifnull(#{spec2,jdbcType=VARCHAR}, ''),
+      ifnull(#{spec3,jdbcType=VARCHAR}, ''),
+      <if test="factoryId != null" >
+        #{factoryId,jdbcType=BIGINT},
+      </if>
+      <if test="factoryName != null" >
+        #{factoryName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityId != null" >
+        #{cityId,jdbcType=BIGINT},
+      </if>
+      <if test="cityName != null" >
+        #{cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="warehouseId != null" >
+        #{warehouseId,jdbcType=INTEGER},
+      </if>
+      <if test="warehouseName != null" >
+        #{warehouseName,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="weight != null" >
+        #{weight,jdbcType=DECIMAL},
+      </if>
+      <if test="amount != null" >
+        #{amount,jdbcType=DECIMAL},
+      </if>
+      <if test="weightConcept != null" >
+        #{weightConcept,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="isChecked != null" >
+        #{isChecked,jdbcType=VARCHAR},
+      </if>
+      <if test="isDeleted != null" >
+        #{isDeleted,jdbcType=VARCHAR},
+      </if>
+      <if test="created != null" >
+        #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createdBy != null" >
+        #{createdBy,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdated != null" >
+        #{lastUpdated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdatedBy != null" >
+        #{lastUpdatedBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modificationNumber != null" >
+        #{modificationNumber,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+
+  <select id="selectByParam" resultType="java.lang.Long" parameterType="com.prcsteel.ec.model.domain.ec.Cart" >
+    select id from mkt_cart
+    <where>
+      <if test=" userGuid != null ">
+        and user_guid = #{userGuid}
+      </if>
+      <if test=" userGuid == null and cookieId != null ">
+        and cookie_id = #{cookieId}
+      </if>
+      and seller_id = #{sellerId}
+      and category_uuid = #{categoryUuid}
+      and material_uuid = #{materialUuid}
+      and spec1 = #{spec1}
+      and spec2 = #{spec2}
+      and spec3 = #{spec3}
+      and factory_id = #{factoryId}
+      and city_id = #{cityId}
+      and warehouse_id = #{warehouseId}
+      and weight_concept =#{weightConcept}
+    </where>
+  </select>
+
+  <select id="selectCheckedByUserGuid" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from mkt_cart
+    where user_guid = #{userGuid} and is_checked = 'Y'
+  </select>
+
+  <resultMap id="ResourceDto" type="com.prcsteel.ec.model.dto.ResourceDto" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="seller_id" property="sellerId" jdbcType="BIGINT" />
+    <result column="seller_name" property="sellerName" jdbcType="VARCHAR" />
+    <result column="category_name" property="categoryName" jdbcType="VARCHAR" />
+    <result column="material_name" property="materialName" jdbcType="VARCHAR" />
+    <result column="spec1" property="spec1" jdbcType="VARCHAR" />
+    <result column="spec2" property="spec2" jdbcType="VARCHAR" />
+    <result column="spec3" property="spec3" jdbcType="VARCHAR" />
+    <result column="factory_id" property="factoryId" jdbcType="BIGINT" />
+    <result column="factory_name" property="factoryName" jdbcType="VARCHAR" />
+    <result column="city_id" property="cityId" jdbcType="BIGINT" />
+    <result column="city_name" property="cityName" jdbcType="VARCHAR" />
+    <result column="warehouse_id" property="warehouseId" jdbcType="INTEGER" />
+    <result column="warehouse_name" property="warehouseName" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="DECIMAL" />
+    <result column="weight" property="weight" jdbcType="DECIMAL" />
+    <result column="amount" property="amount" jdbcType="DECIMAL" />
+    <result column="weight_concept" property="weightConcept" jdbcType="VARCHAR" />
+    <result column="is_checked" property="isChecked" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Resource_Column_List" >
+    id, guid, cookie_id, user_guid, seller_id, seller_name, category_uuid, category_name, material_uuid, material_name,
+    spec1, spec2, spec3, factory_id, factory_name, city_id, city_name, warehouse_id, warehouse_name, price, weight,
+    amount, weight_concept, remark, is_deleted, is_checked, created, created_by, last_updated, last_updated_by,
+    modification_number
+  </sql>
+
+  <select id="selectByUserGuidAndCookieId" resultMap="ResourceDto">
+    SELECT
+    <include refid="Resource_Column_List" />
+    FROM mkt_cart
+    <where>
+      <if test="cookieId != null">
+        cookie_id = #{cookieId}
+      </if>
+      <if test="userGuid != null">
+        OR user_guid = #{userGuid}
+      </if>
+    </where>
+    order by created desc, id desc
+  </select>
+
+  <update id="updateCartUserGuidByCookieId">
+
+    <if test="cookieId != null and userGuid != null ">
+      UPDATE mkt_cart
+      SET user_guid = #{userGuid}, cookie_id = NULL
+      WHERE cookie_id = #{cookieId};
+    </if>
+
+    UPDATE mkt_cart a,
+    (
+        SELECT MAX(id) maxid, SUM(weight) weight
+        FROM mkt_cart
+        <where>
+          <if test=" userGuid != null ">
+            user_guid = #{userGuid}
+          </if>
+          <if test=" userGuid == null and cookieId != null ">
+            cookie_id = #{cookieId}
+          </if>
+        </where>
+        GROUP BY
+          <if test=" userGuid != null ">
+            user_guid,
+          </if>
+          <if test=" userGuid == null and cookieId != null ">
+            cookie_id,
+          </if>
+          seller_id, category_uuid, material_uuid, spec1, spec2, spec3, factory_id, city_id, warehouse_id, weight_concept
+        HAVING
+            COUNT(id) <![CDATA[ > ]]> 1
+    ) b
+    SET a.weight = b.weight, a.amount = round(a.price * b.weight, 3)
+    WHERE a.id = b.maxid;
+
+    DELETE FROM mkt_cart
+    WHERE id NOT IN
+    (
+        SELECT id
+        FROM
+        (
+            SELECT max(id) id
+            FROM mkt_cart
+            <where>
+              <if test=" userGuid != null ">
+                user_guid = #{userGuid}
+              </if>
+              <if test=" userGuid == null and cookieId != null ">
+                cookie_id = #{cookieId}
+              </if>
+            </where>
+            GROUP BY
+            <if test=" userGuid != null ">
+              user_guid,
+            </if>
+            <if test=" userGuid == null and cookieId != null ">
+              cookie_id,
+            </if>
+            seller_id,category_uuid,material_uuid,spec1, spec2, spec3,factory_id,city_id,warehouse_id,weight_concept
+        ) a
+    )
+    <if test=" userGuid != null ">
+      AND user_guid = #{userGuid}
+    </if>
+    <if test=" userGuid == null and cookieId != null ">
+      AND cookie_id = #{cookieId}
+    </if>
+    ;
+  </update>
+
+  <update id="updateWeightAndPrice">
+    UPDATE mkt_cart
+    SET weight = weight + #{weight}, price = #{price}, amount = round(price * weight, 3)
+    WHERE id = #{id};
+  </update>
+
+  <update id="batchUpdateWeightAndChecked">
+    UPDATE mkt_cart
+    SET
+    <if test="weight != null">
+      weight = #{weight}, amount = round(price * #{weight}, 3)
+    </if>
+    <if test="isChecked != null">
+      is_checked = #{isChecked}
+    </if>
+    WHERE id in (${ids});
+  </update>
+
+  <update id="batchDeleteByIds" parameterType="java.lang.String">
+    DELETE FROM mkt_cart
+    WHERE id IN (${ids})
+  </update>
+
+    <!--批量添加购物车  add by peanut on 2015/05/09-->
+    <insert id="batchInsert" parameterType="com.prcsteel.ec.model.domain.ec.Cart" >
+        INSERT INTO mkt_cart (id, guid, cookie_id, user_guid, seller_id, seller_name, category_uuid, category_name,
+        material_uuid, material_name,
+        spec1, spec2, spec3, factory_id, factory_name, city_id, city_name, warehouse_id, warehouse_name, price, weight,
+        amount, weight_concept, remark, is_deleted, is_checked, created, created_by, last_updated, last_updated_by)
+        VALUES
+        <foreach collection="list" item="it" separator=",">
+            ( #{it.id,jdbcType=BIGINT},#{it.guid,jdbcType=VARCHAR}, #{it.cookieId,jdbcType=VARCHAR},
+            #{it.userGuid,jdbcType=VARCHAR}, #{it.sellerId,jdbcType=INTEGER}, #{it.sellerName,jdbcType=VARCHAR},
+            #{it.categoryUuid,jdbcType=VARCHAR}, #{it.categoryName,jdbcType=VARCHAR}, #{it.materialUuid,jdbcType=VARCHAR},
+            #{it.materialName,jdbcType=VARCHAR}, ifnull(#{it.spec1,jdbcType=VARCHAR}, ''), ifnull(#{it.spec2,jdbcType=VARCHAR}, ''),
+            ifnull(#{it.spec3,jdbcType=VARCHAR}, ''), #{it.factoryId,jdbcType=BIGINT}, #{it.factoryName,jdbcType=VARCHAR},
+            #{it.cityId,jdbcType=BIGINT}, #{it.cityName,jdbcType=VARCHAR}, #{it.warehouseId,jdbcType=INTEGER}, #{it.warehouseName,jdbcType=VARCHAR}, #{it.price,jdbcType=DECIMAL},
+            #{it.weight,jdbcType=DECIMAL}, #{it.amount,jdbcType=DECIMAL}, #{it.weightConcept,jdbcType=VARCHAR},
+            #{it.remark,jdbcType=VARCHAR}, #{it.isDeleted,jdbcType=VARCHAR},#{it.isChecked,jdbcType=VARCHAR},
+            NOW(), #{it.createdBy,jdbcType=VARCHAR}, NOW(),#{it.lastUpdatedBy,jdbcType=VARCHAR})
+        </foreach>
+    </insert>
+</mapper>

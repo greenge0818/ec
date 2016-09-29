@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+       default-lazy-init="false">
+ 
+    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+				<!--<ref bean="demoJobTrigger"/>-->
+                <ref bean="searchPreferenceJobTrigger"/>
+            </list>
+        </property>
+        <property name="autoStartup" value="${EC_QUARTZ_JOB_ENABLED}"/>
+    </bean>
+
+    <!-- 示例 -->
+    <bean id="demoJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="demoJobDetail"/>
+        <property name="cronExpression" value="0 */1 * * * ?"/>
+    </bean>
+
+    <bean id="demoJobDetail"
+          class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="demoJob"/>
+        <property name="targetMethod" value="execute"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+
+    <bean id="demoJob" class="com.prcsteel.ec.job.DemoJob"/>
+    <!-- end 示例 -->
+
+    <!-- 猜你喜欢job -->
+    <bean id="searchPreferenceJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="searchPreferenceJobDetail"/>
+        <property name="cronExpression" value="0 0 0 * * ?"/>  <!-- 晚上12点跑-->
+    </bean>
+
+    <bean id="searchPreferenceJobDetail"
+          class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="searchPreferenceJob"/>
+        <property name="targetMethod" value="execute"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+
+    <bean id="searchPreferenceJob" class="com.prcsteel.ec.job.SearchPreferenceJob"/>
+    <!-- end 猜你喜欢job -->
+
+    <!-- 需求单code表清空（truncate） -->
+    <bean id="truncateRequirementCodeJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="truncateRequirementCodeJobDetail"/>
+        <property name="cronExpression" value="0 0 0 * * ?"/>  <!-- 晚上12点跑-->
+    </bean>
+
+    <bean id="truncateRequirementCodeJobDetail"
+          class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="truncateRequirementCodeJob"/>
+        <property name="targetMethod" value="execute"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+
+    <bean id="truncateRequirementCodeJob" class="com.prcsteel.ec.job.TruncateRequirementCodeJob"/>
+    <!-- 需求单code表清空（truncate） -->
+</beans>

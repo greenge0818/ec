@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<!-- meta S -->
+		#parse("layout/meta.vm")
+		<!-- meta E -->
+		<title>会员中心</title>
+		<link type="image/x-icon" href="$link.getContextPath()/css/default/images/favicon.ico " rel="shortcut icon">
+		<link href="$link.getContextPath()/css/plugin/jquery-tips/jquery-tips.css" rel="stylesheet" />
+		<link href="$link.getContextPath()/css/plugin/artdialog.css" rel="stylesheet" />
+		<link href="$link.getContextPath()/css/default/css/common.css" rel="stylesheet" />
+		<link href="$link.getContextPath()/css/default/css/global.css" rel="stylesheet" />
+		<link href="$link.getContextPath()/css/plugin/artdialog.css" rel="stylesheet" />
+		<link href="$link.getContextPath()/css/default/css/member.css" rel="stylesheet" />
+		<link href="$link.getContextPath()/css/default/css/gwfind.css" rel="stylesheet" />
+		 #parse("layout/context.vm")
+		<script>
+//			var _hmt = _hmt || [];
+//			    (function() {
+//			      var hm = document.createElement("script");
+//			      hm.src = "//hm.baidu.com/hm.js?d18d819a63068d5dd5a58859eed22d99";
+//			      var s = document.getElementsByTagName("script")[0];
+//			      s.parentNode.insertBefore(hm, s);
+//			    })();
+		</script>
+
+		<script src="$link.getContextPath()/js/lib/seajs/2.2.0/sea.js" type="text/javascript"></script>
+		<script src="$link.getContextPath()/js/seaconfig.js"></script>
+		<script type="text/javascript">
+			 seajs.use('$link.getContextPath()/js/event/member.init.js');
+		</script>
+	</head>
+
+	<body>
+		#parse("member/head.vm")
+
+		<!--common S-->
+		<div class="m-main">
+			<div class='member-info'  >
+				<div class="member-info-c">
+					<div class="welcome">
+						<div class="bold wel-name">欢迎你，<span>$!{memberInfo.name}</span> $!{company}</div>
+						<div>积分：#if(${score})${score}#{else}0#end <span>|&nbsp;&nbsp;</span><a href="$link.getContextPath()/member/getpoint">查看如何赚取积分?</a></div>
+					</div>
+					<div class="f-fr last-reset-c">
+							<div>上次登录时间：$!{lastLoginTime}</div>
+							<div><a href="$link.getContextPath()/member/modifypassword">重置密码</a> &nbsp;&nbsp;<a href="$link.getContextPath()/member/resetphone">修改绑定手机号</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="listinfo wth990 f-clr">
+				<div class="t-l left-content ">
+				</div>
+				<div class="t-r right-content">
+					#parse("member/find.vm")
+				</div>
+			</div>
+			<div class="f-clr"></div>
+		</div>
+		<!--common E-->
+		<!---公用底部控件 开始--->
+
+		<div id="footer">
+			<div>
+		        Copyright&nbsp;&nbsp; &copy; 2006-2016&nbsp;&nbsp;<a
+		            href="http://www.prcsteel.com" target="_blank" style="color: #4884be">prcsteel.com</a>&nbsp;钢为网&nbsp;
+		        版权所有
+		    </div>
+		</div>
+
+		<!---公用底部控件 结束--->
+		<!--<div style='display:none;'>
+			<script type="text/javascript">
+				var _paq1 = _paq1 || [];
+				  _paq1.push(['trackPageView']);
+				  _paq1.push(['enableLinkTracking']);
+				  (function() {
+				    var u="//piwik.prcsteel.com/piwik/";
+				    _paq1.push(['setTrackerUrl', u+'piwik.php']);
+				    _paq1.push(['setSiteId', 5]);
+				    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+				    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+				  })();
+			</script>
+			<noscript>
+				<p><img src="//piwik.prcsteel.com/piwik/piwik.php?idsite=5" style="border:0;" alt="" /></p>
+			</noscript>
+			<script type="text/javascript">
+				var _paq = _paq || [];
+				        _paq.push(['trackPageView']);
+				        _paq.push(['enableLinkTracking']);
+				        (function () {
+				            var u = "http://piwik.prcsteel.com//piwik/";
+				            _paq.push(['setTrackerUrl', u + 'piwik.php']);
+				            _paq.push(['setSiteId', 2]);
+				            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+				            g.type = 'text/javascript'; g.async = true; g.defer = true; g.src = u + 'piwik.js'; s.parentNode.insertBefore(g, s);
+				        })();
+			</script>
+			<noscript>
+				<p><img src="http://piwik.prcsteel.com/piwik/piwik.php?idsite=2" style="border:0;" alt="" /></p>
+			</noscript>
+			<script type="text/javascript">
+				var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256380266'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1256380266' type='text/javascript'%3E%3C/script%3E"));
+			</script>
+		</div>-->
+	</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>钢为掌柜</title>
+		<link type="image/x-icon" href="$link.getContextPath()/css/default/images/favicon.ico " rel="shortcut icon">
+		<link href="$link.getContextPath()/css/default/css/common.css" rel="stylesheet" />
+		<link href="$link.getContextPath()/css/plugin/jquery.fullPage.css" rel="stylesheet" />
+		<link href="$link.getContextPath()/css/default/css/default.css" rel="stylesheet"/>
+		<link href="$link.getContextPath()/css/default/css/adviertisement.css" rel="stylesheet" />
+		<script src="$link.getContextPath()/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+		<script src="$link.getContextPath()/js/jquery.slimscroll.min.js" type="text/javascript"></script>
+		<script src="$link.getContextPath()/js/jquery.fullPage.min.js" type="text/javascript"></script>
+		<script src="$link.getContextPath()/js/scroll.js" type="text/javascript"></script>
+		 #parse("layout/context.vm")
+	</head>
+	<body>
+		<div class="ad-top">
+			#parse("layout/min-header.vm")
+			<div class="second">
+				<div class="download width1000 center f-clrfix">
+					<div class="f-fl " style="width:550px;">
+						<div >
+							<span class="left-icon"></span><span class="text">钢为掌柜</span>
+						</div>
+						
+					</div>
+					<div class="f-fr" style="text-align: right;">
+						<div class="download-r">
+							<img src="$link.getContextPath()/css/default/images/zgapp.png"/>
+							<span class="down-text">扫码下载</span>
+							<!--<span data-attr="ios" class="dwn-logo ios">
+								
+							</span>
+							<span data-attr="ios" >
+								iPhone 下载
+							</span>
+							<span data-attr="android"  class="dwn-logo android mg-lt-40">
+								
+							</span>
+							<span data-attr="android">
+								Android 下载
+							</span>-->
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<div id="fullpage">
+			<div class="first screen-page section " align="center">
+				<div align="center" class="screen-page-c">
+					<img src="$link.getContextPath()/css/default/images/scroll_1.png"   />
+				</div>
+				
+			</div>
+			<div class="second screen-page section" style="background: #ee6a55">
+				<div align="center" class="screen-page-c">
+					<img src="$link.getContextPath()/css/default/images/scroll_2.png" />
+				</div>
+			</div>
+			<div class="third screen-page section" style="background: #f3ac1e">
+				<div align="center" class="screen-page-c">
+					<img src="$link.getContextPath()/css/default/images/scroll_3.png" />
+				</div>
+			</div>
+			<div class="forth screen-page section" id="forthsection" style="background: #596273">
+				<div align="center" class="screen-page-c forth-c" >
+						<div class="qrcode-c">
+							<!--<div class="android-c">
+								<div>
+									<img src="$link.getContextPath()/css/default/images/android.png" />
+								</div>
+								<div class="des-qr">
+									Android手机扫描下载
+								</div>
+							</div>-->
+							<div class="ios-c">
+								<div>
+									<img src="$link.getContextPath()/css/default/images/zgapp.png" />
+								</div>
+								<div class="des-qr">
+									手机扫描下载
+								</div>
+							</div>
+							<div class="cartoon">
+								<div>
+									<img src="$link.getContextPath()/css/default/images/scroll_4.png" />
+								</div>
+							</div>
+						</div>
+					
+				    <!--<div class="globalfooter" >
+						<p class="footer-l f-fl">网站备案/许可证号：浙ICP备14043533</p>
+						<p class="footer-r f-fr">Copyright ©2006-2016 prcsteel.com 浙江钢为网络科技有限公司 版权所有</p>
+					</div>-->
+				</div>
+			</div>
+		</div>
+		<div class="d-mask"  style="display: none">
+			
+		</div>
+		<div class="alert-dialog" style="display: none">
+				<div class="closeLabel"></div>
+				<img src="$link.getContextPath()/css/default/images/android.png" />
+		</div>
+	</body>
+</html>

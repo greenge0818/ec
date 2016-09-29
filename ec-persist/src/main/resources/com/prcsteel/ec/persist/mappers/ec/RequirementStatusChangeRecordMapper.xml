@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.prcsteel.ec.persist.dao.ec.RequirementStatusChangeRecordDao" >
+  <resultMap id="BaseResultMap" type="com.prcsteel.ec.model.domain.ec.RequirementStatusChangeRecord" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="guid" property="guid" jdbcType="VARCHAR" />
+    <result column="user_guid" property="userGuid" jdbcType="VARCHAR" />
+    <result column="requirement_guid" property="requirementGuid" jdbcType="VARCHAR" />
+    <result column="requirement_code" property="requirementCode" jdbcType="VARCHAR" />
+    <result column="remote_order_code" property="remoteOrderCode" jdbcType="VARCHAR" />
+    <result column="remote_order_created" property="remoteOrderCreated" jdbcType="TIMESTAMP" />
+    <result column="origin_status" property="originStatus" jdbcType="VARCHAR" />
+    <result column="change_to_status" property="changeToStatus" jdbcType="VARCHAR" />
+    <result column="source" property="source" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="is_deleted" property="isDeleted" jdbcType="CHAR" />
+    <result column="created" property="created" jdbcType="TIMESTAMP" />
+    <result column="created_by" property="createdBy" jdbcType="VARCHAR" />
+    <result column="last_updated" property="lastUpdated" jdbcType="TIMESTAMP" />
+    <result column="last_updated_by" property="lastUpdatedBy" jdbcType="VARCHAR" />
+    <result column="modification_number" property="modificationNumber" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, guid, user_guid, requirement_guid, requirement_code, remote_order_code, remote_order_created, 
+    origin_status, change_to_status, source, remark, is_deleted, created, created_by, 
+    last_updated, last_updated_by, modification_number
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from busi_requirement_status_change_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from busi_requirement_status_change_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.prcsteel.ec.model.domain.ec.RequirementStatusChangeRecord" >
+    insert into busi_requirement_status_change_record (id, guid, user_guid, 
+      requirement_guid, requirement_code, remote_order_code, 
+      remote_order_created, origin_status, change_to_status, 
+      source, remark, is_deleted, 
+      created, created_by, last_updated, 
+      last_updated_by, modification_number)
+    values (#{id,jdbcType=INTEGER}, #{guid,jdbcType=VARCHAR}, #{userGuid,jdbcType=VARCHAR}, 
+      #{requirementGuid,jdbcType=VARCHAR}, #{requirementCode,jdbcType=VARCHAR}, #{remoteOrderCode,jdbcType=VARCHAR}, 
+      #{remoteOrderCreated,jdbcType=TIMESTAMP}, #{originStatus,jdbcType=VARCHAR}, #{changeToStatus,jdbcType=VARCHAR}, 
+      #{source,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{isDeleted,jdbcType=CHAR}, 
+      #{created,jdbcType=TIMESTAMP}, #{createdBy,jdbcType=VARCHAR}, #{lastUpdated,jdbcType=TIMESTAMP}, 
+      #{lastUpdatedBy,jdbcType=VARCHAR}, #{modificationNumber,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.prcsteel.ec.model.domain.ec.RequirementStatusChangeRecord" >
+    insert into busi_requirement_status_change_record
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="guid != null" >
+        guid,
+      </if>
+      <if test="userGuid != null" >
+        user_guid,
+      </if>
+      <if test="requirementGuid != null" >
+        requirement_guid,
+      </if>
+      <if test="requirementCode != null" >
+        requirement_code,
+      </if>
+      <if test="remoteOrderCode != null" >
+        remote_order_code,
+      </if>
+      <if test="remoteOrderCreated != null" >
+        remote_order_created,
+      </if>
+      <if test="originStatus != null" >
+        origin_status,
+      </if>
+      <if test="changeToStatus != null" >
+        change_to_status,
+      </if>
+      <if test="source != null" >
+        source,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="isDeleted != null" >
+        is_deleted,
+      </if>
+      <if test="created != null" >
+        created,
+      </if>
+      <if test="createdBy != null" >
+        created_by,
+      </if>
+      <if test="lastUpdated != null" >
+        last_updated,
+      </if>
+      <if test="lastUpdatedBy != null" >
+        last_updated_by,
+      </if>
+      <if test="modificationNumber != null" >
+        modification_number,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="guid != null" >
+        #{guid,jdbcType=VARCHAR},
+      </if>
+      <if test="userGuid != null" >
+        #{userGuid,jdbcType=VARCHAR},
+      </if>
+      <if test="requirementGuid != null" >
+        #{requirementGuid,jdbcType=VARCHAR},
+      </if>
+      <if test="requirementCode != null" >
+        #{requirementCode,jdbcType=VARCHAR},
+      </if>
+      <if test="remoteOrderCode != null" >
+        #{remoteOrderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="remoteOrderCreated != null" >
+        #{remoteOrderCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="originStatus != null" >
+        #{originStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="changeToStatus != null" >
+        #{changeToStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null" >
+        #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="isDeleted != null" >
+        #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="created != null" >
+        #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createdBy != null" >
+        #{createdBy,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdated != null" >
+        #{lastUpdated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdatedBy != null" >
+        #{lastUpdatedBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modificationNumber != null" >
+        #{modificationNumber,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.prcsteel.ec.model.domain.ec.RequirementStatusChangeRecord" >
+    update busi_requirement_status_change_record
+    <set >
+      <if test="guid != null" >
+        guid = #{guid,jdbcType=VARCHAR},
+      </if>
+      <if test="userGuid != null" >
+        user_guid = #{userGuid,jdbcType=VARCHAR},
+      </if>
+      <if test="requirementGuid != null" >
+        requirement_guid = #{requirementGuid,jdbcType=VARCHAR},
+      </if>
+      <if test="requirementCode != null" >
+        requirement_code = #{requirementCode,jdbcType=VARCHAR},
+      </if>
+      <if test="remoteOrderCode != null" >
+        remote_order_code = #{remoteOrderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="remoteOrderCreated != null" >
+        remote_order_created = #{remoteOrderCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="originStatus != null" >
+        origin_status = #{originStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="changeToStatus != null" >
+        change_to_status = #{changeToStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null" >
+        source = #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="isDeleted != null" >
+        is_deleted = #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="created != null" >
+        created = #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createdBy != null" >
+        created_by = #{createdBy,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdated != null" >
+        last_updated = #{lastUpdated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdatedBy != null" >
+        last_updated_by = #{lastUpdatedBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modificationNumber != null" >
+        modification_number = #{modificationNumber,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.prcsteel.ec.model.domain.ec.RequirementStatusChangeRecord" >
+    update busi_requirement_status_change_record
+    set guid = #{guid,jdbcType=VARCHAR},
+      user_guid = #{userGuid,jdbcType=VARCHAR},
+      requirement_guid = #{requirementGuid,jdbcType=VARCHAR},
+      requirement_code = #{requirementCode,jdbcType=VARCHAR},
+      remote_order_code = #{remoteOrderCode,jdbcType=VARCHAR},
+      remote_order_created = #{remoteOrderCreated,jdbcType=TIMESTAMP},
+      origin_status = #{originStatus,jdbcType=VARCHAR},
+      change_to_status = #{changeToStatus,jdbcType=VARCHAR},
+      source = #{source,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      is_deleted = #{isDeleted,jdbcType=CHAR},
+      created = #{created,jdbcType=TIMESTAMP},
+      created_by = #{createdBy,jdbcType=VARCHAR},
+      last_updated = #{lastUpdated,jdbcType=TIMESTAMP},
+      last_updated_by = #{lastUpdatedBy,jdbcType=VARCHAR},
+      modification_number = #{modificationNumber,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectByLastTimeAndUserGuidLimit" resultMap="BaseResultMap">
+      select
+      <include refid="Base_Column_List" />
+      from busi_requirement_status_change_record
+      where user_guid = #{userGuid} and remote_order_created <![CDATA[ < ]]> date_format(#{lastTime},'%Y-%m-%d %T')
+      order by remote_order_created desc,
+      case change_to_status when 'NEW' then 0 when 'PICKED' then 1 when 'QUOTED' then 2 when 'FINISHED' then 3 when 'CLOSED' then 4 end desc
+      limit #{index}
+  </select>
+
+  <select id="selectByLastTimeAndUserGuidForAPP" resultMap="BaseResultMap">
+    select
+    <if test="isOnceMore == false">
+      *
+    </if>
+    <if test="isOnceMore == true">
+    distinct source, remote_order_code, requirement_code, remote_order_created
+    </if>
+    from busi_requirement_status_change_record
+    where user_guid = #{userGuid}
+    <if test="lastTime!=null and lastTime!=''">
+      and remote_order_created <![CDATA[ > ]]> #{lastTime}
+    </if>
+    <if test="isOnceMore == true">
+      and change_to_status = 'QUOTED'
+    </if>
+    order by remote_order_created desc,
+    case change_to_status when 'NEW' then 0 when 'PICKED' then 1 when 'QUOTED' then 2 when 'FINISHED' then 3 when 'CLOSED' then 4 end desc
+  </select>
+
+  <!-- 根据状态获取需求（指定时间内） -->
+  <select id="selectByQuery" resultMap="BaseResultMap" >
+    select * from (
+    select cr.*
+    from busi_requirement_status_change_record cr
+    join busi_requirement br on cr.requirement_code = br.code
+    where br.user_guid = #{userGuid,jdbcType=VARCHAR}
+    <if test="stageStatus!=null and stageStatus!=''">
+      and br.stage_status = #{stageStatus,jdbcType=VARCHAR}
+      and cr.change_to_status = #{stageStatus,jdbcType=VARCHAR}
+    </if>
+    <if test="startTime!=null and startTime!=''">
+      and date_format(br.last_updated,'%Y-%m-%d') <![CDATA[ >= ]]> date_format(#{startTime},'%Y-%m-%d')
+    </if>
+    <if test="endTime!=null and endTime!=''">
+      and date_format(br.last_updated,'%Y-%m-%d') <![CDATA[ <= ]]> date_format(#{endTime},'%Y-%m-%d')
+    </if>
+    order by cr.remote_order_created desc,
+    case change_to_status when 'NEW' then 0 when 'PICKED' then 1 when 'QUOTED' then 2 when 'FINISHED' then 3 when 'CLOSED' then 4 end desc) x
+    group by x.requirement_code
+    order by x.remote_order_created desc,case change_to_status when 'NEW' then 0 when 'PICKED' then 1 when 'QUOTED' then 2 when 'FINISHED' then 3 when 'CLOSED' then 4 end desc
+
+
+
+    limit
+    #{start},#{length}
+  </select>
+
+  <select id="selectByRequirementCode" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from busi_requirement_status_change_record
+    where requirement_code = #{requirementCode,jdbcType=VARCHAR}
+    order by remote_order_created desc,
+    case change_to_status when 'NEW' then 0 when 'PICKED' then 1 when 'QUOTED' then 2 when 'FINISHED' then 3 when 'CLOSED' then 4 end desc
+  </select>
+</mapper>

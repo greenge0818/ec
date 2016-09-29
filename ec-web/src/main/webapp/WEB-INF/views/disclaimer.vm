@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<title>隐私声明</title>
+	<!-- meta S -->
+	#parse("layout/meta.vm")
+	<!-- meta E -->
+	<!-- context S -->
+	#parse("layout/context.vm")
+	<!-- context E -->
+	<meta name="Keywords" content="钢铁，钢材，钢铁价格，钢材行情，钢铁电子商务" />
+	<meta name="Description" content="钢为网是中国钢铁电子商务交易平台，为国内钢厂、钢材贸易商、钢材终端用户提供钢铁行业新闻、钢铁价格、钢材行情走势、钢材期货、钢材市场等资源与信息。“购钢材，够简单”就上钢为网" />
+	<link href="$link.getContextPath()/css/default/css/global.css" rel="stylesheet" />
+	<link href="$link.getContextPath()/css/default/css/default.css" rel="stylesheet" />
+	<link href="$link.getContextPath()/css/default/css/disclaimer.css" rel="stylesheet" />
+</head>
+
+<body class="no-skin">
+
+<!-- Header S-->
+#parse("layout/min-header.vm")
+<!-- Header E-->
+<!-- logo and search -->
+<div class="logolayout">
+	<div class="indexlogo f-fl"><a href="$link.getContextPath()/"></a></div>
+</div>
+<!-- 首页导航E -->
+<div class="navbox f-clrfix">
+	<div class="index-nav f-clrfix">
+		<ul>
+			<li class="active"><a href="$link.getContextPath()/">首页</a></li>
+			<li><a href="$link.getContextPath()/market/" target="_blank">钢铁超市</a></li>
+			<li><a href="$marketCenterDomain" >行情圈</a></li>
+			<li><a href="https://www.paysteel.com/" target="_blank">款道</a></li>
+			<li><a href="$link.getContextPath()/helpfind/" >钢为购</a></li>
+		</ul>
+	</div>
+</div>
+<div class="paragraph-c">
+	<h1>钢为网客户隐私政策</h1>
+	<p>
+		您作为钢为网的客户，在向您提供服务的过程中，钢为网可能会获取您的信息，为了向您提供最高水平的服务，获取上述信息是非常重要的；而与此同时，我们也会对您的这些信息进行妥当处理。
+	</p>
+	<p>
+		本项政策具体说明了本公司可能向客户采集的信息种类、本公司使用该等信息的目的、本公司共享这些信息的情况以及本公司为保护您个人信息的保密性而采取的各项措施。在本项政策说明中，“钢为网”指浙江钢为网络科技有限公司及其关联公司。
+	</p>
+	<div class="gap">
+		
+	</div>
+	<h2>
+		信息来源
+	</h2>
+	<p>
+		本公司采集的客户信息主要来自您所填写的账户申请，以及您在和钢为网建立业务关系过程中向钢为网提交的其他表格和材料。本公司还可能就钢为网提供的产品和服务，收集您涉及该等产品或服务的交易信息和有关经历。在上述情况下，我们可能在日常业务中继续获取相关信息，但有仅会将这些信息用于监管或安全目的。
+	</p>
+	<p>
+		对于本公司要求您提供的任何资料，您有权拒绝提供。但是，如果我们无法获得您的信息，则可能导致我们无法为您开设或维护账户，或向您提供相关的服务。本公司将会尽一切努力确保我们拥有的客户信息准确、完整，如果您的信息发生任何变更后能够及时通知我们，将会给我们的工作带来极大的帮助以为您提供更好的服务。
+	</p>
+	<div class="gap">
+		
+	</div>
+	<h2>
+		客户个人信息的用途
+	</h2>
+	<p>
+		我们可能将您的信息用于下列目的：
+	</p>
+	<p>
+		<ul class="circle">
+			<li>管理、操作并推动您和钢为网的关系，和/或对您在钢为网开设的账户进行维护和管理；</li>
+			<li>就您和本公司的业务关系和/或所开设的账户，通过邮寄、电话、电子邮件、传真等方式和您以及您指定的代表(如果适用)进行联系；</li>
+			<li>就钢为网提供的产品和服务向您提供相关的资料、建议或意见；</li>
+			<li>推动本公司的内部业务运营，包括评估和管理风险，以及满足本公司在法律和监管方面的要求；</li>
+			<li>征得你同意的其他用途。</li>
+		</ul>
+		<p>
+			未经您的同意，我们将不会向第三方披露您的信息。但是，我们可能向下列实体披露您的信息：
+		</p>
+		<ul class="circle">
+			<li>钢为网的内部相关公司；</li>
+			<li>法律要求或保护我们服务所必需的其他各方（如法院等政府机构）；</li>
+			<li>征得您同意的其他各方。</li>
+		</ul>
+		<p>
+			如果您和钢为网的业务关系终止，钢为网将继续按照本项政策处理我们保留的客户信息。
+		</p>
+	</p>
+	<div class="gap">
+		
+	</div>
+	<h2>
+		更多信息
+	</h2>
+	<p>
+		如果您有任何具体问题，请通过以下方式与我们联系：
+	</p>
+	<p>
+		钢为网
+	</p>
+	<p>
+		电子邮件：kf@prcsteel.com
+	</p>
+	<div class="gap">
+		
+	</div>
+
+
+</div>
+<!-- 主题内容 -->
+	
+	
+	<!-- Footer S -->
+#parse("layout/globalfooter.vm")
+	<!-- Footer E -->
+
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.prcsteel.ec.persist.dao.ec.UserDao">
+
+    <resultMap id="baseResultMap" type="com.prcsteel.ec.model.domain.ec.User">
+        <result property="id" column="id"/>
+        <result property="guid" column="guid"/>
+        <result property="name" column="account"/>
+        <result property="mobile" column="mobile"/>
+        <result property="source" column="source"/>
+        <result property="status" column="status"/>
+        <result property="created" column="created"/>
+        <result property="gmtModified" column="gmt_modified"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.prcsteel.ec.model.domain.ec.User" useGeneratedKeys="true"
+			keyProperty="id">
+		<![CDATA[
+			INSERT INTO user (
+				guid,
+				name,
+				mobile,
+				source,
+				status,
+				created,
+				created_by,
+				last_updated,
+				last_updated_by,
+				remark
+			)
+			VALUES (
+				#{guid},
+				#{name},
+				#{mobile},
+				#{source},
+				#{status},
+				#{created},
+				#{createdBy},
+				#{lastUpdated},
+				#{lastUpdatedBy},
+				#{remark}
+			)
+        ]]>
+	</insert>
+
+	<select id="queryActiveUserById" parameterType="Integer" resultType="com.prcsteel.ec.model.domain.ec.User">
+		SELECT id, guid,
+		name,mobile,
+		created,
+		created_by,
+		last_updated,
+		last_updated_by,
+		remark FROM user WHERE id=#{id} AND is_deleted='N'
+	</select>
+
+	 <select id="queryUserById" parameterType="Integer" resultType="com.prcsteel.ec.model.domain.ec.User">
+        SELECT id, guid,
+		 	name,mobile,
+			created,
+			created_by,
+			last_updated,
+			last_updated_by,
+			remark FROM user WHERE id=#{id}
+    </select>
+
+    <select id="query" resultMap="baseResultMap">
+		<![CDATA[
+			SELECT id, guid,
+				account,
+				email,
+				created,
+				created_by,
+				last_updated,
+				last_updated_by,
+				remark
+			FROM user
+        ]]>
+	</select>
+    <!--通过手机号查询用户-->
+    <select id="selectByPhone" parameterType="String" resultMap="baseResultMap">
+		 SELECT id, guid,
+		 	name,mobile,
+			created,
+			created_by,
+			last_updated,
+			last_updated_by,
+			remark FROM user WHERE mobile=#{phone} AND is_deleted='N'
+	</select>
+
+	<!--通过Guid查询超市用户-->
+	<select id="selectByGuid" parameterType="String" resultMap="baseResultMap">
+		SELECT id, guid,
+		name,mobile,
+		created,
+		created_by,
+		last_updated,
+		last_updated_by,
+		remark FROM user WHERE guid=#{guid} AND is_deleted='N'
+	</select>
+
+    <!--通过旧手机号修改为新手机号-->
+    <update id="updateMobileByMobile" parameterType="String">
+		UPDATE USER SET
+		name=CASE WHEN name=mobile THEN #{newPhone} ELSE name END,
+		mobile= #{newPhone}
+        WHERE mobile=#{oldPhone} AND is_deleted='N'
+	</update>
+
+	<!--通过旧手机号修改用户姓名-->
+	<update id="updateNameByMobile" parameterType="String">
+		UPDATE USER SET
+		name=#{name}
+		WHERE mobile=#{oldPhone} AND is_deleted='N'
+	</update>
+
+	<!--通过旧手机号更新手机和姓名-->
+	<update id="updateMobileAndNameByMobile" parameterType="String">
+		UPDATE USER SET
+		name=#{name},
+		mobile= #{newPhone}
+		WHERE mobile=#{oldPhone} AND is_deleted='N'
+	</update>
+
+	<select id="selectNewMobile" resultMap="baseResultMap" parameterType="com.prcsteel.ec.model.domain.ec.User">
+		SELECT id, guid,
+		name,mobile,
+		created,
+		created_by,
+		last_updated,
+		last_updated_by,
+		remark FROM user WHERE mobile=#{mobile} AND is_deleted='N' AND id!=#{id}
+		limit 1
+	</select>
+</mapper>

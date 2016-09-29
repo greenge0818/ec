@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.prcsteel.ec.persist.dao.ec.RequirementDao">
+
+	<resultMap id="BaseResultMap" type="com.prcsteel.ec.model.domain.ec.Requirement">
+		<id column="id" property="id" jdbcType="BIGINT" />
+		<result column="guid" property="guid" jdbcType="VARCHAR" />
+		<result column="code" property="code" jdbcType="VARCHAR" />
+		<result column="user_guid" property="userGuid" jdbcType="VARCHAR" />
+		<result column="request" property="request" jdbcType="VARCHAR" />
+		<result column="file_url" property="fileUrl" jdbcType="VARCHAR" />
+		<result column="source" property="source" jdbcType="VARCHAR" />
+		<result column="type" property="type" jdbcType="VARCHAR" />
+		<result column="stage_status" property="stageStatus" jdbcType="VARCHAR" />
+		<result column="close_stage" property="closeStage" jdbcType="VARCHAR" />
+		<result column="close_reason" property="closeReason" jdbcType="VARCHAR" />
+		<result column="remark" property="remark" jdbcType="VARCHAR" />
+		<result column="is_deleted" property="isDeleted" jdbcType="CHAR" />
+		<result column="created" property="created" jdbcType="TIMESTAMP" />
+		<result column="created_by" property="createdBy" jdbcType="VARCHAR" />
+		<result column="last_updated" property="lastUpdated" jdbcType="TIMESTAMP" />
+		<result column="last_updated_by" property="lastUpdatedBy" jdbcType="VARCHAR" />
+		<result column="modification_number" property="modificationNumber" jdbcType="INTEGER" />
+	</resultMap>
+
+	<sql id="Base_Column_List" >
+		id, guid, code, user_guid, request, file_url, source, type, stage_status, close_stage,
+		close_reason, remark, is_deleted, created, created_by, last_updated, last_updated_by,
+		modification_number
+	</sql>
+
+	<resultMap id="RequirementDto" type="com.prcsteel.ec.model.dto.RequirementDto">
+		<result column="guid" property="guid" jdbcType="VARCHAR" />
+		<result column="code" property="code" jdbcType="VARCHAR" />
+		<result column="request" property="request" jdbcType="VARCHAR" />
+		<result column="file_url" property="fileUrl" jdbcType="VARCHAR" />
+		<result column="source" property="source" jdbcType="VARCHAR" />
+		<result column="type" property="type" jdbcType="VARCHAR" />
+		<result column="stage_status" property="stageStatus" jdbcType="VARCHAR" />
+		<result column="close_stage" property="closeStage" jdbcType="VARCHAR" />
+		<result column="close_reason" property="closeReason" jdbcType="VARCHAR" />
+		<result column="created" property="created" jdbcType="TIMESTAMP" />
+	</resultMap>
+	<sql id="RequirementDto_Column_List" >
+		id, guid, code, user_guid, request, file_url, source, type, stage_status, close_stage,
+		close_reason, remark, is_deleted, created, created_by, last_updated, last_updated_by,
+		modification_number
+	</sql>
+
+	<!--按需求单codes筛选 -->
+	<select id="selectByCodes" resultMap="RequirementDto" >
+		SELECT
+		<include refid="RequirementDto_Column_List" />
+		FROM busi_requirement
+		WHERE code IN
+		<foreach collection="codeList" item="code" index="index" open="(" close=")" separator=",">
+			#{code}
+		</foreach>
+		ORDER BY last_updated DESC
+	</select>
+
+	<!-- 获取需求总数 -->
+	<select id="totalRequirement" resultType="java.util.HashMap" >
+		SELECT count(id) allCount,
+		ifnull(sum(CASE stage_status WHEN 'NEW' THEN 1 ELSE 0 END ),0) newCount,
+		ifnull(sum(CASE stage_status WHEN 'PICKED' THEN 1 ELSE 0 END ),0) pickedCount,
+		ifnull(sum(CASE stage_status WHEN 'QUOTED' THEN 1 ELSE 0 END ),0) quotedCount,
+		ifnull(sum(CASE stage_status WHEN 'FINISHED' THEN 1 ELSE 0 END ),0) finishedCount,
+		ifnull(sum(CASE stage_status WHEN 'CLOSED' THEN 1 ELSE 0 END ),0) closedCount
+		FROM busi_requirement
+		WHERE user_guid = #{userGuid,jdbcType=VARCHAR}
+	</select>
+
+	<!-- 根据状态获取需求总数 -->
+	<select id="requirementCountByStatus" resultType="int" >
+		SELECT count(id)
+		FROM busi_requirement
+		WHERE user_guid = #{userGuid,jdbcType=VARCHAR}
+		<if test="stageStatus!=null and stageStatus!=''">
+			AND stage_status = #{stageStatus,jdbcType=VARCHAR}
+		</if>
+		<if test="startTime!=null and startTime!=''">
+			AND date_format(last_updated,'%Y-%m-%d') <![CDATA[ >= ]]> date_format(#{startTime},'%Y-%m-%d')
+		</if>
+		<if test="endTime!=null and endTime!=''">
+			AND date_format(last_updated,'%Y-%m-%d') <![CDATA[ <= ]]> date_format(#{endTime},'%Y-%m-%d')
+		</if>
+	</select>
+
+	<!-- 根据参数查询出不可以再次提交的记录 -->
+	<select id="selectUnresendByParam" resultMap="BaseResultMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM busi_requirement
+		WHERE user_guid = #{userGuid,jdbcType=VARCHAR}
+		AND request IS NULL
+		AND file_url IS NULL
+		AND created <![CDATA[ >= ]]> date_sub(NOW(), interval 5 minute)
+		AND source != 'PICK'
+		AND type = 'RECEIPT'
+		LIMIT 1
+	</select>
+
+	<resultMap id="RequirementForPickDto" type="com.prcsteel.ec.model.dto.RequirementForPickDto">
+		<result column="file_url" property="fileUrl" jdbcType="VARCHAR" />
+		<result column="user_guid" property="userGUID" jdbcType="VARCHAR" />
+		<result column="code" property="code" jdbcType="VARCHAR" />
+		<result column="source" property="source" jdbcType="VARCHAR" />
+		<result column="request" property="requestContent" jdbcType="VARCHAR" />
+		<result column="mobile" property="mobile" jdbcType="VARCHAR" />
+		<result column="type" property="requestType" jdbcType="VARCHAR" />
+		<result column="created" property="createTime" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="selectPickDtoByCode" resultMap="RequirementForPickDto" parameterType="java.lang.String">
+        SELECT b.file_url, b.user_guid, b.code, b.source, b.request, u.mobile, b.type, date_format(b.created,'%Y-%m-%d %H:%i:%s') created
+        FROM busi_requirement b
+        JOIN user u ON b.user_guid = u.guid
+        WHERE b.code = #{code,jdbcType=VARCHAR}
+	</select>
+	
+	<select id="getMaxCode" resultType="Integer" parameterType="java.lang.String">
+		select SUBSTR(max(code) ,10,length(code))*1 from busi_requirement where code like '${date}%'
+	</select>
+</mapper>

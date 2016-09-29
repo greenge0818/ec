@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<link type="image/x-icon" href="$link.getContextPath()/css/default/images/favicon.ico " rel="shortcut icon">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="钢铁,钢材,螺纹钢,热轧卷板,冷轧卷板,中厚板,热轧带钢,钢铁市场,钢材交易">
+<meta name="description" content="钢为网钢铁超市为国内钢厂、钢材贸易商、钢材终端用户提供国内钢铁,钢材,螺纹钢,热轧卷板,冷轧卷板,中厚板,热轧带钢线上钢铁市场,钢材交易电商平台。">
+<link href="$link.getContextPath()/css/default/css/member.css" rel="stylesheet" />
+<link href="$link.getContextPath()/css/default/css/global.css" rel="stylesheet" />
+<link href="$link.getContextPath()/css/default/css/default.css" rel="stylesheet" />
+<link rel="stylesheet" href="$link.getContextPath()/css/default/css/ad.css" />
+<link href="$link.getContextPath()/css/plugin/artdialog.css" rel="stylesheet" />
+<title>广告合作</title>
+<!-- context S -->
+#parse("layout/context.vm")
+<!-- context E -->
+</head>
+
+<body class="no-skin">
+<!--[if lte IE 6]>
+	<div style="width:100%;_position:absolute;
+	_bottom:auto;
+	_top:expression(eval(document.documentElement.scrollTop));
+	z-index:1000;">
+		<div style="width:100%;height:30px;border-bottom:1px solid #ff5a00;background:#ffede3;color:#444;line-height:30px; text-align:center;">
+		系统检测您当前的浏览器为IE6，可能会影响部分功能的使用。为了您有更好的体验。建议您<a href="http://www.microsoft.com/china/windows/internet-explorer/" target="_blank" style="color:#c81624;text-decoration:underline;">升级IE浏览器</a>或者下载安装使用<a href="http://dlsw.baidu.com/sw-search-sp/soft/9d/14744/ChromeStandalone_V43.0.2357.124_Setup.1433905898.exe" target="_blank" style="color:#c81624;text-decoration:underline;">谷歌浏览器chrome</a>
+		</div>
+	<style>
+	body{_padding-top:30px;}
+	</style>
+	</div>
+<![endif]-->
+	<!-- Header S-->
+	#parse("layout/min-header.vm")
+	<!-- Header E-->
+	<!-- logo and search -->
+	<div class="logolayout" style="background:#fff">
+		<div class="indexlogo f-fl"><a href="$link.getContextPath()/"></a></div>
+	</div>
+	<!-- 首页导航E -->
+	<div class="navbox f-clrfix">
+		<div class="index-nav f-clrfix">
+			<ul>
+				<li class="active"><a href="$link.getContextPath()/">首页</a></li>
+				<li><a href="$link.getContextPath()/market/" target="_blank">钢铁超市</a></li>
+				<li><a href="$marketCenterDomain" >行情圈</a></li>
+				<li><a href="https://www.paysteel.com/" target="_blank">款道</a></li>
+				<li><a href="$link.getContextPath()/helpfind/" >钢为购</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="ads">
+		<h1>钢为广告位信息</h1>
+		<p>广告分为套餐模式以及单独售卖模式</p>
+		<ul class="adsMessage">
+			<li><span class="iconBgImg iconBgPosL f-fl"></span><p class="f-fl">网页广告网站的主体为：www.prcsteel.com</p></li>
+			<li>
+				<div class="f-fr ads-pricon">
+					<img src="$link.getContextPath()/css/default/images/pricon-zg.png" />
+					<p>钢为掌柜（服务号）</p>
+				</div>				
+				<div class="f-fr ads-pricon">
+					<img src="$link.getContextPath()/css/default/images/pricon-zzd.png" />
+					<p>钢为早知道（公众号）</p>
+				</div>	
+				<span class="iconBgImg iconBgPosR f-fr"></span>
+			</li>
+		</ul>
+		
+		<!-- 组合套餐  S-->
+		<h2 class="combo_content">组合套餐</h2>
+		<div class="ads-Combine">
+			<div class="adsBox relative">
+				<label class="f-fl">
+					<h3>超豪华套餐</h3>
+					<p>套餐数量：<span>3</span>  广告位数量：<span>7</span></p>
+				</label>				
+				<p class="f-fr lineHei">￥15,000/月</p>
+				<div class="clear"></div>
+				<ul class="ads-CombineUl">
+					<li>广告1：<span>首页首屏</span></li>
+					<li>广告2：<span>二级页面首屏/每个</span></li>
+					<li>广告3：<span>详情正文中间</span></li>
+					<li class="t-r">微信可选：<span>A+C/D/E（选一）</span></li>
+				</ul>
+				<div class="layerOut absolute none">
+					<p class="closeIcon absolute"></p>
+					<img src="$link.getContextPath()/css/default/images/chaohaohua.png">
+				</div>
+			</div>
+			<div class="adsBox relative">
+				<label class="f-fl">
+					<h3>高出镜套餐</h3>
+					<p>套餐数量：<span>3</span>  广告位数量：<span>7</span></p>
+				</label>				
+				<p class="f-fr lineHei">￥8,000/月</p>
+				<div class="clear"></div>
+				<ul class="ads-CombineUl">
+					<li>广告1：<span>推荐位广告</span></li>
+					<li>广告2：<span>二级页面横幅1</span></li>
+					<li>广告3：<span>详情正文底部</span></li>
+					<li class="t-r">微信可选：<span>B+C/D/E（选一）</span></li>
+				</ul>
+				<div class="layerOut absolute none">
+					<p class="closeIcon absolute"></p>
+					<img src="$link.getContextPath()/css/default/images/gaochujing.png">
+				</div>
+			</div>
+			<div class="adsBox relative">
+				<label class="f-fl">
+					<h3>高性价比套餐</h3>
+					<p>套餐数量：<span>3</span>  广告位数量：<span>7</span></p>
+				</label>				
+				<div class="clear"></div>
+				<ul class="ads-CombineUl liWidth">
+					<li class="liWidth1">广告1：<span>首页横幅1</span></li>
+					<li class="liWidth2">广告2：<span>二级页面横幅2</span></li>
+					<li class="liWidth3">广告3：<span>详情页右1</span></li>
+					<li class="liWidth4">微信可选：<span>C/D/E（选一）</span></li>
+					<li class="liWidth5"><span class="orangeClo">￥6,000/月</span></li>
+					
+					<li class="liWidth1">广告1：<span>首页横幅2</span></li>
+					<li class="liWidth2">广告2：<span>二级页面横幅3</span></li>
+					<li class="liWidth3">广告3：<span>详情页右2</span></li>
+					<li class="liWidth4">微信可选：<span>C/D/E（选一）</span></li>
+					<li class="liWidth5"><span class="orangeClo">￥5,000/月</span></li>
+					
+					<li class="liWidth1">广告1：<span>首页横幅3</span></li>
+					<li class="liWidth2">广告2：<span>二级页面横幅4</span></li>
+					<li class="liWidth3">广告3：<span>详情页右3</span></li>
+					<li class="liWidth4">微信可选：<span>C/D/E（选一）</span></li>
+					<li class="liWidth5"><span class="orangeClo">￥4,000/月</span></li>
+				</ul>
+				<div class="layerOut absolute none">
+					<p class="closeIcon absolute"></p>
+					<img src="$link.getContextPath()/css/default/images/gaoxingjiabi.png">
+				</div>
+			</div>
+			<div class="adsBox relative">
+				<label class="f-fl">
+					<h3>微信组合</h3>
+					<p>投放次数：<span>早知道连续 5 次</span><span>钢为掌柜 1 次 </span></p>
+				</label>				
+				<div class="clear"></div>
+				<ul class="ads-CombineUl liWidthWeixin">
+					<li class="liWidthWeixin1"><span>A</span></li>
+					<li class="liWidthWeixin2">组合：<span>首文底端</span></li>
+					<li class="liWidthWeixin3">微信平台：<span>早知道、掌柜</span></li>
+					<li class="liWidthWeixin4">位置：<span>首文</span></li>
+					<li class="liWidthWeixin5">广告位数量：<span>2</span></li>
+					<li class="liWidthWeixin6">备注：<span>不在被投放的软文上投放</span></li>
+					
+					<li class="liWidthWeixin1"><span>B</span></li>
+					<li class="liWidthWeixin2">组合：<span>次文组合</span></li>
+					<li class="liWidthWeixin3">微信平台：<span>早知道、掌柜</span></li>
+					<li class="liWidthWeixin4">位置：<span>首文</span></li>
+					<li class="liWidthWeixin5">广告位数量：<span>2</span></li>
+					<li class="liWidthWeixin6"></li>
+					
+					<li class="liWidthWeixin1"><span>C</span></li>
+					<li class="liWidthWeixin2">组合：<span>其他文组合</span></li>
+					<li class="liWidthWeixin3">微信平台：<span>早知道、掌柜</span></li>
+					<li class="liWidthWeixin4">位置：<span>首文</span></li>
+					<li class="liWidthWeixin5">广告位数量：<span>2</span></li>
+					<li class="liWidthWeixin6"></li>
+					
+					<li class="liWidthWeixin1"><span>D</span></li>
+					<li class="liWidthWeixin2">组合：<span>banner组合</span></li>
+					<li class="liWidthWeixin3">微信平台：<span>掌柜</span></li>
+					<li class="liWidthWeixin4"><p>位置：</p><p class="spanDis">会员活动、了解掌柜、掌柜指数、找到掌柜</p></li>
+					<li class="liWidthWeixin5">广告位数量：<span>7</span></li>
+					<li class="liWidthWeixin6"></li>
+					
+					<li class="liWidthWeixin1"><span>E</span></li>
+					<li class="liWidthWeixin2">组合：<span>底端组合</span></li>
+					<li class="liWidthWeixin3">微信平台：<span>早知道、掌柜</span></li>
+					<li class="liWidthWeixin4">位置：<span>首文</span></li>
+					<li class="liWidthWeixin5">广告位数量：<span>4以上</span></li>
+					<li class="liWidthWeixin6">备注：<span>不在被投放的软文上投放</span></li>
+				</ul>
+				<div class="layerOut absolute none">
+					<p class="closeIcon absolute"></p>
+					<img src="$link.getContextPath()/css/default/images/weixinzuhe.png">
+				</div>
+			</div>
+		</div>	
+		<!-- 组合套餐  E-->	
+		
+		<!-- 行情中心广告位及价格  S-->
+		<h2 class="webPage_content">行情中心广告位及价格</h2>
+		<div class="ads-Combine">
+			<div class="adsBox relative">
+				<label class="f-fl">
+					<h3>行情中心首页</h3>
+					<p>位置：<span>首屏页面</span>  投放方式：<span>随机轮播</span>  大小：<span>单张80K以内</span>  格式：<span>jpg、jpeg、png</span></p>
+				</label>				
+				<div class="clear"></div>
+				<ul class="ads-CombineUl liWidthHangQing">
+					<li class="liWidthHangQing1"><span>首页首屏</span></li>
+					<li class="liWidthHangQing2">数量：<span>3</span></li>
+					<li class="liWidthHangQing3">尺寸：<span>250*285</span></li>
+					<li class="liWidthHangQing4"><span>￥40,000/年</span></li>
+					<li class="liWidthHangQing5"><span>￥11,000/季</span></li>
+					<li class="liWidthHangQing6"><span>￥4,000/月</span></li>
+					
+					<li class="liWidthHangQing1"><span>推荐位广告</span></li>
+					<li class="liWidthHangQing2">数量：<span>3</span></li>
+					<li class="liWidthHangQing3">尺寸：<span>640*160</span></li>
+					<li class="liWidthHangQing4"><span>￥20,000/年</span></li>
+					<li class="liWidthHangQing5"><span>￥5,500/季</span></li>
+					<li class="liWidthHangQing6"><span>￥2,000/月</span></li>
+					
+					<li class="liWidthHangQing1"><span>横幅1</span></li>
+					<li class="liWidthHangQing2">数量：<span>3</span></li>
+					<li class="liWidthHangQing3">尺寸：<span>640*160</span></li>
+					<li class="liWidthHangQing4"><span>￥15,000/年</span></li>
+					<li class="liWidthHangQing5"><span>￥4,000/季</span></li>
+					<li class="liWidthHangQing6"><span>￥1,500/月</span></li>
+					
+					<li class="liWidthHangQing1"><span>横幅2</span></li>
+					<li class="liWidthHangQing2">数量：<span>3</span></li>
+					<li class="liWidthHangQing3">尺寸：<span>640*160</span></li>
+					<li class="liWidthHangQing4"><span>￥12,000/年</span></li>
+					<li class="liWidthHangQing5"><span>￥3,300/季</span></li>
+					<li class="liWidthHangQing6"><span>￥1,200/月</span></li>
+					
+					<li class="liWidthHangQing1"><span>横幅3</span></li>
+					<li class="liWidthHangQing2">数量：<span>3</span></li>
+					<li class="liWidthHangQing3">尺寸：<span>640*160</span></li>
+					<li class="liWidthHangQing4"><span>￥10,000/年</span></li>
+					<li class="liWidthHangQing5"><span>￥2,800/季</span></li>
+					<li class="liWidthHangQing6"><span>￥1,500/月</span></li>
+				</ul>
+				<div class="layerOut absolute none">
+					<p class="closeIcon absolute"></p>
+					<img src="$link.getContextPath()/css/default/images/hangqingshouye.png">
+				</div>
+			</div>
+			<div class="adsBox relative">
+				<label class="f-fl">
+					<h3>行情中心二级页面</h3>
+					<p>位置：<span>钢厂调价、行业分析、钢为资讯、统计汇总、价格预测</span>  投放方式：<span>随机轮播</span>  大小：<span>单张80K以内</span>  格式：<span>jpg、jpeg、png</span></p>
+				</label>				
+				<div class="clear"></div>
+				<ul class="ads-CombineUl liWidthHangQing">
+					<li class="liWidthHangQing1"><span>二级页面首屏</span></li>
+					<li class="liWidthHangQing2">数量：<span>3</span></li>
+					<li class="liWidthHangQing3">尺寸：<span>312*200</span></li>
+					<li class="liWidthHangQing4"><span>￥20,000/年</span></li>
+					<li class="liWidthHangQing5"><span>￥5,500/季</span></li>
+					<li class="liWidthHangQing6"><span>￥2,000/月</span></li>
+					
+					<li class="liWidthHangQing1"><span>横幅1</span></li>
+					<li class="liWidthHangQing2">数量：<span>3</span></li>
+					<li class="liWidthHangQing3">尺寸：<span>600*80</span></li>
+					<li class="liWidthHangQing4"><span>￥10,000/年</span></li>
+					<li class="liWidthHangQing5"><span>￥2,250/季</span></li>
+					<li class="liWidthHangQing6"><span>￥1,000/月</span></li>
+					
+					<li class="liWidthHangQing1"><span>横幅2</span></li>
+					<li class="liWidthHangQing2">数量：<span>3</span></li>
+					<li class="liWidthHangQing3">尺寸：<span>600*80</span></li>
+					<li class="liWidthHangQing4"><span>￥7,500/年</span></li>
+					<li class="liWidthHangQing5"><span>￥2,000/季</span></li>
+					<li class="liWidthHangQing6"><span>￥750/月</span></li>
+					
+					<li class="liWidthHangQing1"><span>横幅3</span></li>
+					<li class="liWidthHangQing2">数量：<span>3</span></li>
+					<li class="liWidthHangQing3">尺寸：<span>600*80</span></li>
+					<li class="liWidthHangQing4"><span>￥6,000/年</span></li>
+					<li class="liWidthHangQing5"><span>￥1,650/季</span></li>
+					<li class="liWidthHangQing6"><span>￥600/月</span></li>
+					
+					<li class="liWidthHangQing1"><span>横幅4</span></li>
+					<li class="liWidthHangQing2">数量：<span>3</span></li>
+					<li class="liWidthHangQing3">尺寸：<span>600*80</span></li>
+					<li class="liWidthHangQing4"><span>￥5,000/年</span></li>
+					<li class="liWidthHangQing5"><span>￥1,400/季</span></li>
+					<li class="liWidthHangQing6"><span>￥500/月</span></li>
+				</ul>
+				<div class="layerOut absolute none">
+					<p class="closeIcon absolute"></p>
+					<img src="$link.getContextPath()/css/default/images/hangqingerji.png">
+				</div>
+			</div>
+			<div class="adsBox relative">
+				<label class="f-fl">
+					<h3>新闻详情页面</h3>
+					<p>位置：<span>详情页面</span>  投放方式：<span>随机轮播</span>  大小：<span>单张80K以内</span>  格式：<span>jpg、jpeg、png</span></p>
+				</label>				
+				<div class="clear"></div>
+				<ul class="ads-CombineUl liWidthHangQing">
+					<li class="liWidthHangQing1"><span>正文中</span></li>
+					<li class="liWidthHangQing2">数量：<span>3</span></li>
+					<li class="liWidthHangQing3">尺寸：<span>145*245</span></li>
+					<li class="liWidthHangQing4"><span>￥30,000/年</span></li>
+					<li class="liWidthHangQing5"><span>￥8,000/季</span></li>
+					<li class="liWidthHangQing6"><span>￥3,000/月</span></li>
+					
+					<li class="liWidthHangQing1"><span>正文下</span></li>
+					<li class="liWidthHangQing2">数量：<span>3</span></li>
+					<li class="liWidthHangQing3">尺寸：<span>530*145</span></li>
+					<li class="liWidthHangQing4"><span>￥20,000/年</span></li>
+					<li class="liWidthHangQing5"><span>￥5,500/季</span></li>
+					<li class="liWidthHangQing6"><span>￥2,000/月</span></li>
+					
+					<li class="liWidthHangQing1"><span>详情右1</span></li>
+					<li class="liWidthHangQing2">数量：<span>3</span></li>
+					<li class="liWidthHangQing3">尺寸：<span>312*145</span></li>
+					<li class="liWidthHangQing4"><span>￥10,000/年</span></li>
+					<li class="liWidthHangQing5"><span>￥2,800/季</span></li>
+					<li class="liWidthHangQing6"><span>￥1,000/月</span></li>
+					
+					<li class="liWidthHangQing1"><span>详情右2</span></li>
+					<li class="liWidthHangQing2">数量：<span>3</span></li>
+					<li class="liWidthHangQing3">尺寸：<span>312*145</span></li>
+					<li class="liWidthHangQing4"><span>￥10,000/年</span></li>
+					<li class="liWidthHangQing5"><span>￥2,800/季</span></li>
+					<li class="liWidthHangQing6"><span>￥1,000/月</span></li>
+					
+					<li class="liWidthHangQing1"><span>详情右3</span></li>
+					<li class="liWidthHangQing2">数量：<span>3</span></li>
+					<li class="liWidthHangQing3">尺寸：<span>312*145</span></li>
+					<li class="liWidthHangQing4"><span>￥10,000/年</span></li>
+					<li class="liWidthHangQing5"><span>￥2,800/季</span></li>
+					<li class="liWidthHangQing6"><span>￥1,000/月</span></li>
+									
+				</ul>
+				<div class="layerOut absolute none">
+					<p class="closeIcon absolute"></p>
+					<img src="$link.getContextPath()/css/default/images/xinwenxiangqing.png">
+				</div>
+			</div>
+		</div>	
+		<!-- 行情中心广告位及价格  E-->	
+		
+		<!-- 微信软文价格  S-->
+		<h2 class="weChat_content">微信软文价格</h2>
+		<div class="ads-Combine">
+			<div class="adsBox relative">
+				<label class="f-fl">
+					<h3>钢为早知道<span>（一天一次）</span></h3>
+					<p>位置：<span>推送文</span></p>
+				</label>				
+				<div class="clear"></div>
+				<ul class="ads-CombineUl liWidthRuanWen">
+					<li class="liWidthRuanWen1"><span>次文</span></li>
+					<li class="liWidthRuanWen2">投放方式：<span>文字+图片+设计（整篇文章）</span></li>
+					<li class="liWidthRuanWen3">大小：<span>单张2M以内</span></li>
+					<li class="liWidthRuanWen4">格式：<span>jpg、jpeg、png</span></li>
+					<li class="liWidthRuanWen5"><span>￥5,000/次</span></li>
+					
+					<li class="liWidthRuanWen1"><span>其他文</span></li>
+					<li class="liWidthRuanWen2">投放方式：<span>文字+图片+设计（整篇文章）</span></li>
+					<li class="liWidthRuanWen3">大小：<span>单张2M以内</span></li>
+					<li class="liWidthRuanWen4">格式：<span>jpg、jpeg、png</span></li>
+					<li class="liWidthRuanWen5"><span>￥5,000/次</span></li>
+					
+					<li class="liWidthRuanWen1"><span>次文</span></li>
+					<li class="liWidthRuanWen2">投放方式：<span>文字+图片+设计（整篇文章）</span></li>
+					<li class="liWidthRuanWen3">大小：<span>单张2M以内</span></li>
+					<li class="liWidthRuanWen4">格式：<span>jpg、jpeg、png</span></li>
+					<li class="liWidthRuanWen5"><span>￥5,000/次</span></li>
+				</ul>
+				<div class="layerOut absolute none">
+					<p class="closeIcon absolute"></p>
+					<img src="$link.getContextPath()/css/default/images/zaozhidaoruanwen.png">
+				</div>
+			</div>
+			<div class="adsBox relative">
+				<label class="f-fl">
+					<h3>钢为掌柜<span>（一月四次）</span></h3>
+					<p>位置：<span>推送文</span></p>
+				</label>				
+				<div class="clear"></div>
+				<ul class="ads-CombineUl liWidthRuanWen">
+					<li class="liWidthRuanWen1"><span>次文</span></li>
+					<li class="liWidthRuanWen2">投放方式：<span>文字+图片+设计（整篇文章）</span></li>
+					<li class="liWidthRuanWen3">大小：<span>单张2M以内</span></li>
+					<li class="liWidthRuanWen4">格式：<span>jpg、jpeg、png</span></li>
+					<li class="liWidthRuanWen5"><span>￥10,000/次</span></li>
+					
+					<li class="liWidthRuanWen1"><span>其他文</span></li>
+					<li class="liWidthRuanWen2">投放方式：<span>文字+图片+设计（整篇文章）</span></li>
+					<li class="liWidthRuanWen3">大小：<span>单张2M以内</span></li>
+					<li class="liWidthRuanWen4">格式：<span>jpg、jpeg、png</span></li>
+					<li class="liWidthRuanWen5"><span>￥6,000/次</span></li>
+
+				</ul>
+				<div class="layerOut absolute none">
+					<p class="closeIcon absolute"></p>
+					<img src="$link.getContextPath()/css/default/images/zaozhidaoruanwen.png">
+				</div>
+			</div>
+		</div>	
+		<!-- 微信软文价格  E-->	
+		
+		<!-- 早知道及掌柜其他广告  S-->
+		<h2>早知道及掌柜其他广告</h2>
+		<div class="ads-Combine">
+			<div class="adsBox relative">
+				<label class="f-fl">
+					<h3>钢为早知道</h3>
+					<p>位置：<span>推送文</span>  投放方式：<span>固定图片无链接 </span>  大小：<span>单张2M以内</span>  格式：<span>jpg、jpeg、png</span></p>
+				</label>				
+				<div class="clear"></div>
+				<ul class="ads-CombineUl liWidthzaoZhiDao">
+					<li><span>首文底端</span></li>
+					<li>尺寸：<span>800*300</span></li>
+					<li><span>￥200/天</span></li>
+					<li><span>￥1,400/周</span></li>
+					<li><span>￥5,600/月</span></li>
+					<li><span>￥16,800/季</span></li>
+					<li class="liWidthzaoZhiDao7"><span>电议/年</span></li>	
+					
+					<li><span>次文底端</span></li>
+					<li>尺寸：<span>800*300</span></li>
+					<li><span>￥150/天</span></li>
+					<li><span>￥1,050/周</span></li>
+					<li><span>￥4,200/月</span></li>
+					<li><span>￥12,600/季</span></li>
+					<li class="liWidthzaoZhiDao7"><span>电议/年</span></li>
+						
+					<li><span>其他文底端</span></li>
+					<li>尺寸：<span>800*300</span></li>
+					<li><span>￥100/天</span></li>
+					<li><span>￥700/周</span></li>
+					<li><span>￥2,800/月</span></li>
+					<li><span>￥8,400/季</span></li>
+					<li class="liWidthzaoZhiDao7"><span>电议/年</span></li>
+					
+				</ul>
+				<div class="layerOut absolute none">
+					<p class="closeIcon absolute"></p>
+					<img src="$link.getContextPath()/css/default/images/zaozhidao.png">
+				</div>
+			</div>
+			<div class="adsBox relative">
+				<label class="f-fl">
+					<h3>钢为掌柜</h3>
+					<p>大小：<span>单张2M以内</span>  格式：<span>jpg、jpeg、png</span></p>
+				</label>				
+				<div class="clear"></div>
+				<ul class="ads-CombineUl liWidthZhangGui">
+					<li><span>推送文</span></li>
+					<li><span>首文底端</span></li>
+					<li>投放方式：<span>图片+链接</span></li>
+					<li>尺寸：<span>800*300</span></li>
+					<li class="liWidthZhangGui5"><span>￥400/次</span></li>
+					
+					<li><span>推送文</span></li>
+					<li><span>次文底端</span></li>
+					<li>投放方式：<span>图片+链接</span></li>
+					<li>尺寸：<span>800*300</span></li>
+					<li class="liWidthZhangGui5"><span>￥300/次</span></li>
+					
+					<li><span>推送文</span></li>
+					<li><span>其他文底端</span></li>
+					<li>投放方式：<span>图片+链接</span></li>
+					<li>尺寸：<span>800*300</span></li>
+					<li class="liWidthZhangGui5"><span>￥200/次</span></li>
+					
+					<li><span>我的钢为-会员活动</span></li>
+					<li><span>置顶banner</span></li>
+					<li>投放方式：<span>横向轮播+链接</span></li>
+					<li>尺寸：<span>750*120</span></li>
+					<li class="liWidthZhangGui5"><span>￥700/次</span></li>
+
+				</ul>
+				<div class="layerOut absolute none">
+					<p class="closeIcon absolute"></p>
+					<img src="$link.getContextPath()/css/default/images/gangweizhanggui.png">
+				</div>
+			</div>
+			<div class="adsBox relative">
+				<label class="f-fl">
+					<h3>钢为掌柜及钢为早知道</h3>
+					<p>大小：<span>单张2M以内</span>  格式：<span>jpg、jpeg、png</span></p>
+				</label>				
+				<div class="clear"></div>
+				<ul class="ads-CombineUl liWidthZhangGui">
+					<li><span>了解掌柜</span></li>
+					<li><span>尾页banner</span></li>
+					<li>投放方式：<span>横向轮播+链接</span></li>
+					<li>尺寸：<span>690*200</span></li>
+					<li class="liWidthZhangGui5"><span>￥800/次</span></li>
+					
+					<li><span>找到掌柜</span></li>
+					<li><span>尾页banner</span></li>
+					<li>投放方式：<span>横向轮播+链接</span></li>
+					<li>尺寸：<span>690*200</span></li>
+					<li class="liWidthZhangGui5"><span>￥800/次</span></li>
+					
+					<li><span>掌柜指数</span></li>
+					<li><span>置顶banner</span></li>
+					<li>投放方式：<span>横向轮播+链接</span></li>
+					<li>尺寸：<span>750*120</span></li>
+					<li class="liWidthZhangGui5"><span>￥1,400/次</span></li>
+
+				</ul>
+				<div class="layerOut absolute none">
+					<p class="closeIcon absolute"></p>
+					<img src="$link.getContextPath()/css/default/images/zhangguizaozhidao.png">
+				</div>
+			</div>
+		</div>	
+		<!-- 早知道及掌柜其他广告  E-->
+		
+		<!-- 流程  S-->
+		<h2>流程</h2>
+		<div class="ads-Combine">
+			<div class="adsBox bor-b-red">
+				<ul class="flow">
+					<li><p class="flow-circle flow-circlePosiTel"></p> <span>0571-8971&nbsp;8799，或联系在线客服</span></li>
+					<li><p class="flow-circle flow-circlePosiTime"></p> <span>与售卖人员确定位置及投放时间。</span></li>
+					<li><p class="flow-circle flow-circlePosiMoney"></p> <span>付款给钢为，可点击<a id="payInfo">查看打款信息</a></span></li>
+					<li><p class="flow-circle flow-circlePosiData"></p> <span>提供广告资料给钢为</span></li>
+				</ul>
+			</div>			
+			
+		</div>	
+		<!-- 流程  E-->
+	</div>
+	
+	<!-- 右侧悬浮框 S-->
+	<div class="floatTip none">
+		<div class="ad-back">
+			<p class="backTop"></p>
+			<p class="backDown"></p>
+		</div>
+		<ul class="backTo">
+			<li class="combo"><p>套餐</p></li>
+			<li class="webPage"><p>网页</p></li>
+			<li class="weChat"><p>微信</p></li>
+			<li class="serv"><p><a class="qqlink">客服</a></p></li>
+		</ul>
+	</div>
+	<!-- 右侧悬浮框  E-->
+		<!-- Footer S -->
+	#parse("layout/globalfooter.vm")
+	<!-- Footer E -->
+	<script src="$link.getContextPath()/js/lib/seajs/2.2.0/sea.js"></script>
+	<script src="$link.getContextPath()/js/seaconfig.js"></script>
+	<script>
+		seajs.use('ad');
+	</script>
+	#parse("layout/qq.vm")
+</body>
+</body>
+</html>

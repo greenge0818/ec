@@ -1,0 +1,12 @@
+<input type="button" id="entQQ" value="BizQQWPA" style="display: none;"/>
+<script type="text/javascript" src="http://wpa.b.qq.com/cgi/wpa.php" charset="utf-8"></script>
+<script>
+    BizQQWPA.addCustom({
+        aty: '0', //指定工号类型
+        a: '0', //指定的工号
+        nameAccount: '4007059515', //营销QQ号码
+        selector: 'www.prcsteel.com', //这里任意写一个字符串就行
+        node: document.getElementById('entQQ') //WPA被放置的元素
+
+    });
+</script>

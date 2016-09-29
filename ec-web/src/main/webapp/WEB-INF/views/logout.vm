@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+<h1>您已成功退出。</h1>
+    <p>
+        <a href="$link.getContextPath()/index.html">首页</a>|
+        <a href="$link.getContextPath()/login.html">登录</a>
+    </p>
+</body>
+</html>

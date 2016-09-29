@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- meta S -->
+	#parse("layout/meta.vm")
+	<!-- meta E -->
+    <title>出错啦</title>
+    <link type="image/x-icon" href="$link.getContextPath()/css/default/images/favicon.ico " rel="shortcut icon">
+    <link href="$link.getContextPath()/css/default/css/error.css" rel="stylesheet"/>
+    <!-- context S -->
+    #parse("layout/context.vm")
+    <!-- context E -->
+</head>
+<body>
+	<div class="logolayout">
+	    <div class="indexlogo f-fl"><a href="/web/"></a></div>
+	    <!--<a href="http://www.prcsteel.com" target="_blank" class="logo"></a>-->
+	    <span class="f-fr">全国服务热线：<i>0571-8971&nbsp;8799</i></span>
+	</div>
+	<div class="err-body">
+        <span><strong>抱歉，您要访问的页面被外星人偷走了，</strong></span>
+           <br>
+          <span><strong>钢铁侠正在努力追回！</strong></span>
+          <br>
+          <br><br><br>
+           <span><strong style="color:#c81623;margin-right:20px;"><a  style="color:#c81623;" href="$link.getContextPath()/">返回首页</a></strong> <strong style="color:#c81623;"><a class="qqlink"  style="color:#c81623;" >联系管理</a></strong> </span>
+        </div>
+    <div class="footer">
+     #parse("layout/globalfooter.vm")
+	</div>
+	#parse("layout/qq.vm")
+  <script src="$link.getContextPath()/js/lib/seajs/2.2.0/sea.js"></script>
+  <script src="$link.getContextPath()/js/seaconfig.js"></script>
+  <script>
+    seajs.use(['util','jquery'],function(util,$){
+        $(".qqlink").bind("click",function(){
+          util.setqq();
+        })
+    })
+  </script>
+</body>
+</html>

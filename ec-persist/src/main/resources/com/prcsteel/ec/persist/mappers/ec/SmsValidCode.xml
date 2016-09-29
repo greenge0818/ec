@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.prcsteel.ec.persist.dao.ec.SmsValidCodeDao">
+
+    <resultMap id="baseResultMap" type="com.prcsteel.ec.model.domain.ec.SmsValidCode">
+        <result property="id" column="id"/>
+        <result property="guid" column="guid"/>
+        <result property="module" column="module"/>
+        <result property="mobile" column="mobile"/>
+        <result property="validCode" column="valid_code"/>
+        <result property="resendTime" column="resend_time"/>
+        <result property="expireTime" column="expire_time"/>
+        <result property="created" column="created"/>
+        <result property="createdBy" column="created_by"/>
+        <result property="lastUpdated" column="last_updated"/>
+        <result property="lastUpdatedBy" column="last_updated_by"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.prcsteel.ec.model.domain.ec.SmsValidCode" useGeneratedKeys="true" keyProperty="id">
+		<![CDATA[
+			INSERT INTO base_sms_valid_code (
+				guid,
+				module,
+				mobile,
+				valid_code,
+				resend_time,
+				expire_time,
+				created,
+				created_by,
+				last_updated,
+				last_updated_by,
+				remark,
+				is_deleted
+			)
+			VALUES (
+				#{guid},
+				#{module},
+				#{mobile},
+				#{validCode},
+				#{resendTime},
+				#{expireTime},
+				#{created},
+				#{createdBy},
+				#{lastUpdated},
+				#{lastUpdatedBy},
+				#{remark},
+				#{isDeleted}
+			)
+        ]]>
+	</insert>
+
+    <!-- 根据手机号和模块查询出不可以再次发送验证码的记录-->
+    <select id="selectUnresendByMobileAndModule" resultMap="baseResultMap" parameterType="String">
+		<![CDATA[
+			SELECT id,guid,
+				module,
+				mobile,
+				valid_code,
+				resend_time,
+				expire_time
+			FROM base_sms_valid_code
+			WHERE mobile=#{mobile} AND module=#{module} AND is_deleted='N'
+			AND NOW()< resend_time
+			ORDER BY id DESC LIMIT 1
+        ]]>
+	</select>
+
+    <!-- 根据手机号,模块查询出最新的一条验证码数据-->
+    <select id="selectByMobileAndModule" resultMap="baseResultMap" parameterType="String">
+        <![CDATA[
+			SELECT id,guid,
+				module,
+				mobile,
+				valid_code,
+				resend_time,
+				expire_time
+			FROM base_sms_valid_code
+			WHERE mobile=#{mobile} AND module=#{module} AND is_deleted='N'
+			ORDER BY id DESC LIMIT 1
+        ]]>
+    </select>
+
+    <!--根据手机号、验证码、模块使得验证记录失效-->
+    <update id="invalidCodeByMobileAndCodeAndModule" parameterType="String">
+          UPDATE base_sms_valid_code SET is_deleted ='Y'
+          WHERE mobile=#{mobile} AND module=#{module}  AND is_deleted='N'
+          <if test="code != null and code != ''">
+              AND valid_code=#{code}
+          </if>
+    </update>
+
+    <!-- 根据手机号查询出最新的三条注册的验证码数据-->
+    <select id="selectRegisterRecordByMobile" resultMap="baseResultMap">
+        <![CDATA[
+			SELECT id,guid,
+				module,
+				mobile,
+				valid_code,
+				created
+			FROM base_sms_valid_code
+			WHERE mobile=#{mobile} AND module='REGISTER'
+			ORDER BY created DESC LIMIT #{times}
+        ]]>
+    </select>
+</mapper>

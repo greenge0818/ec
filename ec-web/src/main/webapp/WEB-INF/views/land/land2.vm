@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="image/x-icon" href="$link.getContextPath()/css/default/images/favicon.ico " rel="shortcut icon">
+<meta name="keywords" content="钢铁市场">
+<meta name="description" content="钢为网钢铁超市提供最全面的钢材交易信息，包括钢材规格、钢材生产厂家、最新出厂价格，一键采购，“购钢材，够简单”就上钢为网">
+<link href="$link.getContextPath()/css/default/css/global.css" rel="stylesheet" />
+<link href="$link.getContextPath()/css/default/css/default.css" rel="stylesheet" />
+<link href="$link.getContextPath()/css/default/css/about.css" rel="stylesheet"/>
+<link href="$link.getContextPath()/css/default/css/nav.css" rel="stylesheet"/>
+<link href="$link.getContextPath()/css/default/css/new.css" rel="stylesheet"/>
+<title>钢铁市场_钢为网</title>
+<!-- context S -->
+#parse("layout/context.vm")
+<!-- context E -->
+</head>
+
+<body class="no-skin ">
+<!--[if lte IE 6]>
+	<div style="width:100%;_position:absolute;
+	_bottom:auto;
+	_top:expression(eval(document.documentElement.scrollTop));
+	z-index:1000;">
+		<div style="width:100%;height:30px;border-bottom:1px solid #ff5a00;background:#ffede3;color:#444;line-height:30px; text-align:center;">
+		系统检测您当前的浏览器为IE6，可能会影响部分功能的使用。为了您有更好的体验。建议您<a href="http://www.microsoft.com/china/windows/internet-explorer/" target="_blank" style="color:#c81624;text-decoration:underline;">升级IE浏览器</a>或者下载安装使用<a href="http://dlsw.baidu.com/sw-search-sp/soft/9d/14744/ChromeStandalone_V43.0.2357.124_Setup.1433905898.exe" target="_blank" style="color:#c81624;text-decoration:underline;">谷歌浏览器chrome</a>
+		</div>
+	<style>
+	body{_padding-top:30px;}
+	</style>
+	</div>
+<![endif]-->
+	<!-- logo and search -->
+	<div class="logolayout">
+		<div class="indexlogo f-fl"><a href="$link.getContextPath()/"></a></div>
+	</div>
+	<!-- 首页导航E -->
+	<div class="navbox f-clrfix">
+		<div class="index-nav f-clrfix">
+			<ul>
+				<li ><a href="$link.getContextPath()/">首页</a></li>
+				<li class="active"><a href="$link.getContextPath()/market/" target="_blank">钢铁超市</a></li>
+				<li><a href="$marketCenterDomain" >行情圈</a></li>
+				<li><a href="https://www.paysteel.com/" target="_blank">款道</a></li>
+				<li><a href="$link.getContextPath()/helpfind/" >钢为购</a></li>
+			</ul>
+		</div>
+	</div>
+	<!--
+    	content S
+
+    -->
+    <div class="m-crumbs">
+				<a href="$link.getContextPath()/market/">钢铁超市</a><em>&gt;</em><a class="link" href="#">钢铁市场</a>
+			</div>
+			<div class="f-clrfix"></div>
+
+			<div class="main-bar">
+				<div class="f-clearfix">
+					<div class="f-fl main-lf adjust-list">
+						<div class="news-h1 f-clrfix"><span class="f-fl">钢铁<em class="red-c">市场</em></span><hr /></div>
+						<div class="adjust-tit">
+							<ul>
+								#foreach($category in $resultList)
+									#if($velocityCount < 6)
+                                        <li class="f-clrfix"><a href="$link.getContextPath()/market/categoryuuid_$!{category.nsortID}_city_0" target="_blank"><span class="f-fl tit-con">$!{category.nsortName}价格_$!{category.nsortName}批发采购</span></a></li>
+									#end
+								#end
+							</ul>
+						</div>
+						<div class="adjust-tit">
+                            #foreach($category in $resultList)
+                                #if($velocityCount > 5 && $velocityCount < 11)
+                                    <li class="f-clrfix"><a href="$link.getContextPath()/market/categoryuuid_$!{category.nsortID}_city_0" target="_blank"><span class="f-fl tit-con">$!{category.nsortName}价格_$!{category.nsortName}批发采购</span></a></li>
+                                #end
+                            #end
+						</div>
+						<div class="adjust-tit">
+                            #foreach($category in $resultList)
+                                #if($velocityCount > 10 && $velocityCount < 16)
+                                    <li class="f-clrfix"><a href="$link.getContextPath()/market/categoryuuid_$!{category.nsortID}_city_0" target="_blank"><span class="f-fl tit-con">$!{category.nsortName}价格_$!{category.nsortName}批发采购</span></a></li>
+                                #end
+                            #end
+						</div>
+						<div class="adjust-tit">
+                            #foreach($category in $resultList)
+                                #if($velocityCount > 15 && $velocityCount < 21)
+                                    <li class="f-clrfix"><a href="$link.getContextPath()/market/categoryuuid_$!{category.nsortID}_city_0" target="_blank"><span class="f-fl tit-con">$!{category.nsortName}价格_$!{category.nsortName}批发采购</span></a></li>
+                                #end
+                            #end
+						</div>
+					</div>
+					<div class="f-fr main-fr">
+						<div class="con-fr">
+							<div class="news-h2">
+								<span class="f-fl">统计汇总</span>
+								<hr class="">
+								<a href="$marketCenterDomain/huizong.html" target="_blank" class="icon more f-fr">更多</a>
+							</div>
+							<div class="con-fr-list">
+								<ul>
+                                    #foreach($statistics in $steelStatistics.data)
+                                        #if($velocityCount < 11)
+                                            <li class="con-fr-li"><a href="$statistics.url" target="_blank">$statistics.title</a></li>
+                                        #end
+                                    #end
+								</ul>
+							</div>
+						</div>
+						<div class="con-fr">
+							<div class="news-h2">
+								<span class="f-fl">钢为资讯</span>
+								<hr class="">
+								<a href="$marketCenterDomain/" target="_blank" class="icon more f-fr">更多</a>
+							</div>
+							<div class="con-fr-list">
+								<ul>
+                                    #foreach($hot in $hotMarket.data)
+                                        #if($velocityCount < 11)
+                                            <li class="con-fr-li"><a href="$hot.url" target="_blank">$hot.title</a></li>
+                                        #end
+                                    #end
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+                <!---基础分页地址--->
+                #set($transUrl="$link.getContextPath()/guide/name_")
+
+                <!---总页码--->
+				#set($pageNum=${number.pageCount(${total},${pageSize})})
+
+                <!---当前页码--->
+				#set($currentPage=$pageIndex)
+
+                <!--分页 S-->
+				#if($pageNum >0)
+                    <div id="m-page" class="m-page none" style="display: block;padding-left:0px;">
+                        <div class="m-page-num" id="m-page-num">
+							#if($currentPage==1 || $pageNum==0)
+                                <span class="current prev">&nbsp;上一页</span>
+							#else
+								#set($pre=$currentPage - 1)
+                                <a href="$!{transUrl}$!{pre}.html" class="prev">上一页</a>
+							#end
+
+							#if($pageNum ==0)
+                                <span class="current">0</span>
+							#elseif($currentPage<5)
+								#if($pageNum<=5)
+									#foreach($foo in [1..$pageNum])
+										#if ($foo == $currentPage)
+                                            <span class="current">$foo</span>
+										#else
+                                            <a href="$!{transUrl}$!{foo}.html"  #if($velocityCount==1)style="border: 1px solid rgb(232, 232, 232);"  #end>$foo</a>
+										#end
+									#end
+								#elseif($pageNum>5)
+									#foreach($foo in [1..5])
+										#if ($foo == $currentPage)
+                                            <span class="current">$foo</span>
+										#else
+                                            <a href="$!{transUrl}$!{foo}.html"  #if($velocityCount==1)style="border: 1px solid rgb(232, 232, 232);"  #end>$foo</a>
+										#end
+									#end
+                                    <span class="dotted-page">...</span>
+                                    <a href="$!{transUrl}$!{pageNum}.html" style="border: 1px solid rgb(232, 232, 232);">$pageNum</a>
+								#end
+							#elseif($currentPage<=$pageNum)
+								#set($s=$currentPage - 2)
+								#set($e=$currentPage + 2)
+
+								#if($e >= $pageNum)
+                                    <a  href="$!{transUrl}1.html" style="border: 1px solid rgb(232, 232, 232);">1</a>
+                                    <span class="dotted-page">...</span>
+									#foreach($foo in [$s..$pageNum])
+										#if ($foo == $currentPage)
+                                            <span class="current">$foo</span>
+										#else
+                                            <a href="$!{transUrl}$!{foo}.html"  #if($velocityCount==1)style="border: 1px solid rgb(232, 232, 232);"  #end>$foo</a>
+										#end
+									#end
+								#else
+                                    <a  href="$!{transUrl}1.html" style="border: 1px solid rgb(232, 232, 232);">1</a>
+                                    <span class="dotted-page">...</span>
+									#foreach($foo in [$s..$e])
+										#if ($foo == $currentPage)
+                                            <span class="current">$foo</span>
+										#else
+                                            <a  href="$!{transUrl}$!{foo}.html" #if($velocityCount==1)style="border: 1px solid rgb(232, 232, 232);"  #end>$foo</a>
+										#end
+									#end
+                                    <span class="dotted-page">...</span>
+                                    <a href="$!{transUrl}$!{pageNum}.html" style="border: 1px solid rgb(232, 232, 232);">$pageNum</a>
+								#end
+							#end
+
+							#if($currentPage==$pageNum || $pageNum ==0)
+                                <span class="current next">&nbsp;下一页</span>
+							#else
+								#set($next=$currentPage + 1)
+                                <a href="$!{transUrl}$!{next}.html" class="next">下一页</a>
+							#end
+                        </div>
+                        <i>
+                            共<em class="order-page-max">&nbsp;$pageNum
+                        </em>页，
+                        </i>
+                        <i>到第&nbsp;
+                            <input type="text" class="page-num-ipt" name="pageNum" value="">
+                            &nbsp;页
+                        </i>
+                        <button class="page-num-btn" data-attr="name_" type="button">确定</button>
+                    </div>
+				#end
+
+				<!--分页 E-->
+			</div>
+    <!--
+    	content E
+    -->
+		<!-- Footer S -->
+	#parse("layout/globalfooter.vm")
+	<!-- Footer E -->
+	<script src="$link.getContextPath()/js/lib/seajs/2.2.0/sea.js"></script>
+	<script src="$link.getContextPath()/js/seaconfig.js"></script>
+	<script>
+		seajs.use("land234");
+	</script>
+</body>
+</html>

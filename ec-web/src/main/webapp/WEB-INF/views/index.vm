@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<title>钢为网_钢铁价格走势_钢材价格行情_第三方钢铁交易服务平台</title>
+	<!-- meta S -->
+	#parse("layout/meta.vm")
+	<!-- meta E -->
+	<!-- context S -->
+	#parse("layout/context.vm")
+	<!-- context E -->
+	<meta name="Keywords" content="钢铁，钢材，钢铁价格，钢材行情，钢铁电子商务" />
+	<meta name="Description" content="钢为网是中国钢铁电子商务交易平台，为国内钢厂、钢材贸易商、钢材终端用户提供钢铁行业新闻、钢铁价格、钢材行情走势、钢材期货、钢材市场等资源与信息。“购钢材，够简单”就上钢为网" />
+	<link href="$link.getContextPath()/css/default/css/global.css" rel="stylesheet" />
+	<link href="$link.getContextPath()/css/plugin/artdialog.css" rel="stylesheet" />
+	<link href="$link.getContextPath()/css/default/css/shopcart.css" rel="stylesheet" />
+    <link href="$link.getContextPath()/css/default/css/login.css" rel="stylesheet" />
+	<link href="$link.getContextPath()/css/default/css/market.css" rel="stylesheet" />
+	<link href="$link.getContextPath()/css/default/css/default.css" rel="stylesheet" />
+</head>
+
+<body class="no-skin">
+
+<!-- Header S-->
+#parse("layout/min-header.vm")
+<!-- Header E-->
+<!-- logo and search -->
+<div class="logolayout">
+	<div class="indexlogo f-fl"><a href="$link.getContextPath()/"></a></div>
+	<div class="searchdiv f-fr">
+		<div class="searchbox f-clrfix">
+            <div class="i-search i-search-bar" id="i-search">
+			<ul>
+				<li class="catrgory">
+					 <div class="product-ipt">
+	                     <div class="form-item" style="width:200px">
+	                        <label class="f-label" style="color: rgb(153, 153, 153);font-size: 18px;">请输入钢材名字或材质</label>
+	                        <input type="text" id="nsortName" class="f-text" style="font-size: 18px;width: 250px;" value="" autocomplete="off" >
+	                        <!--品名首字母匹配  S-->
+	                        <div id="proComp" class="product-complete none" style="border-color: grey;">
+	                            <ul class="product-complete-ul" >
+	                            </ul>
+	                        </div>
+	                        <!--品名首字母匹配  E-->
+	                        <!--品名数据层  S-->
+	                        <div class="show-layer product-bar none" id="showLayer_nsortName">
+	                            <div class="product-t">
+	                                <ul class="product-t-ul">
+	                                </ul>
+	                            </div>
+	                         </div>
+	                         <!--品名数据层 E-->
+	                     </div>
+                 	</div>
+                </li>
+				#*<li class="material">
+					<div class="product-ipt">
+	                     <div class="form-item">
+	                     	<span class="icon1 searchdown-arr-icon"></span>
+	                        <label class="f-label" style="color: rgb(153, 153, 153);">材质</label>
+	                        <input type="text" id="material" class="f-text" value="" autocomplete="off" readonly>
+							<input type="hidden" name="material-uuid" id="material-uuid">
+                             <!--材质数据层  S-->
+                             <div class="show-layer textures-bar none" id="showLayer_material">
+                                 <div class="textures-t">
+                                     <a class="layer-del"></a>
+                                     <span>可多选</span>
+                                 </div>
+                                 <div class="textures-con">
+
+                                 </div>
+                                 <div class="btn-bar">
+                                     <button class="clear-btn">清除</button>
+                                     <button class="confirm-btn">确认</button>
+                                 </div>
+                             </div>
+                             <!--材质数据层  E-->
+	                     </div>
+                 	</div>
+				</li>
+				<li class="factory">
+					<div class="product-ipt">
+	                     <div class="form-item">
+	                     	<span class="icon1 searchdown-arr-icon"></span>
+	                        <label class="f-label" style="color: rgb(153, 153, 153);">钢厂</label>
+	                        <input type="text" id="factory" class="f-text" value="" autocomplete="off" readonly>
+                             <input type="hidden" id="test_u_acc" class="f-text" value="">
+                             <!--厂家数据层 S-->
+                             <div class="show-layer factory-layer textures-bar standard-bar none" id="showLayer_factory" style="left: -392px;top: 30px;">
+                                 <div class="product-t">
+                                     <a class="layer-del"></a>
+                                     <ul class="product-t-ul">
+                                     </ul>
+                                 </div>
+                                 <div class="product-b">
+
+                                 </div>
+                                 <div class="btn-bar f-clrfix">
+                                     <button class="clear-btn">清除</button>
+                                     <button class="confirm-btn">确认</button>
+                                 </div>
+                             </div>
+                             <!--厂家数据层  E-->
+	                     </div>
+                 	</div>
+				</li>*#
+			</ul>
+			</div>
+			<div class="searchicon"><em id="searchBtn"></em></div>
+		</div>
+		<div class="err-c none" style="width:100%">
+            <span class="info">请选择需购买的品名</span>
+    	</div>
+	</div>
+</div>
+<!-- 首页导航E -->
+<div class="navbox f-clrfix">
+	<div class="index-nav f-clrfix">
+		<ul>
+			<li class="active"><a href="$link.getContextPath()/">首页</a></li>
+			<li><a href="$link.getContextPath()/market" target="_blank">钢铁超市</a></li>
+			<li><a href="$marketCenterDomain/" >行情圈</a></li>
+			<li><a href="https://www.paysteel.com/" target="_blank">款道</a></li>
+			<li><a href="$link.getContextPath()/helpfind/" >钢为购</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- 主题内容 -->
+<div class="f-clrfix idx-main" id="idxMain">
+	<!-- 左侧浮动 -->
+	<div id="quote" class="f-fl"  style="display:none;">
+	    <div class="m-quote">
+	        <div class="price-tit-bar">
+	            <span class="tit-text f-fl"><span id="areaCity"></span></span>
+	            <span class="tit-date f-fr" id="lastTime">05/20周三</span>
+	        </div>
+	        <ul></ul>
+	    </div>
+	</div>
+	<!-- 右侧主体内容 -->
+	<div class="mmain" id="mmain">
+		<div class="bannerbox">
+			<div class="bannermark"></div>
+			<div class="bannermenubox">
+				<div class="menu-content-mark"></div>
+				<div class="menu-content f-fl">
+					<div class="menuslide" id="banner01">
+						<img src="$link.getContextPath()/css/default/images/banner01.png" alt="">
+					</div>
+					<div class="menuslide" id="banner02">
+						<img src="$link.getContextPath()/css/default/images/banner02.png" alt="">
+						<a class="qqlink"></a>
+					</div>
+					<div class="menuslide" id="banner03">
+						<div class="banner03_l f-fl">
+							<div class="find-box-bg">
+								<h2>填写采购需求  <span>(可不填)</span></h2>
+								<textarea class="textarea" id="focastextarea" maxlength="100" name="request">如：中天18的四级抗震螺纹，40吨，杭州交货</textarea>
+							</div>
+							<div class="find-box-bg">
+								<h2>上传采购需求</h2>
+								<div class="markbtn">
+									<a href="javascript:;" class="a-upload">
+										<input type="file" upload="file" name="uploadFile" id="uploadFile1" />
+										<em class="upload-icon"></em>上传文件
+									</a>
+									<span class="focaserr-msg-span"></span>
+								</div>
+							    <div class="filelist1">
+							    	<div id="file_upload-queue1" class="uploadify-queue1"></div>
+							    </div>
+							    <div class="upload_btn">
+							    	<a href="javascript:;" class="a-upload"><input type="file" class="filerowbtn" upload="file" name="uploadFile" id="uploadFile2" /><em class="upload-icon"></em>上传文件</a><span class="focaserr-msg-span"></span>
+							    </div>
+							    <input type="hidden" name="fileUrl" id="fileUrl1">
+							    <p>注：可上传2M之内的word、excel、文本和图片文件</p>
+							</div>
+						</div>
+						<p class="hot_fen"></p>
+						<div class="banner03_r f-fr">
+							<div class="focaslogin loginbox focas-login-form">
+								<ul id="telCheckLogin">
+			                        <li class="f-clrfix">
+			                            <div class="focas-form-item">
+			                                <div class="border-style">
+			                                    <div class="focas-item-text">
+			                                        <span class="focasicon login-iphone1-icon"></span>
+			                                        <div class="focas-item-text-wrap">
+			                                            <label class="focas-ipt-label" style="color: rgb(153, 153, 153);">手机号码</label><input type="text" id="userPhonetellogin" name="phone" must="1" #if($!{memberInfo.mobile}) value="$!{memberInfo.mobile}" readonly #end class="focas-input_txt focas-ipt-text userPhonetellogin" maxlength="11">
+			                                        </div>
+			                                        <em class="focas-input-empty" id="facas-phone" #if($!{memberInfo.mobile}) style="display: none" #end></em>
+			                                    </div>
+			                                </div>
+			                                
+			                            </div>
+			                            
+			                        </li>
+			                        <li class="f-clrfix" id="smsCodeNumberLi" #if($!{memberInfo.mobile}) style="display: none" #end>
+			                            <div class="focas-form-item wd-150">
+			                                <div class="border-style wd-150">
+			                                    <div class="focas-item-text wd-150">
+			                                        <span class="focasicon login-smscode1-icon"></span>
+			                                        <div class="focas-item-text-wrap wd-90">
+			                                            <label class="focas-ipt-label" style="color: rgb(153, 153, 153);">验证码</label><input type="text" value="" name="code" class="focas-ipt-text wd-90 smsCodeNumber" id="smsCodeNumber" must="1" verify="number" maxlength="4" msg="验证码错误">
+			                                        </div>
+			                                        <em class="focas-input-empty"></em>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                            <span data-attr="timeLong" class="cart-login-valid-btn sendsms sms_btn">获取验证码</span>
+			                        </li>
+			                        <li class="f-clrfix tishi">
+			                       	<span class="err-msg-span"></span>
+			                        </li>
+			                        <li class="f-clrfix">
+			                            <input type="button" value=" 提交 " class="input_btn">
+			                        </li>
+			                    </ul>
+
+							</div>
+							#if($!{memberInfo.mobile})
+							<p id="word">我们将用0571-8971&nbsp;8799给您回电，请保持手机畅通。</p>
+							#else
+							<p id="word">请留下您的联系方式，我们将用<br>0571-8971&nbsp;8799给您回电，请保持手机畅通。</p>
+							#end
+						</div>
+					</div>
+					<div class="menuslide" id="banner04">
+						<p class="banner04">
+						<img src="$link.getContextPath()/css/default/images/banner04.png" alt=""></p>
+						<a class="qqlink" ></a>
+					</div>
+					<div class="menuslide" id="banner05">
+							<div class="banner03_l f-fl">
+								<p class="banner05left">
+									<img src="$link.getContextPath()/css/default/images/banner05.png" alt="">
+								</p>
+							</div>
+							<div class="banner03_r f-fr">
+							<div class="focaslogin loginbox focas-login-form">
+								<ul id="telCheckLogin">
+			                        <li class="f-clrfix">
+			                            <div class="focas-form-item">
+			                                <div class="border-style">
+			                                    <div class="focas-item-text">
+			                                        <span class="focasicon login-iphone1-icon"></span>
+			                                        <div class="focas-item-text-wrap">
+			                                            <label class="focas-ipt-label" style="color: rgb(153, 153, 153);">手机号码</label><input type="text" id="userPhonetellogin" name="phone" must="1" #if($!{memberInfo.mobile}) value="$!{memberInfo.mobile}"  readonly #end  class="focas-input_txt focas-ipt-text userPhonetellogin" maxlength="11">
+			                                        </div>
+			                                        <em class="focas-input-empty" id="facas-phone" #if($!{memberInfo.mobile}) style="display: none" #end></em>
+			                                    </div>
+			                                </div>
+			                                
+			                            </div>
+			                            
+			                        </li>
+			                        <li class="f-clrfix" id="smsCodeNumberLi" #if($!{memberInfo.mobile}) style="display: none" #end>
+			                            <div class="focas-form-item wd-150">
+			                                <div class="border-style wd-150">
+			                                    <div class="focas-item-text wd-150">
+			                                        <span class="focasicon login-smscode1-icon"></span>
+			                                        <div class="focas-item-text-wrap wd-90">
+			                                            <label class="focas-ipt-label" style="color: rgb(153, 153, 153);">验证码</label><input type="text" value="" name="code" class="focas-ipt-text wd-90 smsCodeNumber" id="smsCodeNumber" must="1" verify="number" maxlength="4" msg="验证码错误">
+			                                        </div>
+			                                        <em class="focas-input-empty"></em>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                            <span data-attr="timeLong1"  class="cart-login-valid-btn sendsms sms_btn">获取验证码</span>
+			                        </li>
+			                        <li class="f-clrfix tishi">
+			                          <span class="err-msg-span"></span>
+			                        </li>
+			                        <li class="f-clrfix">
+			                            <input type="button" value=" 提交 " class="input_btn">
+			                        </li>
+			                    </ul>
+
+							</div>
+							#if($!{memberInfo.mobile})
+							<p id="word">我们将用0571-8971&nbsp;8799给您回电，请保持手机畅通。</p>
+							#else
+							<p id="word">请留下您的联系方式，我们将用<br>0571-8971&nbsp;8799给您回电，请保持手机畅通。</p>
+							#end
+						</div>
+					</div>
+				</div>
+				<div class="menu f-fr"></div>
+				<div class="menuul">
+					<ul>
+						<li><em></em>我要发送手机里的采购照片</li>
+						<li><em></em>我有采购单的截图</li>
+						<li><em></em>我想发送采购单的文件</li>
+						<li><em></em>我想和掌柜在线聊聊</li>
+						<li><em></em>我想我们还是通过电话聊吧</li>
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+
+		<!-- scroll bannner -->
+
+		<div class="scrollbanner">
+			<div class="banner" id="banner" >
+				<div class="bannerimgbox"></div>
+				<div class="d2" id="banner_id">
+					<ul></ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="hot_resource">
+			<div class="title"><span>热门资源</span></div>
+			<div class="hot_res_list"></div>
+		</div>
+
+		<div class="partthree f-clrfix">
+			#if(!$null.isnull(${hotMarket}) && ${hotMarket.data.size()} > 0)
+                <div class="partleft f-fl">
+                    <div class="title"><span>热门行情资讯</span><em><a href="$marketCenterDomain/" target="_blank">了解更多</a></em></div>
+                    <ul class="hqnews">
+						#foreach($hot in $hotMarket.data)
+                            <li><a href="$hot.url" target="_blank">$hot.title</a></li>
+						#end
+                    </ul>
+                </div>
+			#end
+			<div class="partright f-fr">
+				<div class="viphd">
+					<div class="title"><span>会员活动</span><em><a href="$marketCenterDomain/vip.html" target="_blank">了解更多</a></em></div>
+					<div class="vipbannerbox">
+						<div class="banner" id="vipbanner" >
+							<div class="bannerimgbox"></div>
+							<div class="d2" id="vipbanner_id">
+								<ul></ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				#if(!$null.isnull(${steelStatistics}) && ${steelStatistics.data.size()} > 0)
+					<div class="steelprice">
+						<div class="title"><span>钢价汇总统计</span><em><a href="$marketCenterDomain/huizong.html" target="_blank">了解更多</a></em></div>
+						<ul class="steelul f-fl">
+							#foreach($statistics in $steelStatistics.data)
+								#if($velocityCount < 6)
+									<li><a href="$statistics.url" target="_blank">$statistics.title</a></li>
+								#end
+							#end
+						</ul>
+						<p class="hot_fen"></p>
+						<ul class="steelul f-fr">
+							#foreach($statistics in $steelStatistics.data)
+								#if($velocityCount > 5)
+									<li><a href="$statistics.url" target="_blank">$statistics.title</a></li>
+								#end
+							#end
+						</ul>
+					</div>
+				#end
+				
+			</div>
+		</div>
+	</div>
+ </div>
+
+<!-- 首页二维码区域 B -->
+<div class="markpart">
+	<div class="markbox f-clrfix">
+		<div class="mark-l f-fl">
+			<div class="markimg f-fr"><img src="$link.getContextPath()/css/default/images/gwzd.png" width="139"></div>
+			<div class="mark-info f-fr"><p>最新资讯入口</p> <h2>钢为早知道</h2></div>
+		</div>
+		<div class="mark-r f-fr">
+			<div class="markimg f-fl"><img src="$link.getContextPath()/css/default/images/gwzg.png" width="139"></div>
+			<div class="mark-info f-fl"><p>会员活动入口</p> <h2>钢为掌柜</h2></div>
+		</div>
+	</div>
+</div>
+
+<!-- 钢为介绍 -->
+<div class="gwinfo">
+	<div class="gwinfobox">
+		<div class="gwleft f-fl">
+			<div class="gwinfologo">
+				<a href="$link.getContextPath()/" title="钢为网"></a>		
+			</div>
+			<p class="gwinfotel"><em></em>0571-8971&nbsp;8799</p>
+		</div>
+		<div class="gwright f-fr">
+			<dl>
+				<dt class="infotit">用户指南</dt>
+				<dd><a href="$link.getContextPath()/helpfind/" target="_blank">免费找货 <span>Cargo searching</span></a></dd>
+				<dd><a rel="external nofollow" href="$link.getContextPath()/aboutus?buyer" target="_blank">买家入门 <span>Users guide</span></a></dd>
+				<dd><a rel="external nofollow" href="$link.getContextPath()/aboutus?seller" target="_blank">卖家合作 <span>Cooperation</span></a></dd>
+				<dd><a rel="external nofollow" href="$link.getContextPath()/adintro" target="_blank">广告合作 <span>Advertising</span></a></dd>
+			</dl>
+			<dl>
+				<dt class="infotit">账户信息</dt>
+				<dd><a rel="external nofollow" href="$link.getContextPath()/user/register" target="_blank">免费注册 <span>Registration</span></a></dd>
+				#if($!{memberInfo})
+                <!--已登录显示-->
+				<dd><a rel="external nofollow" href="$link.getContextPath()/member/modifypassword" target="_blank">密码找回 <span>Password recovery</span></a></dd>
+				#else
+                <!--未登录显示-->
+				<dd><a rel="external nofollow" href="$link.getContextPath()/user/resetpassword" target="_blank">密码找回 <span>Password recovery</span></a></dd>
+				#end
+				<dd><a rel="external nofollow" href="$link.getContextPath()/aboutus?member" target="_blank">会员说明 <span>Members bible</span></a></dd>
+			</dl>
+			<dl>
+				<dt class="infotit">钢为网</dt>
+				<dd><a rel="external nofollow" href="$link.getContextPath()/aboutus" target="_blank">关于钢为 <span>About PRCsteel</span></a></dd>
+				<dd><a rel="external nofollow" href="$link.getContextPath()/aboutus?contact" target="_blank">联系我们 <span>Contact us</span></a></dd>
+				<dd><a rel="external nofollow" href="$link.getContextPath()/disclaimer" target="_blank">隐私声明 <span>Privacy statement</span></a></dd>
+                <dd><a rel="external nofollow" href="$!{marketCenterDomain}/dongtai.html" target="_blank">钢为动态 <span>Prcsteel news</span></a></dd>
+			</dl>
+		</div>
+	</div>
+</div>
+<div id="shopcart" class="shopcart"></div>
+<!-- 底部导航 -->
+<div class="footnav">
+	<div class="footnavbox">
+		<ul>
+			<li><a href="$link.getContextPath()/">首页</a></li>
+			<li><a href="$link.getContextPath()/market/" target="_blank">钢铁超市</a></li>
+			<li><a href="$marketCenterDomain">行情圈</a></li>
+			<li><a href="https://www.paysteel.com/" target="_blank">款道</a></li>
+			<li><a href="$link.getContextPath()/helpfind/">钢为购</a></li>
+		</ul>
+	</div>	
+</div>
+
+<!-- 底部E -->
+<div class="indexfooter">
+	#if(!$null.isnull(${friendshipLink}) && ${friendshipLink.data.size()} > 0)
+		<div class="frendlink f-clrfix">
+			<div class="frenlinkleft f-fl"><em></em></div>
+			<div class="frendlinkright f-fr">
+				#foreach($!{friendship} in $!{friendshipLink.data})
+					<a href="$!{friendship.url}" target="_blank">$!{friendship.title}</a>
+				#end
+			</div>
+		</div>
+	#end
+	<!-- Footer S -->
+#parse("layout/globalfooter.vm")
+	<!-- Footer E -->
+</div>
+<script src="$link.getContextPath()/js/lib/seajs/2.2.0/sea.js"></script>
+<script src="$link.getContextPath()/js/seaconfig.js"></script>
+<script>
+	seajs.use('$link.getContextPath()/js/event/index.init.js');
+    var marketCenterDomain = "$marketCenterDomain";
+</script>
+  <!--
+      	cas登录开始
+      -->
+#parse("layout/cas.vm")
+<!--
+	cas登录结束
+-->
+#parse("layout/qq.vm")
+</body>
+</html>

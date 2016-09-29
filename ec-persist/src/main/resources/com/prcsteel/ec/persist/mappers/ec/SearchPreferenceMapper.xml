@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.prcsteel.ec.persist.dao.ec.SearchPreferenceDao" >
+  <resultMap id="BaseResultMap" type="com.prcsteel.ec.model.dto.SearchHistoryDto" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="category_uuid" property="categoryUuid" jdbcType="VARCHAR" />
+    <result column="category_name" property="categoryName" jdbcType="VARCHAR" />
+    <result column="material_uuid" property="materialUuid" jdbcType="VARCHAR" />
+    <result column="material_name" property="materialName" jdbcType="VARCHAR" />
+    <result column="spec1" property="spec1" jdbcType="VARCHAR" />
+    <result column="spec2" property="spec2" jdbcType="VARCHAR" />
+    <result column="spec3" property="spec3" jdbcType="VARCHAR" />
+    <result column="factory_id" property="factoryId" jdbcType="VARCHAR" />
+    <result column="factory_name" property="factoryName" jdbcType="VARCHAR" />
+    <result column="city_id" property="cityId" jdbcType="VARCHAR" />
+    <result column="city_name" property="cityName" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <update id="searchPreferencesJob">
+     call proc_do_search_preferences();
+  </update>
+
+  <update id="showSearchPreference" parameterType="com.prcsteel.ec.model.query.Market2SmartResourceQuery">
+    <![CDATA[
+      UPDATE mkt_search_preference
+      SET is_show = 'Y'
+      WHERE user_guid = #{userGuid} AND category_uuid = #{categoryUuid} AND count >= 3 AND (
+        SELECT * FROM(
+          SELECT COUNT(id) FROM mkt_search_preference
+          WHERE user_guid = #{userGuid} AND is_deleted = 'N' AND is_show = 'Y'
+        ) x
+      ) < 5
+    ]]>
+  </update>
+
+  <update id="delSearchPreference" parameterType="java.lang.Long">
+    UPDATE mkt_search_preference
+    SET is_deleted = 'Y'
+    WHERE id = #{id};
+    UPDATE mkt_search_history h, (
+    SELECT user_guid, category_uuid
+    FROM mkt_search_preference
+    WHERE id = #{id}
+    ) d
+    SET h.is_deleted_for_preference = 'Y'
+    WHERE h.category_uuid = d.category_uuid
+    AND (h.user_guid = d.user_guid OR (h.user_guid IS NULL AND d.user_guid IS NULL))
+    AND h.is_deleted_for_preference = 'N';
+  </update>
+
+  <select id="getSearchPreferenceList" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT id, category_uuid, category_name, material_uuid, material_name, spec1, spec2, spec3,
+      factory_id, factory_name, ifnull(city_id, 0) city_id, city_name
+    FROM mkt_search_preference
+    WHERE user_guid = #{userGuid} AND is_deleted = 'N' AND is_show = 'Y'
+    ORDER BY count DESC, last_updated DESC, id DESC
+  </select>
+</mapper>

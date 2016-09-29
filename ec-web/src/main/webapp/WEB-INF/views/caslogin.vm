@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    #parse("layout/context.vm")
+    <script type="text/javascript" src="$link.getContextPath()/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+    	var username = "",pwd = "";
+    	var setInfo = function(u,p){
+    		username = u;
+    		pwd = p;
+    		$("#subIframe")[0].contentWindow.loginforParent();
+    	}
+    	var getInfo = function(){
+    		
+    		return {username:username,pwd:pwd}
+    	};
+
+        function loginMessage(res) {
+            if (res.code == 0){
+                window.parent.cas.loginAfter();
+            } else {
+            	//var index = indexOf(Context.CAS_MSG.status, res.msg);
+                //$("#msg").html(Context.CAS_MSG.message[index]);
+            	window.parent.cas.wrongAfter(Context.getMsg(res.msg));
+                
+            }
+        }
+        function indexOf(arr, str){
+            // 如果可以的话，调用原生方法
+            if(arr && arr.indexOf){
+                return arr.indexOf(str);
+            }
+
+            var len = arr.length;
+            for(var i = 0; i < len; i++){
+                // 定位该元素位置
+                if(arr[i] == str){
+                    return i;
+                }
+            }
+
+            // 数组中不存在该元素
+            return -1;
+        }
+
+        /**
+         * 时间戳
+         * @returns {number}
+         */
+        var timestamp = function() {
+            return new Date().getTime();
+        }
+    </script>
+</head>
+<body>
+    <iframe id="subIframe" src="$link.getRoot()$link.getContextPath()/casloginDiagram"></iframe>
+    <button>Fetch</button>
+    <div id="msg" style="color: Red;"></div>
+</body>
+</html>

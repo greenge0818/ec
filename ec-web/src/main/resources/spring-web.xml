@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:mvc="http://www.springframework.org/schema/mvc"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context 
+http://www.springframework.org/schema/context/spring-context-3.0.xsd
+http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+	<import resource="ecweb-config.xml" />
+
+	<mvc:annotation-driven
+			content-negotiation-manager="contentNegotiationManager" />
+	<mvc:resources mapping="/js/**" location="/js/" />
+	<mvc:resources mapping="/css/**" location="/css/" />
+	<mvc:resources mapping="/swagger-ui/**" location="/swagger-ui/" />
+	<mvc:resources mapping="/robots.txt" location="/" />
+	<mvc:resources mapping="/sitemap-*.txt" location="/" />
+	<bean id="contentNegotiationManager"
+		  class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+		<property name="favorPathExtension" value="false" />
+
+		<property name="favorParameter" value="false" />
+		<property name="ignoreAcceptHeader" value="false" />
+		<property name="mediaTypes">
+			<value>
+				atom=application/atom+xml
+				html=text/html
+				json=application/json
+				*=*/*
+			</value>
+		</property>
+	</bean>
+
+	<context:component-scan base-package="com.prcsteel.ec.controller" />
+
+	<bean id="velocityConfig"
+		  class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+		<property name="configLocation">
+			<value>classpath:/velocity.properties</value>
+		</property>
+	</bean>
+
+	<bean id="viewResolver"
+		  class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
+		<property name="exposeSpringMacroHelpers" value="true" />
+		<property name="suffix" value=".vm" />
+		<property name="layoutUrl" value="layout/default.vm" />
+		<property name="contentType" value="text/html;charset=utf-8" />
+		<property name="toolboxConfigLocation" value="WEB-INF/vm-toolbox.xml" />
+	</bean>
+
+	<bean id="multipartResolver"
+		  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- one of the properties available; the maximum file size in bytes -->
+		<property name="maxUploadSize" value="40000000" />
+	</bean>
+
+
+	<bean class="com.prcsteel.ec.config.SwaggerConfiguration"/>
+</beans>

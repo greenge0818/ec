@@ -1,0 +1,172 @@
+<!--[if lte IE 6]>
+<div style="width:100%;_position:absolute;
+_bottom:auto;
+_top:expression(eval(document.documentElement.scrollTop));
+z-index:1000;">
+	<div style="width:100%;height:30px;border-bottom:1px solid #ff5a00;background:#ffede3;color:#444;line-height:30px; text-align:center;">
+	系统检测您当前的浏览器为IE6，可能会影响部分功能的使用。为了您有更好的体验。建议您<a href="http://www.microsoft.com/china/windows/internet-explorer/" target="_blank" style="color:#c81624;text-decoration:underline;">升级IE浏览器</a>或者下载安装使用<a href="http://dlsw.baidu.com/sw-search-sp/soft/9d/14744/ChromeStandalone_V43.0.2357.124_Setup.1433905898.exe" target="_blank" style="color:#c81624;text-decoration:underline;">谷歌浏览器chrome</a>
+	</div>
+<style>
+body{_padding-top:30px;}
+</style>
+</div>
+<![endif]-->
+<!---头部公共控件 S--->
+
+<!---头部公共控件 E--->
+<!--logo 搜索 S-->
+<div class="bg_topnav">
+	<div class="topnav_width f-clrfix">
+		<div class="topnav_left">
+			<a href="$link.getContextPath()/" id="topLogin" class="topnav_login red-c">钢为网首页</a>
+			<span>服务热线：0571-8971&nbsp;8799</span>
+		</div>
+		<div class="topnav_left" id="userCenterbox" style="display:none;">
+			<i>您好，<label class="icon_topnav_loginin" id="gtxh_uame"></label></i>
+			<a id="userCenter" href="http://market.prcsteel.com/Manage/Todo" target="_blank" ru="http://market.prcsteel.com">会员中心</a>
+			<a id="loginOut" href="$link.getContextPath()/logout.html">退出</a>
+		</div>
+		<div class="topnav_right">
+			<ul>
+				<li class="p-l">
+					<a href="javascript:;" class="popueButton">您好，<span>$!{memberInfo.name}#if(!$!{memberInfo.name})$!{memberInfo.mobile}#end</span></a><a id="loginOut" href="$link.getContextPath()/logout">退出</a>
+				</li>
+				<li class="app"><b><a href="$link.getContextPath()/appintro" target="_blank" class="popueButton">掌柜APP</a></b>
+				</li>
+				<li class="a2">
+					<b class="quick_nav"><a href="$link.getContextPath()/guide" target="_blank" class="popueButton">网站导航</a></b><!-- <i></i>-->
+					<!--<div class="popuePanel quickPanel" id="quickPanel">
+						<i></i>
+						<div class="quick_market">
+							<span>钢铁超市</span>
+							<br>
+							<b>板材 </b>&nbsp;
+							<a href="http://market.prcsteel.com/#sortId=2394&amp;nsortId=2411" target="_blank">低合金板</a>
+							<a href="http://market.prcsteel.com/#sortId=2394&amp;nsortId=2414" target="_blank">容器板</a>
+							<a href="http://market.prcsteel.com/#sortId=2394&amp;nsortId=2406" target="_blank">热轧开平板</a>
+							<a href="http://market.prcsteel.com/#sortId=2394&amp;nsortId=2410" target="_blank">中厚板</a>
+							<br>
+							<b>卷材 </b>&nbsp;
+							<a href="http://market.prcsteel.com/#sortId=2403&amp;nsortId=2405" target="_blank">热轧卷板</a>
+							<a href="http://market.prcsteel.com/#sortId=2403&amp;nsortId=2592" target="_blank">镀锌带钢</a>
+							<a href="http://market.prcsteel.com/#sortId=2403&amp;nsortId=2415" target="_blank">冷轧卷板</a>
+							<a href="http://market.prcsteel.com/#sortId=2403&amp;nsortId=2603" target="_blank">低合金卷</a>
+							<br>
+							<b>型材 </b>&nbsp; <a href="http://market.prcsteel.com/#sortId=2395&amp;nsortId=2475" target="_blank">等边角钢</a>
+							<a href="http://market.prcsteel.com/#sortId=2395&amp;nsortId=2423" target="_blank">H型钢</a>
+							<a href="http://market.prcsteel.com/#sortId=2395&amp;nsortId=2421" target="_blank">槽钢</a>
+							<a href="http://market.prcsteel.com/#sortId=2395&amp;nsortId=2422" target="_blank">工字钢</a>
+							<br>
+							<b>管材 </b>&nbsp; <a href="http://market.prcsteel.com/#sortId=2397&amp;nsortId=2434" target="_blank">无缝管</a>
+							<a href="http://market.prcsteel.com/#sortId=2397&amp;nsortId=2435" target="_blank">方管</a>
+							<a href="http://market.prcsteel.com/#sortId=2397&amp;nsortId=2433" target="_blank">镀锌管</a>
+							<a href="http://market.prcsteel.com/#sortId=2397&amp;nsortId=2432" target="_blank">焊管</a>
+							<br>
+							<b>建材 </b>&nbsp; <a href="http://market.prcsteel.com/#sortId=2396&amp;nsortId=2427" target="_blank">螺纹钢</a>
+							<a href="http://market.prcsteel.com/#sortId=2396&amp;nsortId=2429" target="_blank">圆钢</a>
+							<a href="http://market.prcsteel.com/#sortId=2396&amp;nsortId=2430" target="_blank">高线</a>
+							<a href="http://market.prcsteel.com/#sortId=2396&amp;nsortId=2522" target="_blank">盘螺</a>
+							<br>
+							<b>优钢 </b>&nbsp; <a href="http://market.prcsteel.com/#sortId=2398&amp;nsortId=2440" target="_blank">合结圆</a>
+							<a href="http://market.prcsteel.com/#sortId=2398&amp;nsortId=2439" target="_blank">碳结圆</a>
+							<a href="http://market.prcsteel.com/#sortId=2398&amp;nsortId=2631" target="_blank">合金钢</a>
+							<a href="http://market.prcsteel.com/#sortId=2398&amp;nsortId=2458" target="_blank">轴承钢</a>
+							<br>
+
+						</div>
+						<div class="quick_city">
+							<span>地区分站</span>
+							<a href="http://news.prcsteel.com/areachannel/shanghai.html" target="_blank">上海</a>
+							<a href="http://news.prcsteel.com/areachannel/beijing.html" target="_blank">北京</a>
+							<a href="http://news.prcsteel.com/areachannel/tianjin.html" target="_blank">天津</a>
+							<a href="http://news.prcsteel.com/areachannel/hangzhou.html" target="_blank">杭州</a>
+							<a href="http://news.prcsteel.com/areachannel/nanjing.html" target="_blank">南京</a>
+							<br />
+							<a href="http://news.prcsteel.com/areachannel/jinan.html" target="_blank">济南</a>
+							<a href="http://news.prcsteel.com/areachannel/qingdao.html" target="_blank">青岛</a>
+							<a href="http://news.prcsteel.com/areachannel/wuhan.html" target="_blank">武汉</a>
+							<a href="http://news.prcsteel.com/areachannel/chengdu.html" target="_blank">成都</a>
+							<a href="http://news.prcsteel.com/areachannel/chongqing.html" target="_blank">重庆</a>
+							<br />
+							<a href="http://news.prcsteel.com/areachannel/xian.html" target="_blank">西安</a>
+							<a href="http://news.prcsteel.com/areachannel/changsha.html" target="_blank">长沙</a>
+							<a href="http://news.prcsteel.com/areachannel/lecong.html" target="_blank">乐从</a>
+							<a href="http://news.prcsteel.com/areachannel/nanchang.html" target="_blank">南昌</a>
+							<a href="http://news.prcsteel.com/areachannel/wuxi.html" target="_blank">无锡</a>
+							<br />
+							<a href="http://news.prcsteel.com/areachannel/hefei.html" target="_blank">合肥</a>
+							<a href="http://news.prcsteel.com/areachannel/changchun.html" target="_blank">长春</a>
+							<a href="http://news.prcsteel.com/areachannel/fuzhou.html" target="_blank">福州</a>
+							<a href="http://news.prcsteel.com/areachannel/shenyang.html" target="_blank">沈阳</a>
+							<a href="http://news.prcsteel.com/areachannel/kunming.html" target="_blank">昆明</a>
+							<br />
+							<a href="http://news.prcsteel.com/areachannel/lanzhou.html" target="_blank">兰州</a>
+							<a href="http://news.prcsteel.com/areachannel/zhengzhou.html" target="_blank">郑州</a>
+							<a href="http://news.prcsteel.com/areachannel/guangzhou.html" target="_blank">广州</a>
+							<a href="http://news.prcsteel.com/areachannel/nanning.html" target="_blank">南宁</a>
+							<a href="http://news.prcsteel.com/areachannel/shijiazhuang.html" target="_blank">石家庄</a>
+							<br />
+							<a href="http://news.prcsteel.com/areachannel/haerbin.html" target="_blank">哈尔滨</a>
+						</div>
+						<div class="quick_info">
+							<span>信息行情</span>
+							<strong>
+					<a href="http://news.prcsteel.com/steelchannel/quanguo/gangcaijiage/jiancai.html" target="_blank">钢材市场</a></strong>
+							<a href="http://news.prcsteel.com/steelchannel/quanguo/gangtiexinwen/suoyou.html" target="_blank">钢铁新闻</a>
+							<a href="http://news.prcsteel.com/steelchannel/quanguo/gangcaijiage/jiancai.html" target="_blank">钢材价格</a>
+							<a href="http://news.prcsteel.com/steelchannel/quanguo/gangcaifenxi/jiancai.html" target="_blank">钢材分析</a>
+							<a href="http://news.prcsteel.com/steelchannel/quanguo/gangcaikucun/jiancai.html" target="_blank">钢材库存</a>
+							<br />
+							<strong><a href="http://news.prcsteel.com/yanjiuzhongxin.html" target="_blank">研究中心</a></strong>
+							<a href="http://news.prcsteel.com/gangshikuaibao/" target="_blank">钢市快报</a>
+							<a href="http://news.prcsteel.com/zhuanti.html" target="_blank">钢铁专题</a>
+							<br />
+							<strong>
+					<a href="http://news.prcsteel.com/gangchangxinxi/gangchangtiaojia.html" target="_blank">钢厂信息</a></strong>
+							<a href="http://news.prcsteel.com/gangchangxinxi/gangchangdongtai.html" target="_blank">钢厂动态</a>
+							<a href="http://news.prcsteel.com/gangchangxinxi/gangchangtiaojia.html" target="_blank">钢厂调价</a>
+							<br />
+							<strong><a href="http://news.prcsteel.com/hangqing/chanjingxinwen/hongguanzixun.html" target="_blank">产经新闻</a></strong>
+							<a href="http://news.prcsteel.com/qihuozhongxin/fenxipinglun.html" target="_blank">期货</a>
+							<a href="http://news.prcsteel.com/hangqing/yousejinshu/jiagehangqing.html" target="_blank">有色金属</a>
+							<a href="http://news.prcsteel.com/hangqing/chanjingxinwen/guoneicaijing.html" target="_blank">国内财经</a>
+							<div class="quick_info_bottom">
+								<a href="http://market.prcsteel.com/brand.html" target="_blank">品牌店</a>
+								<a href="http://bbs.prcsteel.com/" target="_blank">钢铁朋友圈</a>
+								<a href="http://app.prcsteel.com/" target="_blank" class="red">掌中钢为APP</a>
+								<a href="http://soft.prcsteel.com/" target="_blank">钢铁旺旺</a>
+							</div>
+						</div>
+					</div>-->
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="tab-nav">
+	<div class="topnav_width f-clrfix">
+		<a href="$link.getContextPath()/" class="topnav_left bg-logo"></a>
+		<div class="f-fr">
+			<ul>
+				<li name="member-tab">
+					<a href="$link.getContextPath()/member">会员中心</a>
+
+				</li>
+				<li name="requirement-tab">
+					<a href="$link.getContextPath()/member/requirement">询价管理</a>
+
+				</li>
+				<li name="purchase-tab">
+					<a href="$link.getContextPath()/member/consignmanage">采购管理</a>
+
+				</li>
+				<li >
+					<a href="$!marketCenterDomain/user.html">资讯管理</a>
+				</li>
+				<li class="cart">
+					<a  href="$link.getContextPath()/cart/mycart" target="_blank">购物车<span class="bgurl circle">$!{myCartCount}</span ><em class="bgurl rgt">&nbsp;</em></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

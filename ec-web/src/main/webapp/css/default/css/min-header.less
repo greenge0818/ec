@@ -1,0 +1,57 @@
+@w1000: 1000px;
+@mg-auto: 0px auto;
+@pos-r: relative;
+@pos-a: absolute;
+@bg-cfcfcf:#cfcfcf;
+@font12: 12px;
+@font14: 14px;
+@red:#f23d3a;
+@hoverred:#d22626;
+@82:#828282;
+
+
+.min-head-layout{
+    width: auto;
+    height: 50px;
+    background-color: @bg-cfcfcf;
+    a{
+        color:@82;
+    }
+    a:hover{
+        color: @hoverred;
+    }
+    .head-main{
+        width: @w1000;
+        height: 50px;
+        margin:@mg-auto;
+        line-height: 50px;
+        font-size:@font14 ;
+        .head-usermenu{
+            width: 390px;
+            color:#828282;
+            .head-userlogin{
+                color:#828282;
+            }
+
+        }
+        .head-tel{
+            width: 470px;
+            color:#828282;
+            text-align: right;
+            span{
+                color: @red;
+                font-weight: bold;
+                font-size:16px ;
+            }
+            a{
+                display: inline-block;
+                margin-right:15px;
+            }
+            em{
+                display: inline-block;
+                margin: 0 15px 0 0;
+            }
+        }
+    }
+}
+

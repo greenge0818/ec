@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <title>钢为网-修改绑定手机</title>
+  <!-- meta S -->
+  #parse("layout/meta.vm")
+  <!-- meta E -->
+
+  <!-- basic scripts S -->
+  #parse("layout/scripts.vm")
+  <!-- basic scripts E -->
+
+  <!-- context S -->
+  #parse("layout/context.vm")
+  <!-- context E -->
+  <link href="$link.getContextPath()/css/default/css/common.css" rel="stylesheet" />
+  <link href="$link.getContextPath()/css/default/css/shopcart.css" rel="stylesheet" />
+  <link href="$link.getContextPath()/css/default/css/login.css" rel="stylesheet" />
+
+</head>
+
+<body class="no-skin">
+
+  <!-- Header S-->
+  #parse("layout/header.vm")
+  <div class="header mg-t-30">
+    <a href="$link.getContextPath()/" target="_blank" class="logo"></a>
+    <em></em><h2>修改绑定手机</h2>
+    <span>全国服务热线：<i>0571-8971&nbsp;8799</i></span>
+  </div> 
+  <!-- Header E -->
+
+  <!-- .main-container -->
+    <div class="mainbg">
+        <div class="dragContent">
+          <!-- step1 验证旧手机 -->
+          <div id="step1" class="showstep hide">
+            <div id="resetbox1" class="loginbox login-form f-clrfix">
+                <!-- 手机验证注册-->
+                <form id="oldcheck" method="post">
+                    <ul id="telCheckLogin">
+                        
+                        <li class="f-clrfix">
+                            <p class="resetphone">当前绑定手机号码：<span id="">$!{userPhone}</span></p> 
+                            <input type="hidden"  class="oldPhone" name="oldPhone" value="$!{userPhone2}">    
+                            <p class="form-err"><em class="error-icon"></em><span></span></p>                             
+                        </li>
+                        
+                        <li class="f-clrfix">
+                            <div class="form-item wd-150">
+                                <div class="border-style">
+                                    <div class="item-text wd-150">
+                                        <span class="icon login-smscode-icon"></span>
+                                        <div class="item-text-wrap wd-90">
+                                            <label class="ipt-label" style="color: rgb(153, 153, 153);">验证码</label><input type="text" must="1" verify="number" value="" name="oldCode" class="ipt-text wd-90 oldcodenum" id="oldCode" maxlength="4">
+                                        </div>
+                                        <em class="input-empty"></em>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="sms_btn" id="getCode">获取验证码</span>
+                            <p class="form-err"><em class="error-icon"></em><span></span></p>
+                        </li>
+                        <li style="height:1px;"></li>
+                        <li class="f-clrfix">
+                            <input type="button" id="Stepgo" class="input_btn" value="下一步">
+                        </li>
+                        
+                    </ul>
+                </form>
+            </div>
+             <p class="nowLogin resetinfo">验证遇到问题，请拨打0571-8971&nbsp;8799或联系<a class="qqlink" >在线客服</a>帮忙处理</p>
+          </div>
+
+          <!-- step2 输入新的手机号码 -->
+          <div id="step2" class="showstep hide">
+            <div id="newPhonebind" class="loginbox login-form f-clrfix">
+              <ul>
+                  <form id="newphone" method="post">
+                  <li class="f-clrfix">
+                      <div class="form-item">
+                          <div class="border-style">
+                              <div class="item-text">
+                                  <span class="icon login-iphone-icon"></span>
+                                  <div class="item-text-wrap">
+                                      <label class="ipt-label" style="color: rgb(153, 153, 153);">新手机号码</label><input type="text" id="userPhonetellogin" name="newPhone" must="1"  class="input_txt ipt-text userPhonetellogin" maxlength="11">
+                                  </div>
+                                  <em class="input-empty"></em>
+                              </div>
+                          </div>
+                          
+                      </div>
+                       <p class="form-err"><em class="error-icon"></em><span></span><i class="form-err-link"></i></p>
+                  </li>
+                  <li class="f-clrfix">
+                      <div class="form-item wd-150">
+                          <div class="border-style">
+                              <div class="item-text wd-150">
+                                  <span class="icon login-smscode-icon"></span>
+                                  <div class="item-text-wrap wd-90">
+                                      <label class="ipt-label" style="color: rgb(153, 153, 153);">验证码</label><input type="text" value="" name="newCode" class="ipt-text wd-90" id="smsCodeNumber" must="1" verify="number" maxlength="4">
+                                  </div>
+                                  <em class="input-empty"></em>
+                              </div>
+                          </div>
+                      </div>
+                      <span class="sms_btn" id="getNewCode">获取验证码</span>
+                       <p class="form-err"><em class="error-icon"></em><span></span></p>
+                  </li>
+                  <li style="height:1px;"></li>
+                  <li class="f-clrfix">
+                      <input type="button" id="bindNewPhone" value="立即绑定" class="input_btn">
+                  </li>
+              </form>
+              </ul>
+              
+            </div>  
+            <p class="nowLogin resetinfo">验证遇到问题，请拨打0571-8971&nbsp;8799或联系<a class="qqlink" >在线客服</a>帮忙处理</p>
+          </div>
+
+          <!-- step3 手机号码绑定成功 -->
+          <div id="step3" class="showstep hide">
+              <div class="regmain f-clrfix">
+                <p class="reg-ok"><em class="reg-ok-icon"></em></p>
+                <h2 class="reg-ok">您的手机号码修改成功</h2>
+                <p class="reg-ok reg-msg">系统将会在<span>5</span>秒后自动跳转至登录页</p>
+                <p class="reg-ok reg-link"><a href="javascript:;" class="f-fl" id="gobackindex">&lt;返回首页</a><a href="$link.getContextPath()/logout?to=login" class="f-fr">立即登录</a></p>
+              </div>
+          </div>
+        </div>
+    </div>
+  <!-- /.main-container -->
+  <script src="$link.getContextPath()/js/lib/seajs/2.2.0/sea.js"></script>
+  <script src="$link.getContextPath()/js/seaconfig.js"></script>
+  <script>
+    seajs.use('$link.getContextPath()/js/event/resetphone.js'); 
+  </script>
+
+  <!-- Footer S -->
+  #parse("layout/footer.vm")
+  <!-- Footer E -->
+	#parse("layout/qq.vm")
+</body>
+</html>

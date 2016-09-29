@@ -1,0 +1,13 @@
+.idea
+**.iml
+rebel.xml
+
+
+**/target/
+**/overlays/
+**/classes/
+**/lib/
+
+**.epoch
+**.log
+**.lck

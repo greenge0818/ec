@@ -1,0 +1,45 @@
+/*color*/
+@black:#333;
+@blue:#1d7ad9;
+@white:#fff;
+@orange:#ff6926;
+@red:#c81623;
+@gray:#999999;
+@lightGray:#e8e8e8;
+.t-c{text-align: center;}
+.p-t(@n){padding-top:@n;}
+.p-r(@n){padding-right:@n;}
+.p-b(@n){padding-bottom:@n;}
+.p-l(@n){padding-left:@n;}
+
+.ma-t(@n){margin-top:@n;}
+.ma-r(@n){margin-right:@n;}
+.ma-b(@n){margin-bottom:@n;}
+.ma-l(@n){margin-left:@n;}
+/*分页器 S*/
+.m-page{.t-c;height: 36px;line-height: 36px;.ma-t(10px);.p-t(5px);
+    .m-page-num{display: inline;}
+    .m-page-form{display: inline;
+        .page-num-ipt{width: 25px;height: 20px;border: 1px solid @lightGray;.p-l(5px);.p-r(5px);vertical-align: middle;.t-c;}
+        .page-num-ipt:focus{width: 25px;height: 20px;border: 1px solid @lightGray;.p-l(5px);.p-r(5px);vertical-align: middle;.t-c;}
+        .page-num-btn{
+            border: 1px solid @lightGray;height: 26px;width: 40px;background: @white;
+            line-height: 23px;*line-height: 20px;vertical-align: middle;
+        }
+    }
+    button{width:50px;height:23px;border:1px solid #e8e8e8;background:#fff;line-height:20px;vertical-align: middle;}
+    button:hover{border:1px solid #c81624;color:#c81624;-moz-transition:border-color 0.3s ease-in;-webkit-transition:border-color 0.3s ease-in;-o-transition:border-color 0.3s ease-in;-ms-transition:border-color 0.3s ease-in;transition:border-color 0.3s ease-in;}
+    i{
+           input{width:30px;height:21px;margin-right:5px;padding:0 3px;border:1px solid #e8e8e8;line-height:20px;vertical-align: middle;} 
+    }
+    .prev, .next{padding:7px 14px;border: 1px solid @lightGray;margin: 0 4px;}
+     span{color:@gray}
+    .prev.current, .next.current{background: #f5f5f5;color:@gray;border: 1px solid #e8e8e8;padding: 7px 14px;}
+    .page-num{width: 36px;height: 36px;padding:7px 14px;
+        &:hover{background: @red;}
+    }
+    a{padding:7px 14px;border: 1px solid @lightGray;border-left: 0;}
+    .current{background: @red;border:1px solid @red;color:@white;padding:7px 14px;}
+    .dotted-page{padding: 0 5px;}
+}
+/*分页器 E*/

@@ -1,0 +1,245 @@
+<div class="show-layer product-bar none" id="showLayer_nsortName" style="display: block;">
+	<div class="product-t">
+		<ul class="product-t-ul">
+			<li class="product-t-li "><a href="javascript:;" sortid="2397">管材</a><em class="icon down-redArr-icon"></em></li>
+			<li class="product-t-li "><a href="javascript:;" sortid="2398">优钢</a><em class="icon down-redArr-icon"></em></li>
+		</ul>
+	</div>
+	<div name="nsort" style="display: block;">
+		<div class="product-con f-clrfix bder-b-dashed">
+			<div class="product-con-sort f-fl"><span class="bold">热轧:</span></div>
+			<div class="product-con-bar f-fl">
+				<div class="product-con-bar-list">
+					<span><a nsortid="2434" href="javascript:;">无缝管</a></span>
+					<span><a nsortid="2432" href="javascript:;">焊管</a></span>
+					<span><a nsortid="2438" href="javascript:;">螺旋管</a></span>
+					<span><a nsortid="2437" href="javascript:;">锅炉管</a></span>
+					<span><a nsortid="2487" href="javascript:;">流体管</a></span>
+				</div>
+				<div class="product-con-bar-list">
+					<span><a nsortid="2488" href="javascript:;">合金管</a></span>
+					<span><a nsortid="2492" href="javascript:;">石油管</a></span>
+					<span><a nsortid="3011" href="javascript:;">热扩管</a></span>
+					<span><a nsortid="2436" href="javascript:;">方矩管</a></span>
+					<span><a nsortid="3013" href="javascript:;">直缝管</a></span>
+				</div>
+				<div class="product-con-bar-list">
+					<span><a nsortid="2599" href="javascript:;">支架管</a></span>
+					<span><a nsortid="2494" href="javascript:;">轴承管</a></span>
+					<span><a nsortid="2490" href="javascript:;">结构管</a></span>
+					<span><a nsortid="2489" href="javascript:;">化肥用管</a></span>
+					<span><a nsortid="2547" href="javascript:;">精密无缝管</a></span>
+				</div>
+				<div class="product-con-bar-list">
+					<span><a nsortid="2653" href="javascript:;">地质管</a></span>
+					<span><a nsortid="2613" href="javascript:;">管线管</a></span>
+				</div>
+			</div>
+		</div>
+		<div class="product-con f-clrfix bder-b-dashed">
+			<div class="product-con-sort f-fl"><span class="bold">涂镀:</span></div>
+			<div class="product-con-bar f-fl">
+				<div class="product-con-bar-list"><span><a nsortid="2433" href="javascript:;">镀锌管</a></span><span><a nsortid="2435" href="javascript:;">镀锌方矩管</a></span><span><a nsortid="3065" href="javascript:;">涂塑钢管</a></span></div>
+			</div>
+		</div>
+		<div class="product-con f-clrfix bder-b-dashed">
+			<div class="product-con-sort f-fl"><span class="bold">不锈钢:</span></div>
+			<div class="product-con-bar f-fl">
+				<div class="product-con-bar-list"><span><a nsortid="2449" href="javascript:;">不锈钢管</a></span></div>
+			</div>
+		</div>
+	</div>
+	<div name="nsort" style="display: none;">
+		<div class="product-con f-clrfix bder-b-dashed">
+			<div class="product-con-sort f-fl"><span class="bold">热轧:</span></div>
+			<div class="product-con-bar f-fl">
+				<div class="product-con-bar-list">
+					<span><a nsortid="2439" href="javascript:;">碳结圆</a></span>
+					<span><a nsortid="2440" href="javascript:;">合结圆</a></span>
+					<span><a nsortid="2444" href="javascript:;">模具钢</a></span>
+					<span><a nsortid="2458" href="javascript:;">轴承钢</a></span>
+					<span><a nsortid="2460" href="javascript:;">齿轮钢</a></span>
+				</div>
+				<div class="product-con-bar-list">
+					<span><a nsortid="2445" href="javascript:;">弹簧钢</a></span>
+					<span><a nsortid="2595" href="javascript:;">工具钢</a></span>
+					<span><a nsortid="2431" href="javascript:;">冷拉元</a></span>
+					<span><a nsortid="2496" href="javascript:;">易切削钢</a></span>
+					<span><a nsortid="2571" href="javascript:;">冷镦钢</a></span>
+				</div>
+				<div class="product-con-bar-list">
+					<span><a nsortid="2631" href="javascript:;">合金钢</a></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+/****材质*****/
+<div class="show-layer textures-bar none" id="showLayer_material" style="display: block;">
+    <div class="textures-t">
+        <a class="layer-del"></a>
+		<span>可多选</span>
+    </div>
+    <div class="textures-con">
+    	<div class="textures-con-bar-list bder-b-dashed">
+    		<span><a href="javascript:;">Q345qC</a></span>
+    		<span><a href="javascript:;">Q345qD</a></span>
+    		<span><a href="javascript:;">Q345qE</a></span>
+    		<span><a href="javascript:;">Q420qC</a></span>
+    		<span><a href="javascript:;">Q370qC</a></span>
+    	</div>
+    	<div class="textures-con-bar-list bder-b-dashed">
+    		<span><a href="javascript:;">Q235qC</a></span>
+    	</div>
+    </div>
+    <div class="textures-con">你所选择的品类下没有资源</div>
+    <div class="btn-bar">
+        <button class="clear-btn">清除</button>
+        <button class="confirm-btn">确认</button>
+    </div>
+</div>
+
+
+
+
+/***厂家***/
+<div class="show-layer factory-layer textures-bar standard-bar none" style="display: block;">
+	<div class="textures-t f-clrfix">
+		<a class="layer-del f-fr"></a>
+		<span class="fl">可多选</span>
+	</div>
+	<div class="textures-con f-clrfix ">
+		<div class="textures-con-bar-list bder-b-dashed">
+			<span><a href="javascript:;">安钢</a></span>
+			<span><a href="javascript:;">鞍凌</a></span>
+			<span><a href="javascript:;">包钢</a></span>
+			<span><a href="javascript:;">包钢、中铁</a></span>
+			<span><a href="javascript:;">本钢</a></span>
+			<span><a href="javascript:;">涟钢承钢沙钢</a></span>
+		</div>
+		<div class="textures-con-bar-list bder-b-dashed">
+			<span><a href="javascript:;">宁钢</a></span>
+			<span><a href="javascript:;">武钢</a></span>
+			<span><a href="javascript:;">浙钢</a></span>
+			<span><a href="javascript:;">中铁</a></span>
+		</div>
+	</div>
+	<div class="btn-bar f-clrfix">
+		<button class="clear-btn">清除</button>
+		<button class="confirm-btn">确认</button>
+	</div>
+ </div>
+ 
+
+
+/**品规****/
+<div class="show-layer textures-bar breadth-bar standard-bar none" id="showLayer_spec2" style="display: block;">
+	<div class="textures-con f-clrfix ">
+		<div class="textures-con-bar-list bder-b-dashed">
+			<span><a href="javascript:;">1250.00</a></span>
+			<span><a href="javascript:;">1500.00</a></span>
+		</div>
+		<div class="f-clr-l">
+			
+		</div>
+	</div>
+	<div class="btn-bar t-l"> 
+	<span class="s-gray">范围：</span> 
+	<input class="range-ipt" type="text" value="" id="from_spec2">
+	<em class="dash-line">—</em>
+	<input class="range-ipt" type="text" value="" id="to_spec2">
+	<button class="clear-btn">清除</button>
+	<button class="confirm-btn">确认</button> 
+	</div>
+</div>
+/**区域**/
+<div class="show-layer area-layer textures-bar standard-bar none" style="display: none;">
+	<div class="textures-t f-clr-r">
+		<a class="layer-del f-fr" href="javascript:;"></a>
+		<span class="fl">城市（可多选）</span>
+	</div>
+    <div class="textures-con f-clrfix">
+
+	    <div class="product-con f-clrfix bder-b-dashed">
+	    	<div class="product-con-sort f-fl">
+	    		<span class="textures-list-first bold">华中：</span>
+	    	</div>
+	    	<div class="product-con-bar f-fl">
+	    		<div class="textures-con-bar-list f-clrfix">
+	    			<span><a href="javascript:;" provinceid="164" cityid="1780" isselected="0">长沙市</a></span>
+	    			<span><a href="javascript:;" provinceid="163" cityid="2057" isselected="0">武汉市</a></span>
+	    			<span><a href="javascript:;" provinceid="162" cityid="2120" isselected="0">郑州市</a></span>
+	    		</div>
+	    	</div>
+	    </div>
+	    <div class="product-con f-clrfix bder-b-dashed">
+	    	<div class="product-con-sort f-fl">
+	    		<span class="textures-list-first bold">西南：</span>
+	    	</div>
+	    	<div class="product-con-bar f-fl">
+	    		<div class="textures-con-bar-list f-clrfix">
+	    			<span><a href="javascript:;" provinceid="167" cityid="1788" isselected="0">成都市</a></span>
+	    			<span><a href="javascript:;" provinceid="149" cityid="2123" isselected="0">重庆市</a></span>
+	    		</div>
+	    	</div>
+	    </div>
+	    <div class="product-con f-clrfix bder-b-dashed">
+	    	<div class="product-con-sort f-fl">
+	    		<span class="textures-list-first bold">华南：</span>
+	    	</div>
+	    	<div class="product-con-bar f-fl">
+	    		<div class="textures-con-bar-list f-clrfix">
+	    			<span><a href="javascript:;" provinceid="165" cityid="1817" isselected="0">佛山市</a></span>
+	    		</div>
+	    	</div>
+	    </div>
+	    <div class="product-con f-clrfix bder-b-dashed">
+	    	<div class="product-con-sort f-fl">
+	    		<span class="textures-list-first bold">华北：</span>
+	    	</div>
+	    	<div class="product-con-bar f-fl">
+	    		<div class="textures-con-bar-list f-clrfix">
+	    			<span><a href="javascript:;" provinceid="150" cityid="1844" isselected="0">邯郸市</a></span>
+	    			<span><a href="javascript:;" provinceid="150" cityid="1908" isselected="0">廊坊市</a></span>
+	    			<span><a href="javascript:;" provinceid="150" cityid="2001" isselected="0">石家庄市</a></span>
+	    			<span><a href="javascript:;" provinceid="150" cityid="2026" isselected="0">唐山市</a></span>
+	    			<span><a href="javascript:;" provinceid="147" cityid="2028" isselected="0">天津市</a></span>
+	    		</div>
+	    	</div>
+	    </div>
+	    <div class="product-con f-clrfix bder-b-dashed">
+	    	<div class="product-con-sort f-fl">
+	    		<span class="textures-list-first bold">华东：</span>
+	    	</div>
+	    	<div class="product-con-bar f-fl">
+	    		<div class="textures-con-bar-list f-clrfix">
+	    			<span><a class="" href="javascript:;" provinceid="157" cityid="1846" isselected="2">杭州市</a></span>
+	    			<span><a href="javascript:;" provinceid="161" cityid="1877" isselected="0">济南市</a></span>
+	    			<span><a href="javascript:;" provinceid="161" cityid="1906" isselected="0">莱芜市</a></span>
+	    			<span><a href="javascript:;" provinceid="161" cityid="2042" isselected="0">潍坊市</a></span>
+	    			<span><a class="" href="javascript:;" provinceid="156" cityid="2051" isselected="1">无锡市</a></span>
+	    			<span><a class="" href="javascript:;" provinceid="156" cityid="2008" isselected="1">苏州市</a></span>
+	    		</div>
+	    		<div class="textures-con-bar-list f-clrfix">
+	    			<span><a class="" href="javascript:;" provinceid="148" cityid="1991" isselected="1">上海市</a></span>
+	    		</div>
+	    	</div>
+	    </div>
+	    <div class="product-con f-clrfix bder-b-dashed">
+	    	<div class="product-con-sort f-fl">
+	    		<span class="textures-list-first bold"></span>
+	    	</div>
+	    	<div class="product-con-bar f-fl">
+	    		<div class="textures-con-bar-list f-clrfix">
+	    			<span><a href="javascript:;" class="hover">全国</a></span>
+	    		</div>
+	    	</div>
+	    </div>
+    </div>
+    <div class="btn-bar f-clrfix">
+        <button class="clear-btn">清除</button>
+        <button class="confirm-btn">确认</button>
+    </div>
+</div>

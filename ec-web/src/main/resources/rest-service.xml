@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <context:component-scan base-package="org.prcsteel.rest.proxy" />
+
+    <bean id="RestAppContextAware" class="org.prcsteel.rest.proxy.RestAppContextAware">
+        <property name="basePackages">
+            <list>
+                <value>com.prcsteel.ec.service.api</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="esbServer" class="org.prcsteel.rest.proxy.BasicAuthClientHttpRequestFactory">
+        <property name="baseUrl" value="${esbServer}"/>
+        <property name="username" value="kermit"/>
+        <property name="password" value="kermit"/>
+        <property name="connectTimeout" value="${esbServerConnectTimeout}"/>
+        <property name="readTimeout" value="${esbServerReadTimeout}"/>
+        <property name="header">
+            <map>
+                <entry key="Content-Type" value="application/json;charset=utf-8"/>
+            </map>
+        </property>
+    </bean>
+</beans>

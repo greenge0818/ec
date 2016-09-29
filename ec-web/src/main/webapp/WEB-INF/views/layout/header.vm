@@ -1,0 +1,13 @@
+<!--[if lte IE 6]>
+<div style="width:100%;_position:absolute;
+_bottom:auto;
+_top:expression(eval(document.documentElement.scrollTop));
+z-index:1000;">
+	<div style="width:100%;height:30px;border-bottom:1px solid #ff5a00;background:#ffede3;color:#444;line-height:30px; text-align:center;">
+	系统检测您当前的浏览器为IE6，可能会影响部分功能的使用。为了您有更好的体验。建议您<a href="http://www.microsoft.com/china/windows/internet-explorer/" target="_blank" style="color:#c81624;text-decoration:underline;">升级IE浏览器</a>或者下载安装使用<a href="http://dlsw.baidu.com/sw-search-sp/soft/9d/14744/ChromeStandalone_V43.0.2357.124_Setup.1433905898.exe" target="_blank" style="color:#c81624;text-decoration:underline;">谷歌浏览器chrome</a>
+	</div>
+<style>
+body{_padding-top:30px;}
+</style>
+</div>
+<![endif]-->

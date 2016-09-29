@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<title>采购管理</title>
+		<!-- meta S -->
+		#parse("layout/meta.vm")
+		<!-- meta E -->
+		<link type="image/x-icon" href="$link.getContextPath()/css/default/images/favicon.ico " rel="shortcut icon">
+		<link href="$link.getContextPath()/css/plugin/jquery-tips/jquery-tips.css" rel="stylesheet" />
+		<link href="$link.getContextPath()/css/plugin/artdialog.css" rel="stylesheet" />
+		<link href="$link.getContextPath()/css/default/css/common.css" rel="stylesheet" />
+		<link href="$link.getContextPath()/css/default/css/member.css" rel="stylesheet" />
+		 #parse("layout/context.vm")
+		<script>
+//			var _hmt = _hmt || [];
+//			    (function() {
+//			      var hm = document.createElement("script");
+//			      hm.src = "//hm.baidu.com/hm.js?d18d819a63068d5dd5a58859eed22d99";
+//			      var s = document.getElementsByTagName("script")[0];
+//			      s.parentNode.insertBefore(hm, s);
+//			    })();
+		</script>
+
+		<script src="$link.getContextPath()/js/plugin/datePicker/WdatePicker.js" type="text/javascript"></script>
+		<script src="$link.getContextPath()/js/lib/seajs/2.2.0/sea.js" type="text/javascript"></script>
+		<script src="$link.getContextPath()/js/seaconfig.js"></script>
+		<script type="text/javascript">
+			 seajs.use('$link.getContextPath()/js/event/consignmanage.init.js');
+		</script>
+	</head>
+
+	<body>
+		#parse("member/head.vm")
+
+		<!--common S-->
+		<div class="m-main">
+			<div class='tab-info-c'>
+				<div class="tab-c" >
+					<ul>
+						#set($num = $!tabs.size()) 
+						#set($count = 0)
+						#foreach($tab in $!tabs)
+							<li data-pty="$tab.code" class="item #if($count == 0)item-color #end "><span>$tab.msg</span> #if($tab.count != 0) $tab.count #end</li>
+							#if($count < ($num - 1)) <li class="seprator">|</li>								
+						    #else<li class="last width530" ></li>
+						    #end
+						    #set($count = $count + 1)
+						#end
+					</ul>
+				</div>
+			</div>
+			<div class="consign">
+					<div class="search-c">
+						<div class="f-fl">
+							<label>时间：</label>
+							<input id="startDate" class="c-text Wdate height-b" type="text" onfocus="var endDate=$dp.$('endDate');WdatePicker({onpicked:function(){endDate.focus();},maxDate:'#F{$dp.$D(\'endDate\')||\'2220-10-01\'}'})">
+										-
+							<input id="endDate" class="c-text Wdate height-b"  type="text" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'startDate\')}',maxDate:'\'2220-10-01\''})">
+						</div>
+						<!--<div class="form-item">
+							<label class="f-label" style="color: rgb(153, 153, 153);">请输入订单号或卖家名称查询</label>
+							<input  type="text" class="sch-text" id="keyword" />	
+						</div>-->
+						 <div class="form-item">
+	                        <label class="f-label" style="color: rgb(153, 153, 153);">请输入订单号或品名查询</label>
+	                        <input type="text" id="keyword" class="f-text" value="" autocomplete="off">
+	                     </div>
+						
+						
+						<input class="sch-btn" type="button" value="搜索"/>
+					</div>
+					<div class="list" id="list-c">
+						
+					</div>
+					<div id="m-page" class="m-page none">
+							<div class="m-page-num" id="m-page-num">
+							</div>
+							<i>共<em class="order-page-max">1</em>页，</i>
+							<i>到第&nbsp;<input type="text" class="page-num-ipt" name="pageNum" value="" />&nbsp;页</i>
+							<button class="page-num-btn" type="button">确定</button>
+					</div>
+			</div>
+			<div class="f-clr"></div>
+		</div>
+		<!--common E-->
+		<!---公用底部控件 开始--->
+
+		<div id="footer">
+			<div>
+		        Copyright&nbsp;&nbsp; &copy; 2006-2016&nbsp;&nbsp;<a
+		            href="http://www.prcsteel.com/" target="_blank" style="color: #4884be">prcsteel.com</a>&nbsp;钢为网&nbsp;
+		        版权所有
+		    </div>
+		</div>
+
+		<!---公用底部控件 结束--->
+		<!--<div style='display:none;'>
+			<script type="text/javascript">
+				var _paq1 = _paq1 || [];
+				  _paq1.push(['trackPageView']);
+				  _paq1.push(['enableLinkTracking']);
+				  (function() {
+				    var u="//piwik.prcsteel.com/piwik/";
+				    _paq1.push(['setTrackerUrl', u+'piwik.php']);
+				    _paq1.push(['setSiteId', 5]);
+				    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+				    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+				  })();
+			</script>
+			<noscript>
+				<p><img src="//piwik.prcsteel.com/piwik/piwik.php?idsite=5" style="border:0;" alt="" /></p>
+			</noscript>
+			<script type="text/javascript">
+				var _paq = _paq || [];
+				        _paq.push(['trackPageView']);
+				        _paq.push(['enableLinkTracking']);
+				        (function () {
+				            var u = "http://piwik.prcsteel.com//piwik/";
+				            _paq.push(['setTrackerUrl', u + 'piwik.php']);
+				            _paq.push(['setSiteId', 2]);
+				            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+				            g.type = 'text/javascript'; g.async = true; g.defer = true; g.src = u + 'piwik.js'; s.parentNode.insertBefore(g, s);
+				        })();
+			</script>
+			<noscript>
+				<p><img src="http://piwik.prcsteel.com/piwik/piwik.php?idsite=2" style="border:0;" alt="" /></p>
+			</noscript>
+			<script type="text/javascript">
+				var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256380266'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1256380266' type='text/javascript'%3E%3C/script%3E"));
+			</script>
+		</div>-->
+	</body>
+
+</html>

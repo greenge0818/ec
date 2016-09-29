@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.prcsteel.ec.persist.dao.ec.GlobalIdDao">
+
+	<insert id="insert" parameterType="com.prcsteel.ec.model.domain.ec.GlobalId" useGeneratedKeys="true" keyProperty="id">
+		<![CDATA[
+			INSERT INTO global_id (created)
+			VALUES (NOW())
+		]]>
+	</insert>
+
+</mapper>

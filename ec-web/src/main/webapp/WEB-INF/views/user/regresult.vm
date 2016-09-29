@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <title>注册成功</title>
+  <!-- meta S -->
+  #parse("layout/meta.vm")
+  <!-- meta E -->
+
+  <!-- basic scripts S -->
+  #parse("layout/scripts.vm")
+  <!-- basic scripts E -->
+
+  <!-- context S -->
+  #parse("layout/context.vm")
+  <!-- context E -->
+  <link href="$link.getContextPath()/css/default/css/common.css" rel="stylesheet" />
+  <link href="$link.getContextPath()/css/default/css/shopcart.css" rel="stylesheet" />
+  <link href="$link.getContextPath()/css/default/css/login.css" rel="stylesheet" />
+</head>
+
+<body class="no-skin">
+
+  <!-- Header S-->
+  #parse("layout/header.vm")
+  <div class="header mg-t-30">
+    <a href="$link.getContextPath()/" target="_blank" class="logo"></a>
+    <em></em><h2>欢迎注册</h2>
+    <span>全国服务热线：<i>0571-8971&nbsp;8799</i></span>
+  </div> 
+  <!-- Header E -->
+
+  <!-- .main-container -->
+  <div class="mainbg">
+    <div class="regmain f-clrfix">
+        <p class="reg-ok"><em class="reg-ok-icon"></em></p>
+        <h2 class="reg-ok">注册成功，欢迎您成为钢为网会员！</h2>
+        <p class="reg-ok reg-msg">系统将会在<span>10</span>秒后自动跳转至会员中心</p>
+        <p class="reg-ok reg-link"><a href="$link.getContextPath()/" class="f-fl"><返回首页</a><a href="$link.getContextPath()/member/" class="f-fr">进入会员中心</a></p>
+    </div>
+  </div>
+  <!-- /.main-container -->
+  <script src="$link.getContextPath()/js/lib/seajs/2.2.0/sea.js"></script>
+  <script src="$link.getContextPath()/js/seaconfig.js"></script>
+  <script>
+    seajs.use('$link.getContextPath()/js/event/regresult.js');
+  </script>
+
+  <!-- Footer S -->
+  #parse("layout/footer.vm")
+  <!-- Footer E -->
+
+
+</body>
+</html>

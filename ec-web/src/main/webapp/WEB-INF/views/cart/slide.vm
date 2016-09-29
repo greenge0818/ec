@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link type="image/x-icon" href="$link.getContextPath()/css/default/images/favicon.ico " rel="shortcut icon">
+		<link href="$link.getContextPath()/css/plugin/jquery-tips/jquery-tips.css" rel="stylesheet" />
+		<link href="$link.getContextPath()/css/plugin/artdialog.css" rel="stylesheet" />
+		<link href="$link.getContextPath()/css/default/css/cartList.css" rel="stylesheet" />
+		<link href="$link.getContextPath()/css/default/css/common.css" rel="stylesheet" />
+		<link href="$link.getContextPath()/css/default/css/shopcart.css" rel="stylesheet" />
+		<link href="$link.getContextPath()/css/default/css/login.css" rel="stylesheet" />
+		 #parse("layout/context.vm")
+	</head>
+
+	<body>
+		<div id="shopcart" class="shopcart"></div>
+	</body>
+  <script src="$link.getContextPath()/js/lib/seajs/3.0.0/sea.js"></script>
+  <script src="$link.getContextPath()/js/seaconfig.js"></script>
+  <script>
+    seajs.use('$link.getContextPath()/js/event/index');
+  </script>
+</html>
